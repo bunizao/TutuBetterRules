@@ -22,7 +22,7 @@
 
 rules-public（最推荐最完善的规则，**尤其适合`Apple`用户使用**）
 ```
-&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Ftutu%2FClash%2Frules1.ini
+&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Ftutu%2FClash%2Frules.ini
 ```
 rules2（删减了一些关于apple的规则，**适合`Windows`和`Android`用户**）
 ```
