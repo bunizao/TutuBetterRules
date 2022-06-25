@@ -1,14 +1,3 @@
-# tutu的私有分流规则
-
-## FOR Clash(Windows/Mac OS/Android/OpenWrt) & Shadowrocket & Surge(Config🚧)
-
-### 谁用谁爽😊🥰
-
-欢迎使用tutu的自制规则！现在接受**规则自定义计划** 随心所欲定制你自己的规则。
-
-作者的私聊机器人/规则的问题反馈🤖️ https://t.me/chatwithtutu_bot
-
-💰9.99 USD 定制clash规则 保证一年售后有效期，一年之后保证现有规则永久使用，需要更新请按当时价格续费。
 
 # tutu的私有分流规则以及详细配置
 
