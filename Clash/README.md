@@ -11,7 +11,7 @@
 
 * 请求新增分流请提PR(Pull Request)，或者定制。
 
-* 规则更新公告将会在这个telegram频道发布，敬请关注： https://t.me/hututu00
+* 规则更新公告将会在这个**telegram频道**发布，敬请关注： https://t.me/hututu00
 
 * 加入售后会员群（付费）请联系：https://t.me/TicketOffice_bot
 
@@ -23,19 +23,19 @@
 
 rules-public（最推荐最完善的规则，**尤其适合apple用户使用**）
 ```
-&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2Frules-in-clash%2Fmain%2Frules.ini
+&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Fmain%2Frules.ini
 ```
 rules2（删减了一些关于apple的规则，**适合windows以及android用户**）
 ```
-&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2Frules-in-clash%2Fmain%2Frules2.ini
+&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Fmain%2Frules2.ini
 ```
 rules3（此版本在rules2的基础上删除了**全部**emoji） 
 ```
-&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2Frules-in-clash%2Fmain%2Frules3.ini
+&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Fmain%2Frules3.ini
 ```
 rules-beta🚧（beta测试版🚧可能随时不可用）  
 ```
-&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2Frules-in-clash%2Fmain%2Frules-beta.ini
+&config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Fmain%2Frules-beta.ini
 ```
 3⃣️将生成完的一长串链接直接倒入clash！
 ****
