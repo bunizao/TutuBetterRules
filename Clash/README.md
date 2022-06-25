@@ -11,8 +11,7 @@
 
 * 请求新增分流请提PR(Pull Request)，或者定制。
 
-* 规则更新公告将会在这个**telegram频道**发布，敬请关注： https://t.me/hututu00
-
+* 规则更新公告将会在这个**[telegram频道](https://t.me/hututu00)**发布，敬请关注.
 * 加入售后会员群（付费）请联系：https://t.me/TicketOffice_bot
 
 
