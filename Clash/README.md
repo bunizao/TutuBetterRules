@@ -9,9 +9,9 @@
 
 * 作者的私聊机器人/规则的问题反馈🤖️ https://t.me/ChatWithTutu_bot
 
-* 请求新增分流请提PR(Pull Request)，或者定制。
+* 请求新增分流请提PR(Pull Requests)，或者联系作者定制定制规则。
 
-* 规则更新公告将会在这个**[telegram频道](https://t.me/hututu00)**发布，敬请关注.
+* 规则更新公告将会在这个[**telegram频道**](https://t.me/hututu00)发布，敬请关注.
 * 加入售后会员群（付费）请联系：https://t.me/TicketOffice_bot
 
 
@@ -20,11 +20,11 @@
 
 2⃣️在转码之后生成的订阅链接后面加入以下后缀（注意区分版本类型）
 
-rules-public（最推荐最完善的规则，**尤其适合apple用户使用**）
+rules-public（最推荐最完善的规则，**尤其适合`Apple`用户使用**）
 ```
 &config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Ftutu%2FClash%2Frules1.ini
 ```
-rules2（删减了一些关于apple的规则，**适合windows以及android用户**）
+rules2（删减了一些关于apple的规则，**适合`Windows`和`Android`用户**）
 ```
 &config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Ftutu%2FClash%2Frules2.ini
 ```
