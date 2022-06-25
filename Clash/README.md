@@ -1,7 +1,7 @@
 
-# tutu的私有分流规则以及详细配置
+# tutu的私有分流规则
 
-## FOR Clash & Shadowrocket & Surge & Quantumult X(Config👷)
+## FOR Clash & Shadowrocket
 
 ### 谁用谁爽😊🥰
 
