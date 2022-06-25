@@ -22,12 +22,12 @@
 
 
 #### 🔛正式开启规则自定义计划
-   * 💰Price: USD 9.99
+   * 💰Price: `USD 9.99`
    * 享受一年的自定义更新服务 随心所欲打造你私有的规则。
    * 🎉请联系 [@ChatWithTutu_Bot](https://t.me/ChatWithTutu_Bot)
 
 #### 🔛正式开启会员`私有`群组计划
-   * 💰Price: **Dynamic Adjustment [请见频道](https://t.me/hututu00/212)**
+   * 💰Price: `Dynamic Adjustment`  [请见频道](https://t.me/hututu00/212)**
    * 享受全明星阵容技术支持、独有会员规则和新功能尝鲜内测。**[详情了解](https://t.me/hututu00/212)
    * 🎉请联系 [@TicketOffice_Bot](https://t.me/TicketOffice_Bot)
 ---
