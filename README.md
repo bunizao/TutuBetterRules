@@ -19,7 +19,8 @@
 
 ####  正在开发
    * Quantumult X(config)🚧
-
+####  计划开发
+   * Loon(🥮）
 
 #### 🔛正式开启规则自定义计划
    * 💰Price: `USD 9.99`
