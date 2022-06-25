@@ -33,7 +33,7 @@ rules3（此版本在rules2的基础上删除了**全部**emoji）
 ```
 &config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Fmain%2Frules3.ini
 ```
-rules-beta🚧（beta测试版🚧可能随时不可用）  
+rules-beta🚧（beta测试版🚧可能随时不可用 暂无正在测试内容）  
 ```
 &config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Fmain%2Frules-beta.ini
 ```
