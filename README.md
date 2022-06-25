@@ -36,7 +36,9 @@
 ## 🚏中转站
 ### 按照你使用的代理软件查看使用教程👇🏻
 *  [Clash/Shadowrocket ✔️](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/README.md)
+   * 三个版本提供 
 *  [Quantumult X 🚧](https://github.com/bunizao/TutuBetterRules/blob/tutu/QuantumultX/README.md)
+   * 正在秃头开发  
 *  [Surge✔️](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/Surge.conf)
-
+   * 啦啦啦啦啦啦
 
