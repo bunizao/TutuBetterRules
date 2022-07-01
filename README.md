@@ -40,6 +40,6 @@
    * 三个版本提供 
 *  [`Quantumult X` 🚧](https://github.com/bunizao/TutuBetterRules/blob/tutu/QuantumultX/README.md)
    * 正在秃头开发  
-*  [`Surge`✔️](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/Surge.conf)
-   * 啦啦啦啦啦啦
+*  [`Surge`✔️](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/README.md)
+   * 很好用很漂亮
 
