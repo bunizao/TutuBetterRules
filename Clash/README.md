@@ -20,7 +20,7 @@
 
 2⃣️在转码之后生成的订阅链接后面加入以下后缀（注意区分版本类型）
 
-rules-public（最推荐最完善的规则，**尤其适合`Apple`用户使用**）
+rules-all（最推荐最完善的规则，**尤其适合`Apple`用户使用**）
 ```
 &config=https%3A%2F%2Fraw.githubusercontent.com%2Fbunizao%2FTutuBetterRules%2Ftutu%2FClash%2Frules.ini
 ```
