@@ -9,7 +9,7 @@
 
 * 作者的私聊机器人/规则的问题反馈🤖️ https://t.me/ChatWithTutu_bot
 
-* 请求新增分流请提PR(Pull Requests)，或者联系作者定制定制规则。
+* 请求新增分流请提PR(Pull Requests)，或者联系作者定制规则。
 
 * 规则更新公告将会在这个[**telegram频道**](https://t.me/hututu00)发布，敬请关注.
 * 加入售后会员群（付费）请联系：https://t.me/TicketOffice_bot
