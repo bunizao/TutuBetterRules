@@ -38,6 +38,8 @@ rules-beta🚧（beta测试版🚧可能随时不可用 暂无正在测试内容
 ```
 3⃣️将生成完的一长串链接直接倒入clash！
 ****
+
+## Shadowrocket 👉视频导入教程
 「注」  
 ❶节点全都ping不通请先检查第1⃣️步有没有出现问题  （例如&emoji=true&list=false&udp=false&tfo=false&scv=false&fdn=false&sort=false）  请移步机场询问解决方法。
 
