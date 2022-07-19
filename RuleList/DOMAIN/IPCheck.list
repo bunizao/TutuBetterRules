@@ -14,7 +14,7 @@ DOMAIN-SUFFIX,api.weibo.cn
 # DOMAIN,www.baidu.com
 
 # 头条IP定位接口
-# HOST-SUFFIX,toutiaoapi.com
+# DOMAIN-SUFFIX,toutiaoapi.com
 
 # 抖音IP定位接口
 DOMAIN-KEYWORD,core-c-lq
