@@ -1,7 +1,7 @@
 # TutuBetterRules
 欢迎使用Tutu的全平台分流规则(配置)，欢迎投喂star🌟。  
-### 规则更新通知频道：https://t.me/hututu00
-
+### 规则更新通知频道：[🌟欢迎关注我的telegram频道](https://t.me/hututu00)
+### 立刻直接查看教程：[🚏中转站](https://github.com/bunizao/TutuBetterRules#%E4%B8%AD%E8%BD%AC%E7%AB%99)
 
 
 ## 🫧欢迎品尝tutu手搓的分流策略规则～
@@ -13,9 +13,9 @@
 ❺开源规则永久免费🆓！  
 
 #### 现已支持
-   * Clash(Windows/Mac OS/Android/OpenWrt) ✔️  
-   * Shadowrocket ✔️
-   * Surge(Config)✔️ 
+   * [Clash](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/README.md)(Windows/Mac OS/Android/OpenWrt) ✔️  
+   * [Shadowrocket](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/README.md) ✔️
+   * [Surge](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/README.md)(Config)✔️ 
 
 ####  正在开发
    * Quantumult X(config)🚧
