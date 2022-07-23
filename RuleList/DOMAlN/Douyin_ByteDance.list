@@ -281,6 +281,6 @@ DOMAIN-SUFFIX,ixiguavideo.com
 DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,toutiao.com
 IP-CIDR,114.246.10.65/32,no-resolve
-IP-CIDR,58.20.141.67,no-resolve # >>新增🆕 
+IP-CIDR,58.20.141.67/32,no-resolve # >>新增🆕 
 USER-AGENT,TikTok*
 PROCESS-NAME,com.zhiliaoapp.musically
