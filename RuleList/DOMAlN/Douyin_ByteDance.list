@@ -14,6 +14,7 @@ DOMAIN-SUFFIX,activitybyte.com
 DOMAIN-SUFFIX,aihst8.com
 DOMAIN-SUFFIX,amemv.cn
 DOMAIN-SUFFIX,amemv.net
+DOMAIN-SUFFIX,aweme.snssdk.com # >>新增🆕 (这个域名也在Tiktok规则里🤔）
 DOMAIN-SUFFIX,baike.com
 DOMAIN-SUFFIX,bdactivity.com
 DOMAIN-SUFFIX,bdgslb.com
@@ -280,5 +281,6 @@ DOMAIN-SUFFIX,ixiguavideo.com
 DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,toutiao.com
 IP-CIDR,114.246.10.65/32,no-resolve
+IP-CIDR,58.20.141.67,no-resolve # >>新增🆕 
 USER-AGENT,TikTok*
 PROCESS-NAME,com.zhiliaoapp.musically
