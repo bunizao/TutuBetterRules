@@ -33,9 +33,9 @@ DOMAIN,szminorshort.weixin.qq.com
 DOMAIN,mp.weixin.qq.com
 
 # ======= 知乎 ======= #
-#DOMAIN,zhihu-web-analytics.zhihu.com
-#DOMAIN,www.zhihu.com
-#DOMAIN,api.zhihu.com
+DOMAIN,zhihu-web-analytics.zhihu.com
+DOMAIN,www.zhihu.com
+DOMAIN,api.zhihu.com
 DOMAIN-SUFFIX,zhihu.com
 IP-CIDR,103.41.167.0/24
 
