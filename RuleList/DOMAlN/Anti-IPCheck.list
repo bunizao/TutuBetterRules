@@ -1,25 +1,47 @@
 # //测试中// 本项目开发仅供学习交流使用，请勿将本项目用于其他用途！！！
 
 修改 / 联系 https://t.me/hututu0
-# 哔哩哔哩IP定位接口
-DOMAIN,api.bilibili.com
+DOMAIN-SUFFIX,biliapi.net
+DOMAIN,api.bilibili.com 
+DOMAIN,api.bilibili.tv
+DOMAIN,app.bilibili.com
+DOMAIN-SUFFIX,biliapi.com
+DOMAIN,api.live.bilibili.com
+DOMAIN,api.vc.bilibili.com
+DOMAIN,passport.bilibili.com
+DOMAIN,live-trace.bilibili.com
+DOMAIN,message.bilibili.com
+DOMAIN,cm.bilibili.com
 
-# 知乎IP定位接口
-IP-CIDR,103.41.167.0/24,no-resolve
+# ======= 微博 ======= #
+DOMAIN,api.weibo.cn
+DOMAIN,api.weibo.com
 
-# 微博IP定位接口
-DOMAIN-SUFFIX,api.weibo.cn
+# ======= 百度贴吧 ======= #
+DOMAIN,tieba.baidu.com
+DOMAIN,tbmsg.baidu.com
+DOMAIN,tb5.bdstatic.com
+DOMAIN,fclog.baidu.com
+DOMAIN,gsp0.baidu.com
+DOMAIN,hm.baidu.com
+DOMAIN,www.baidu.com
+ 
+# ======= 微信 ======= #
+DOMAIN,szshort.weixin.qq.com
+DOMAIN,szextshort.weixin.qq.com
+DOMAIN,szminorshort.weixin.qq.com
+DOMAIN,mp.weixin.qq.com
 
-# 贴吧IP定位接口
-# DOMAIN,www.baidu.com
+# ======= 知乎 ======= #
+#DOMAIN,zhihu-web-analytics.zhihu.com
+#DOMAIN,www.zhihu.com
+#DOMAIN,api.zhihu.com
+DOMAIN-SUFFIX,zhihu.com
+IP-CIDR,103.41.167.0/24
 
-# 头条IP定位接口
-# DOMAIN-SUFFIX,toutiaoapi.com
+# ======= 国家反诈中心 ======= #
+DOMAIN-SUFFIX,gjfzpt.cn,REJECT 
 
-# 抖音IP定位接口
+# ======= 抖音 ======= #
+# 请求域名过多，建议全局代理
 DOMAIN-KEYWORD,core-c-lq
-DOMAIN-KEYWORD,core-lq
-DOMAIN-KEYWORD,normal-c-lq
-DOMAIN-KEYWORD,normal-lq
-DOMAIN-KEYWORD,search-quic-lq
-DOMAIN-KEYWORD,search-lq
