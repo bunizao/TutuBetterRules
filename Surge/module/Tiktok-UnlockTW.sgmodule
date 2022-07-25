@@ -10,3 +10,6 @@
 
 [MITM]
 hostname = %APPEND% *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com
+
+#原作者：Semporia
+#原脚本：https://github.com/Semporia/TikTok-Unlock/blob/master/Surge/TiKok-TW.sgmodule
