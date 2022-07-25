@@ -1,0 +1,7 @@
+#expl:使用Clash将Spotlight搜索结果定向为Wikipedia.
+#how to use:将本规则走代理
+#appreciate:VC🍟&iRingo
+
+DOMAIN,lookup-api.apple.com
+DOMAIN,lookup-api.apple.com.edgekey.net
+DOMAIN,e16991.b.akamaiedge.net
