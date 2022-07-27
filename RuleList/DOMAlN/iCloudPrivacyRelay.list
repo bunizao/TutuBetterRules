@@ -1,0 +1,9 @@
+# >将本规则走代理即可解锁iCloudPrivacyRelay.
+# >在软路由OpenClash上测试通过
+
+DOMAIN,mask-api.fe.apple-dns.net
+DOMAIN,mask-api.icloud.com
+DOMAIN,mask-h2.icloud.com
+DOMAIN,mask-t.apple-dns.net
+DOMAIN,mask.apple-dns.net
+DOMAIN,mask.icloud.com
