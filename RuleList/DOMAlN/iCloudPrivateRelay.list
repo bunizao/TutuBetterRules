@@ -1,4 +1,4 @@
-# >将本规则走代理即可解锁iCloudPrivacyRelay.
+# >将本规则走代理即可解锁iCloud Private Relay.
 # >在软路由OpenClash上测试通过
 
 DOMAIN,mask-api.fe.apple-dns.net
