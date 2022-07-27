@@ -1,3 +1,5 @@
+#!name=彩云天气Notification🥳
+#!desc=随时了解天气状况☁️使用Surge通知您身边的天气怎么样
 [MITM]
 hostname=weather-data.apple.com, api.weather.com
 [Script]
