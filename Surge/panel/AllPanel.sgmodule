@@ -18,6 +18,9 @@ NET_info = script-name=NET_info,update-interval=1
 #策略组面板 可重复配置 注意修改相应字段
 groupPanel= script-name=groupPanel,update-interval=5
 
+#流媒体解锁状态
+stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
+
 
 [Script]
 #开心一点
@@ -37,3 +40,6 @@ NET_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com
 #策略组面板 可重复配置 注意修改相应字段
 #必须更改的字段：group 填写需要显示的策略组名称
 groupPanel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/groupPanel.js ,argument=icon=network&color=#86abee&group=𝐀𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐜
+
+#流媒体解锁状态
+stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Panel/Stream-All/Stream-All.js
