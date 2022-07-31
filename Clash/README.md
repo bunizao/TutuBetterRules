@@ -1,5 +1,5 @@
 
-# tutu的私有分流规则
+# tutu的自用分流规则
 
 ## FOR Clash & Shadowrocket
 
