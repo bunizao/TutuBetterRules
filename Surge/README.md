@@ -1,5 +1,5 @@
 # Surge配置使用教程🥳
-
+#### 规则更新通知频道：[🌟欢迎关注telegram频道](https://t.me/hututu00)
 
 ### Starting Introduction/初级教程
 
@@ -82,4 +82,6 @@ https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/panel/AllPa
    
     * 🧱墙裂推荐：[🌐 DNS分流模块](https://github.com/VirgilClyne/VirgilClyne/tree/main/modules/DNS)
       * [🌐 DNS for Router and Companys.sgmodule](https://raw.githubusercontent.com/VirgilClyne/VirgilClyne/main/modules/DNS/DNS.sgmodule)
+      
+      
      
