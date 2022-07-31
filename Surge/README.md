@@ -82,6 +82,8 @@ https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/panel/AllPa
    
     * 🧱墙裂推荐：[🌐 DNS分流模块](https://github.com/VirgilClyne/VirgilClyne/tree/main/modules/DNS)
       * [🌐 DNS for Router and Companys.sgmodule](https://raw.githubusercontent.com/VirgilClyne/VirgilClyne/main/modules/DNS/DNS.sgmodule)
-      
+      ---
+      ### Announsment/声明
+      [简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
       
      
