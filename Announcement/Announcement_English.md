@@ -7,3 +7,6 @@
 ### 6. Any modification based on the source code of this project is the spontaneous behavior of other individuals or organizations, and has no direct or indirect relationship with this project, and all the consequences have nothing to do with this project.
 ### 7. All individuals and organizations that directly or indirectly use this project should complete their study and research within 24 hours, and delete all content in this project in a timely manner. If there is a need for the functions of this project, you should develop relevant functions yourself.
 ### 8. This project reserves the right to supplement or change the disclaimer at any time. Individuals or organizations that directly or indirectly use the content of this project are deemed to accept the special statement of this project.
+
+## Other languages are provided:
+### [简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
