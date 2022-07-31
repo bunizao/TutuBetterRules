@@ -64,12 +64,22 @@ https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Surge.sgmodule
 https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/panel/AllPanel.sgmodule
 ```
   * 5.Module/模块
-    * 彩云天气通知：定时通知您身边的天气状态。
-```
-https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/CaiYunWeather.sgmodule
-```
-    * TikTok解锁：使用本脚本可以解锁TikTok对MCC检测的限制(台湾🇹🇼)。
-```
-https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/Tiktok-UnlockTW.sgmodule
-```
+    * 彩云天气通知：定时通知您身边的天气状态。  
+[CaiYunWeather.sgmodule](https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/CaiYunWeather.sgmodule)
 
+    * TikTok解锁：使用本脚本可以解锁TikTok对MCC检测的限制(台湾🇹🇼)。  
+[Tiktok-UnlockTW.sgmodule](https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/Tiktok-UnlockTW.sgmodule)
+
+    * 一些个破解合集  
+[破解合集.sgmodule](https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Surge/Script.sgmodule)
+
+    * 🧱墙裂推荐：[iRingo-解锁完整的Apple功能和集成服务](https://github.com/VirgilClyne/iRingo#iringo)
+      * [ iRingo for Location Services.sgmodule](https://github.com/VirgilClyne/iRingo/blob/main/sgmodule/Location.sgmodule?raw=true)
+      * [ iRingo for Siri & Search.sgmodule](https://github.com/VirgilClyne/iRingo/blob/main/sgmodule/Siri.sgmodule?raw=true)
+      * [ iRingo for Weather.sgmodule](https://github.com/VirgilClyne/iRingo/blob/beta/sgmodule/Weather.beta.sgmodule?raw=true)
+      * [ iRingo for News.sgmodule](https://github.com/VirgilClyne/iRingo/blob/main/sgmodule/News.sgmodule?raw=true)
+      * [ iRingo for TV app.sgmodule](https://github.com/VirgilClyne/iRingo/blob/main/sgmodule/TV.sgmodule?raw=true)
+   
+    * 🧱墙裂推荐：[🌐 DNS分流模块](https://github.com/VirgilClyne/VirgilClyne/tree/main/modules/DNS)
+      * [🌐 DNS for Router and Companys.sgmodule](https://raw.githubusercontent.com/VirgilClyne/VirgilClyne/main/modules/DNS/DNS.sgmodule)
+     
