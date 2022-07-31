@@ -32,13 +32,13 @@ https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Surge.sgmodule
   * 虽然没什么大用，策略组选择的节点还是来自Sub-Store。
 ---
 ### Advanced Introduction/进阶教程
-  * 本配置独家支援`🆕 Anti-IPCheck 混淆大陆app的ip查询`功能，**默认开启**。
+  * 1.本配置独家支援`🆕 Anti-IPCheck 混淆大陆app的ip查询`功能，**默认开启**。
 ```
 144 # > 🆕 Anti-IPCheck 混淆大陆app的ip查询
 145 RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/Anti-IPCheck.list,𝐏𝐫𝐨𝐱𝐲
 ```
 如想关闭，请删去144、145两行或者转为注释。
-  * WeChat加速，**默认关闭**。
+  * 2.WeChat加速，**默认关闭**。
 ```
 163 # > 🆕WeChat 根据你自己的Wechat DC选择策略
 164 #RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/WeChat.list,🇸🇬Singapore
@@ -46,3 +46,30 @@ https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Surge.sgmodule
   * Suggestions/使用建议：
     * WeChat绑定以下地区手机号的：`🇨🇳中国大陆(+86)`、`🇭🇰香港特别行政区(+852)`、`🇲🇴澳门特别行政区(+853)`、`🇪🇺欧洲经济区(EEU)`，**不建议开启**，保持默认即可。
     * WeChat绑定以下地区手机号的：`🇺🇳其他地区`，建议开启。删除164行前面的 **#** 号，即可开启。
+
+
+  * 3.ASN分流，**默认开启**。
+    * 使用了先进的`ASN分流`代替了古老刻板的`GEOIP,CN`。
+    * `ASN`分流比`GEOIP,CN`更加精准可靠。
+    * ASN list引用自[VirgilClyne](https://github.com/VirgilClyne/VirgilClyne/tree/main/modules/ASN),详细介绍请参阅[🍟佬的仓库](https://github.com/VirgilClyne/VirgilClyne/tree/main/modules/ASN)。
+ ```
+196 # > 先进的 ASN China 分流
+197 #GEOIP,CN,DIRECT
+198 RULE-SET,https://raw.githubusercontent.com/VirgilClyne/VirgilClyne/main/modules/ASN/ASN.list,DIRECT
+ ```
+
+  * 4.Panel/面板
+    * 以下是我整理的Panel面板，包括重载配置、策略组面板、网络详情、流媒体解锁状态检测。
+```
+https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/panel/AllPanel.sgmodule
+```
+  * 5.Module/模块
+    * 彩云天气通知：定时通知您身边的天气状态。
+```
+https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/CaiYunWeather.sgmodule
+```
+    * TikTok解锁：使用本脚本可以解锁TikTok对MCC检测的限制(台湾🇹🇼)。
+```
+https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/Tiktok-UnlockTW.sgmodule
+```
+
