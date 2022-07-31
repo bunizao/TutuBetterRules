@@ -1,7 +1,7 @@
 # surge配置使用教程🥳
 
 
-### -Starting Introduction/初级教程
+### Starting Introduction/初级教程
 
 #### 点击`从URL下载配置` 引用以下链接：
 ```
@@ -31,7 +31,7 @@ https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Surge.sgmodule
   * 花样字体生成： https://qwerty.dev/fancy-font-generator
   * 虽然没什么大用，策略组选择的节点还是来自Sub-Store。
 ---
-### -Advanced Introduction/进阶教程
+### Advanced Introduction/进阶教程
   * 本配置独家支援`🆕 Anti-IPCheck 混淆大陆app的ip查询`功能，**默认开启**。
 ```
 144 # > 🆕 Anti-IPCheck 混淆大陆app的ip查询
