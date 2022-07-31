@@ -47,7 +47,7 @@
 *  [`Surge`✔️](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/README.md)
    * 很好用很漂亮
 ---
- ### 📰 Announsment/声明
-[简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
+ ## 📰 Announsment/声明
+ ### [简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
       
      
