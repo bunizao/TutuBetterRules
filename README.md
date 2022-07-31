@@ -38,7 +38,7 @@
 ---
 
 
-## 🚏Instraction/使用教程
+## 🚏 Instraction/使用教程
 ### 按照你使用的代理软件查看使用教程👇🏻
 *  [`Clash/Shadowrocket` ✔️](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/README.md)
    * 三个版本提供 
@@ -46,4 +46,8 @@
    * 正在秃头开发  
 *  [`Surge`✔️](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/README.md)
    * 很好用很漂亮
-
+---
+ ### 📰 Announsment/声明
+      [简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
+      
+     
