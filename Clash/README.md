@@ -44,3 +44,9 @@ rules-beta🚧（beta测试版🚧可能随时不可用 暂无正在测试内容
 ❶节点全都ping不通请先检查第1⃣️步有没有出现问题  （例如&emoji=true&list=false&udp=false&tfo=false&scv=false&fdn=false&sort=false）  请移步机场询问解决方法。
 
 ❷上面的订阅转换链接来自DlerCloud.
+
+---
+## Announsment/声明
+### [简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
+      
+     
