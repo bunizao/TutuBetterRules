@@ -1,6 +1,8 @@
-# //测试中// 本项目开发仅供学习交流使用，请勿将本项目用于其他用途！！！
+# //测试中// 
+#  本项目开发仅供学习交流使用，请勿将本项目用于其他用途！！！
 
-# 修改 / 联系 https://t.me/hututu0
+# 修改 / 联系：https://t.me/hututu0 或者issue
+# 参考 / 感谢：https://github.com/lwd-temp/anti-ip-attribution
 
 # ======= 哔哩哔哩 ======= #
 DOMAIN-SUFFIX,biliapi.net
@@ -18,7 +20,10 @@ DOMAIN,cm.bilibili.com
 # ======= 微博 ======= #
 DOMAIN,api.weibo.cn
 DOMAIN,api.weibo.com
-
+DOMAIN-SUFFIX,weibo.cn
+DOMAIN-SUFFIX,weibo.com
+DOMAIN-SUFFIX,weibocdn.com
+DOMAIN-KEYWORD,weibo
 # ======= 百度贴吧 ======= #
 DOMAIN,tieba.baidu.com
 DOMAIN,tbmsg.baidu.com
@@ -26,7 +31,7 @@ DOMAIN,tb5.bdstatic.com
 DOMAIN,fclog.baidu.com
 DOMAIN,gsp0.baidu.com
 DOMAIN,hm.baidu.com
-DOMAIN,www.baidu.com
+#DOMAIN,www.baidu.com
  
 # ======= 微信 ======= #
 DOMAIN,szshort.weixin.qq.com
@@ -41,9 +46,6 @@ DOMAIN,api.zhihu.com
 DOMAIN-SUFFIX,zhihu.com
 IP-CIDR,103.41.167.0/24
 
-# ======= 国家反诈中心 ======= #
-# DOMAIN-SUFFIX,gjfzpt.cn
-
 # ======= 抖音 ======= #
 # 请求域名过多，建议全局代理
 DOMAIN-KEYWORD,core-c-lq
@@ -56,3 +58,6 @@ DOMAIN-KEYWORD,search-lq
 # ======= 头条 ======= #
 # 网友提供头条IP定位接口
 DOMAIN-SUFFIX,toutiaoapi.com
+
+# ======= 🆕小红书 ======= #
+DOMAIN-SUFFIX,xiaohongshu.com
