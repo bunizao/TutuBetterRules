@@ -38,7 +38,7 @@ https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/QuantumultX/Quant
 
   * 更多Quantumult X教程请参阅：[Quantumult X文字教程](https://www.notion.so/Quantumult-X-1d32ddc6e61c4892ad2ec5ea47f00917)。  
   * 如有疑问，请移步：[Quantumult X交流群](https://t.me/QuanXApp) 询问。
-
+----
 ### Specially Gratitude
 ##### 排名不分先后，狠狠感激以下大佬对本项目的支持～
   * [@Peng-YM](https://github.com/Peng-YM)
