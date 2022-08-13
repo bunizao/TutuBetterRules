@@ -2,8 +2,9 @@
 
 #### 规则更新通知频道：[🌟欢迎关注telegram频道](https://t.me/hututu00)
 
+--
 
-### Introduction
+## Introduction
 
 #### Step 1 - 下载配置
 
@@ -15,9 +16,7 @@
 填充以下链接：  
 
 ``
-
 https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/QuantumultX/QuantumultX.conf
-
 ``
 
 千万别忘记点击右上角``保存``。
