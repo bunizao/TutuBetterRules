@@ -40,7 +40,7 @@ Tips:点击蓝色超链接查看使用教程🥵
   * [@futurkk](https://github.com/futurkk)
   * [@Rabbit-Spec](https://github.com/Rabbit-Spec)
   * [@BlackMatrix7](https://github.com/blackmatrix7)
-  * [forntarv](https://github.com/forntarv/ProxyConfig)
+  * [@forntarv](https://github.com/forntarv/ProxyConfig)
   * [@DivineEngine](https://github.com/DivineEngine)
    
 ---
