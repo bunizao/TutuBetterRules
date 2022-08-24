@@ -27,6 +27,19 @@
    * 💰Price: `Dynamic Adjustment`  [请见频道](https://t.me/hututu00/212)
    * 享受全明星阵容技术支持、独有会员规则和新功能尝鲜内测。[详情了解](https://t.me/hututu00/212)
    * 🎉请联系 [@TicketOffice_Bot](https://t.me/TicketOffice_Bot)
+---
+### Specially Gratitude/鸣谢
+##### 排名不分先后，狠狠感激以下大佬对本项目的支持～
+  * [@Peng-YM](https://github.com/Peng-YM)
+  * [@Tartarus2014](https://github.com/Tartarus2014)
+  * [@Shawn](https://github.com/KOP-XIAO)
+  * [@Troy](https://github.com/Trovoy)
+  * [@VirgilClyne](https://github.com/VirgilClyne)
+  * [@futurkk](https://github.com/futurkk)
+  * [@Rabbit-Spec](https://github.com/Rabbit-Spec)
+  * [@BlackMatrix7](https://github.com/blackmatrix7)
+  * [forntarv](https://github.com/forntarv/ProxyConfig)
+  * [@DivineEngine](https://github.com/DivineEngine)
    
 ---
  ## 📰 Announsment/声明
