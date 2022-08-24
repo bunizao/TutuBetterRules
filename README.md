@@ -10,7 +10,9 @@
    * [Shadowrocket](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/README.md) ✔️
    * [Quantumult X](https://github.com/bunizao/TutuBetterRules/blob/tutu/QuantumultX/README.md)(Config)✔️ 
    * [Surge](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/README.md)(Config)✔️ 
-      * Tips:点击蓝色超链接查看使用教程🥵
+```
+Tips:点击蓝色超链接查看使用教程🥵
+```
 ####  正在开发
    *  Loon(🥮）(config)🚧
 ####  计划开发
