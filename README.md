@@ -17,12 +17,13 @@
 ## 🕊️ Support/支持
    * [Clash](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/README.md)(Windows/Mac OS/Android/OpenWrt) ✔️  
    * [Shadowrocket](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/README.md) ✔️
+   * [Quantumult X](https://github.com/bunizao/TutuBetterRules/blob/tutu/QuantumultX/README.md)(Config)✔️ 
    * [Surge](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/README.md)(Config)✔️ 
-
+      * Tips:点击蓝色超链接查看使用教程～
 ####  正在开发
-   * Quantumult X(config)🚧
+   *  Loon(🥮）(config)🚧
 ####  计划开发
-   * Loon(🥮）
+   * ???
 ---
 ## 🧋 Extra Support/进阶支持
 
@@ -35,17 +36,7 @@
    * 💰Price: `Dynamic Adjustment`  [请见频道](https://t.me/hututu00/212)
    * 享受全明星阵容技术支持、独有会员规则和新功能尝鲜内测。[详情了解](https://t.me/hututu00/212)
    * 🎉请联系 [@TicketOffice_Bot](https://t.me/TicketOffice_Bot)
----
-
-
-## 🚏 Instraction/使用教程
-### 按照你使用的代理软件查看使用教程👇🏻
-*  [`Clash/Shadowrocket` ✔️](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/README.md)
-   * 三个版本提供 
-*  [`Quantumult X` 🚧](https://github.com/bunizao/TutuBetterRules/blob/tutu/QuantumultX/README.md)
-   * 正在秃头开发  
-*  [`Surge`✔️](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/README.md)
-   * 很好用很漂亮
+   
 ---
  ## 📰 Announsment/声明
  ### [简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
