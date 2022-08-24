@@ -49,5 +49,5 @@ https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/QuantumultX/Quant
   * [@futurkk](https://github.com/futurkk)
   * [@Rabbit-Spec](https://github.com/Rabbit-Spec)
   * [@BlackMatrix7](https://github.com/blackmatrix7)
-  * [forntarv](https://github.com/forntarv/ProxyConfig)
+  * [@forntarv](https://github.com/forntarv/ProxyConfig)
   * [@DivineEngine](https://github.com/DivineEngine)
