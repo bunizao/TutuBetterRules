@@ -6,16 +6,22 @@
 
 # ======= 哔哩哔哩 ======= #
 DOMAIN-SUFFIX,biliapi.net
+# 评论区
 DOMAIN,api.bilibili.com 
 DOMAIN,api.bilibili.tv
 DOMAIN,app.bilibili.com
 DOMAIN-SUFFIX,biliapi.com
 DOMAIN,api.live.bilibili.com
 DOMAIN,api.vc.bilibili.com
+# 登录
 DOMAIN,passport.bilibili.com
 DOMAIN,live-trace.bilibili.com
 DOMAIN,message.bilibili.com
 DOMAIN,cm.bilibili.com
+# 动态区 @Atri
+DOMAIN,grpc.biliapi.net
+# biliDNS @Atri
+IP-CIDR,203.107.1.0/24,no-resolve
 
 # ======= 微博 ======= #
 DOMAIN,api.weibo.cn
@@ -44,7 +50,7 @@ DOMAIN,zhihu-web-analytics.zhihu.com
 DOMAIN,www.zhihu.com
 DOMAIN,api.zhihu.com
 DOMAIN-SUFFIX,zhihu.com
-IP-CIDR,103.41.167.0/24
+IP-CIDR,103.41.167.0/24,no-resolve
 
 # ======= 抖音 ======= #
 # 请求域名过多，建议全局代理
