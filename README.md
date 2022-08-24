@@ -28,8 +28,8 @@
    * 享受全明星阵容技术支持、独有会员规则和新功能尝鲜内测。[详情了解](https://t.me/hututu00/212)
    * 🎉请联系 [@TicketOffice_Bot](https://t.me/TicketOffice_Bot)
 ---
-### Specially Gratitude/鸣谢
-##### 排名不分先后，狠狠感激以下大佬对本项目的支持～
+## 🙏 Specially Gratitude/鸣谢
+#### 排名不分先后，狠狠感激以下大佬对本项目的支持～
   * [@Peng-YM](https://github.com/Peng-YM)
   * [@Tartarus2014](https://github.com/Tartarus2014)
   * [@Shawn](https://github.com/KOP-XIAO)
