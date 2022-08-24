@@ -1,16 +1,7 @@
 # TutuBetterRules
 欢迎使用Tutu的全平台分流规则(配置)，欢迎投喂star🌟。  
 #### 规则更新通知频道：[🌟欢迎关注telegram频道](https://t.me/hututu00)
-#### 立刻直接查看教程：[🚏中转站](https://github.com/bunizao/TutuBetterRules#%E4%B8%AD%E8%BD%AC%E7%AB%99)
 
-
-## 🫧 Feature/特性
-
-  * 去广告=true（使用[Anti-AD](https://github.com/privacy-protection-tools/anti-AD)项目的规则）  
-  * iCloud专用代理解锁=true (来自 [🍟整点薯条](https://github.com/VirgilClyne/iRingo)项目的规则)   
-  * 多样化选择=true（根据平台制作了不同的规则配置）  
-  * 融合``自动选择``和``手动选择``的策略，让不同喜好的人都会爱上它！  
-  * ### 开源规则**永久免费**🆓！  
 
 ---
 
@@ -19,7 +10,7 @@
    * [Shadowrocket](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/README.md) ✔️
    * [Quantumult X](https://github.com/bunizao/TutuBetterRules/blob/tutu/QuantumultX/README.md)(Config)✔️ 
    * [Surge](https://github.com/bunizao/TutuBetterRules/blob/tutu/Surge/README.md)(Config)✔️ 
-      * Tips:点击蓝色超链接查看使用教程～
+      * Tips:点击蓝色超链接查看使用教程🥵
 ####  正在开发
    *  Loon(🥮）(config)🚧
 ####  计划开发
