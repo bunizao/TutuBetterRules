@@ -1,0 +1,19 @@
+
+#来源：eHpo1
+#https://github.com/787a68?tab=repositories
+
+# Store
+USER-AGENT,com.apple.appstored*
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN,iosapps.itunes.apple.com
+DOMAIN,osxapps.itunes.apple.com
+
+# Testflight
+DOMAIN,testflight.apple.com
+
+# Update
+DOMAIN,supportdownload.apple.com
+DOMAIN,appldnld.apple.com
+DOMAIN,swcdn.apple.com
+DOMAIN,apptrailers.itunes.apple.com
+DOMAIN,updates-http.cdn-apple.com
