@@ -1,6 +1,0 @@
-#!name=自动切换出站模式
-#!desc=根据网络环境自动切换出站模式 by tutu
-
-[Script]
-
-event network-changed script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/auto-policy.js
