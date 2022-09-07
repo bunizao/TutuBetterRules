@@ -1,5 +1,6 @@
-# >将本规则走代理即可解锁iCloud Private Relay.
-# >在软路由OpenClash上测试通过
+# > 将本规则走代理即可解锁iCloud Private Relay.
+# > 在软路由OpenClash上测试通过
+# > Surge网关测试通过 ios15.N MacOS Big Sur
 
 DOMAIN,mask-api.fe.apple-dns.net
 DOMAIN,mask-api.icloud.com
