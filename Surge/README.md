@@ -10,8 +10,8 @@ https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/Surge.conf
  * 由于这是引用配置，不可编辑，所以我们还需要`创建当前配置副本`。
 
 #### 使用Sub-Store添加订阅节点：
-##### `2022.09.08`之后的配置内嵌Sub-Store，可以不用添加模块。
- * 请确认您已经
+##### `2022.09.08`之后的配置**内嵌Sub-Store**，可以不用添加模块，请确认您正在阅读本文章的日期。
+ * 请确认您已经**正确配置并信任了系统根证书**，并且已开启`MitM`、`Rewrite`、`脚本`。
  * 首页点击`模块`-->`引用新模块..`-->复制以下链接：
 ```
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Surge.sgmodule
@@ -82,8 +82,8 @@ https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/panel/AllPa
       * [ iRingo for News.sgmodule](https://github.com/VirgilClyne/iRingo/blob/main/sgmodule/News.sgmodule?raw=true)
       * [ iRingo for TV app.sgmodule](https://github.com/VirgilClyne/iRingo/blob/main/sgmodule/TV.sgmodule?raw=true)
    
-    * 🧱墙裂推荐：[🌐 DNS分流模块](https://github.com/VirgilClyne/VirgilClyne/tree/main/modules/DNS)
-      * [🌐 DNS for Router and Companys.sgmodule](https://raw.githubusercontent.com/VirgilClyne/VirgilClyne/main/modules/DNS/DNS.sgmodule)
+    * 🧱墙裂推荐：[🌐 DNS分流模块](https://github.com/VirgilClyne/GetSomeFries/wiki/🌐-DNS)
+      * [🌐 DNS for Router and Companys.sgmodule](https://github.com/VirgilClyne/GetSomeFries/blob/main/sgmodule/DNS.sgmodule?raw=true)
       ---
       ### Announsment/声明
       ### [简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
