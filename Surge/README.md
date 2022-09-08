@@ -10,6 +10,8 @@ https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/Surge.conf
  * 由于这是引用配置，不可编辑，所以我们还需要`创建当前配置副本`。
 
 #### 使用Sub-Store添加订阅节点：
+##### `2022.09.08`之后的配置内嵌Sub-Store，可以不用添加模块。
+ * 请确认您已经
  * 首页点击`模块`-->`引用新模块..`-->复制以下链接：
 ```
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Surge.sgmodule
