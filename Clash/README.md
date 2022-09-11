@@ -26,7 +26,7 @@
 
 #### p.s.
 
-* ` Node List`会返回`纯节点信息`，如果您需要规则套壳，请 **不要 **勾选。
+* ` Node List`会返回`纯节点信息`，如果您需要规则套壳，请 **不要**勾选。
 
 * 本API转换纯前端实现，订阅泄漏风险 0% 。
 * 如果您导入代理软件没有发现有策略组，请检查是否 `nodelist=true`，或者直接用[旧版使用教程](https://github.com/bunizao/TutuBetterRules/blob/tutu/Clash/mds/README_old.md)。
