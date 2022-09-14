@@ -42,4 +42,4 @@ NET_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com
 groupPanel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/fishingworld/something/main/groupPanel.js ,argument=icon=network&color=#86abee&group=𝐀𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐜
 
 #流媒体解锁状态
-stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Panel/Stream-All/Stream-All.js
+stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/JS/stream-all.js
