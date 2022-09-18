@@ -1,17 +1,21 @@
+# Apple直连的规则，包括商店（下载），Apple Music等 具体使用方法请见本库的Sample Profile。
+# --> #!Author:tutu
 
-# 来源：eHpo1
-# https://github.com/787a68?tab=repositories
+# Apple Music
+DOMAIN,aod.itunes.apple.com
 
-# Store
+# DOWNLOAD
+
+# > Store
 USER-AGENT,com.apple.appstored*
 DOMAIN-SUFFIX,mzstatic.com
 DOMAIN,iosapps.itunes.apple.com
 DOMAIN,osxapps.itunes.apple.com
 
-# Testflight
+# > Testflight
 DOMAIN,testflight.apple.com
 
-# Update
+#  >Update
 DOMAIN,supportdownload.apple.com
 DOMAIN,appldnld.apple.com
 DOMAIN,swcdn.apple.com
