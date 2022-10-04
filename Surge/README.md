@@ -57,7 +57,7 @@ https://raw.githubusercontents.com/bunizao/TutuBetterRules/tutu/Surge/Surge_lite
 164 #RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/WeChat.list,🇸🇬Singapore
 ```
   * Suggestions/使用建议：
-    * WeChat绑定以下地区手机号的：`🇨🇳中国大陆(+86)`、`🇭🇰香港特别行政区(+852)`、`🇲🇴澳门特别行政区(+853)`、`🇪🇺欧洲经济区(EEU)`，**不建议开启**，保持默认即可。
+    * WeChat绑定以下地区手机号的：`🇨🇳中国大陆(+86)`、`🇭🇰香港特别行政区(+852)`、`🇲🇴澳门特别行政区(+853)`、`🇪🇺欧洲经济区(EEA)`，**不建议开启**，保持默认即可。
     * WeChat绑定以下地区手机号的：`🇺🇳其他地区`，建议开启。删除164行前面的 **#** 号，即可开启。
 
 
