@@ -1,2 +1,5 @@
 DOMAIN-SUFFIX,googleadservices.com
 DOMAIN,ad.doubleclick.net
+DOMAIN,www.googleadservices.com
+DOMAIN-SUFFIX,t.co
+DOMAIN,analytics.twitter.com
