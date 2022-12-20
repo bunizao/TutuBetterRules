@@ -31,9 +31,6 @@ http-response ^https:\/\/(api\.revenuecat\.com\/v\d\/subscribers|vsco\.co\/api\/
 # > 酷我音乐VIP vip1.kuwo.cn, by RE!
 酷我音乐 = type=http-response,pattern=^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kw.js,script-update-interval=0
 
-# > 美图秀秀(2022.01.17) 解锁高级V（包括但不限于：付费海报模板、高级滤镜、高级素材等），无须登陆! api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com,
-# 美图秀秀(2022.01.17) = type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/,requires-body=1,script-path=https://raw.githubusercontent.com/28413761/QX/main/jiaoben/MeiTuXiuXiu.js,script-update-interval=0,max-size=0
-
 # > 美团外卖去开屏广告 by blackmatrix7
 美团外卖去开屏广告 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo?,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js
 
