@@ -1,7 +1,7 @@
 ## Quantumult X 配置使用教程🥳
 
 #### 规则更新通知频道：[🌟欢迎关注telegram频道](https://t.me/hututu00)
-
+ * 对于现行Quantumult X版本`1.2.0-777`部分配图可能与实际不同，但是配置兼容**任意版本**。
 ## Introduction
 
 #### Step 1 - 下载配置
@@ -51,3 +51,6 @@ https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/QuantumultX/Quant
   * [@BlackMatrix7](https://github.com/blackmatrix7)
   * [@forntarv](https://github.com/forntarv/ProxyConfig)
   * [@DivineEngine](https://github.com/DivineEngine)
+  
+## 📰 announcement/声明
+ ### [简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
