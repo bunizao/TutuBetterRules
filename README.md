@@ -20,17 +20,7 @@ Tips:点击蓝色超链接查看使用教程🥵
    * ???
 ---
 ## 🧋 Extra Support/进阶支持
-
-#### 🔛正式开启规则自定义计划
-   * 💰Price: `USD 9.99`
-   * 享受一年的自定义更新服务 随心所欲打造你私有的规则。
-   * 🎉请联系 [@ChatWithTutu_Bot](https://t.me/ChatWithTutu_Bot)
-
-#### 🔛正式开启会员`私有`群组计划
-   * 💰Price: `Dynamic Adjustment`  [请见频道](https://t.me/hututu00/212)
-   * 享受全明星阵容技术支持、独有会员规则和新功能尝鲜内测。[详情了解](https://t.me/hututu00/212)
-   * 🎉请联系 [@TicketOffice_Bot](https://t.me/TicketOffice_Bot)
----
+   * 更多项目请见：[**tutuのBlog | 私の折腾项目大公開!**](https://tutuis.me/p/%E7%A7%81%E3%81%AE%E6%8A%98%E8%85%BE%E9%A1%B9%E7%9B%AE%E5%A4%A7%E5%85%AC%E9%96%8B/)
 ## 🙏 Specially Gratitude/鸣谢
 #### 排名不分先后，狠狠感激以下大佬对本项目的支持～
   * [@Peng-YM](https://github.com/Peng-YM)
