@@ -9,8 +9,9 @@ DOMAIN-SUFFIX,t-mobile.com
 
 # Wifi Calling
 DOMAIN,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
-DOMAIN,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org //通过UDP 4500端口实现VoWifi
 DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+
 
 
