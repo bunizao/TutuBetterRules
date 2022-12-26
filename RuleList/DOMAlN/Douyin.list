@@ -1,7 +1,7 @@
-#!desc:轻量化的抖音规则 通过将本规则代理可以改变抖音显示的ip
-#!maintainer:@hututu0
-#!added:人工维护
-;--------------------------------------------------
+# > desc:轻量化的抖音规则 通过将本规则代理可以改变抖音显示的ip
+# > maintainer:@hututu0
+# > added:人工维护
+#--------------------------------------------------
 DOMAIN-SUFFIX,amemv.com
 DOMAIN-SUFFIX,ixigua.com
 DOMAIN-SUFFIX,ixiguavideo.com
