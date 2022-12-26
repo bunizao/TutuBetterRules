@@ -1,0 +1,15 @@
+66.94.0.0/19,no-reserve
+206.29.177.36/32,no-reserve
+208.54.0.0/16,no-reserve
+
+crl.t-mobile.com
+eas3.msg.t-mobile.com
+mascns.t-mobile.com
+ns.sipgeo.t-mobile.com
+
+epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
+epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+
+# > 来自 @DocOfCard
