@@ -1,3 +1,6 @@
+# > @hututu0 edited
+# > 遇到T-Mobile相关连接问题请将本规则走代理
+# > 注：1.代理线路需支持UDP 2.最好为美国线路IPLC
 IP-CIDR,66.94.0.0/19,no-reserve
 IP-CIDR,206.29.177.36/32,no-reserve
 IP,CIDR,208.54.0.0/16,no-reserve
@@ -10,4 +13,4 @@ DOMAIN,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
 
-# > @hututu0 edited
+
