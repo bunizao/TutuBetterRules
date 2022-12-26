@@ -1,0 +1,19 @@
+#!desc:轻量化的抖音规则 通过将本规则代理可以改变抖音显示的ip
+#!maintainer:@hututu0
+#!added:人工维护
+;--------------------------------------------------
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,ixigua.com
+DOMAIN-SUFFIX,ixiguavideo.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,toutiao.com
+DOMAIN-KEYWORD,ecombdapi
+DOMAIN-KEYWORD,zjurl
+DOMAIN-KEYWORD,douyinstatic
+DOMAIN-KEYWORD,zijieapi
+DOMAIN-KEYWORD,douyin
+DOMAIN-KEYWORD,douyinvod
+DOMAIN-KEYWORD,zjcdn
+DOMAIN-KEYWORD,douyinpic
+DOMAIN-KEYWORD,toutiao
