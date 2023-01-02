@@ -1,6 +1,6 @@
 #!name=Quantumult X转换为Surge适用的格式
 #!desc=在引用链接后添加「qx」即可.
-# 原作者@小白脸
+# 脚本作者@小白脸
 # 修改完善@hututu0
 [Script]
 QX转换 = type=http-request,pattern=qx$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/Surge/main/js/QX_to_Surge.js
