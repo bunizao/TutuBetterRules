@@ -1,0 +1,10 @@
+# 精简的Discord规则
+
+DOMAIN-SUFFIX,airhorn.solutions
+DOMAIN-SUFFIX,airhornbot.com
+DOMAIN-SUFFIX,bigbeans.solutions
+DOMAIN-SUFFIX,dis.gd
+DOMAIN-SUFFIX,hammerandchisel.ssl.zendesk.com
+DOMAIN-SUFFIX,watchanimeattheoffice.com
+DOMAIN-KEYWORD,discord
+IP-CIDR,66.22.248.0/24,no-reserve // UDP Port:(50002|50004|50017)
