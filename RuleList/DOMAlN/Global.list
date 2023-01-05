@@ -383,6 +383,8 @@ DOMAIN-SUFFIX,twitpic.com
 DOMAIN-SUFFIX,twitter.com
 DOMAIN-SUFFIX,twitter.jp
 DOMAIN-SUFFIX,vine.co
+# > Vercel
+DOMAIN-SUFFIX,vercel.app
 # > Wikimedia Foundation
 DOMAIN-SUFFIX,mediawiki.org
 DOMAIN-SUFFIX,wikibooks.org
