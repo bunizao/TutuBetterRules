@@ -1,6 +1,5 @@
-
-#!name=amap
-#!desc=amap
+#!name=高德地图去广告
+#!desc=amap AD block
 [URL Rewrite]
 
 # > 高德_通用广告请求@ddgksf2013
