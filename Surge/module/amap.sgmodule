@@ -1,5 +1,5 @@
 #!name=高德地图去广告
-#!desc=amap AD block
+#!desc=amap AD block | 卸载重装生效
 [URL Rewrite]
 
 # > 高德_通用广告请求@ddgksf2013
