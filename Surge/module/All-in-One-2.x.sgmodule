@@ -1,0 +1,221 @@
+#!name=🚫AD ByeBye+ 2.x
+#!desc=与 AD ByeBye 1.x 互补, 以最优性能表现去除各种广告。
+#!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
+#------------------------------------------------------
+# 目前包括：高德地图，
+# 可能需要卸载重装才会生效
+
+[URL Rewrite]
+
+# -------------------------------------- 高德地图 --------------------------------------
+
+# > 高德_通用广告请求@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution - reject
+
+# -------------------------------------- Weibo --------------------------------------
+
+# > 微博_应用内弹窗广告@ddgksf2013
+^https?:\/\/(preload-click|preload-impression)\.uve\.weibo\.com\/(interface\/wbpullad\/wbpullad_click\.php|wbapplua\/get_wbpullad_log\.lua) - reject
+# > 微博_屏蔽sdkconfig请求@ddgksf2013
+^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php - reject
+
+# ------------------------------------- Zhihu ---------------------------------------
+
+# 屏蔽知乎8.3.0版本首页顶部的视频角标
+^https?:\/\/api\.zhihu\.com\/explore\/entry\/tips - reject
+
+
+
+
+
+
+
+[Script]
+
+# --------------------------------------高德地图--------------------------------------
+# > 高德_首页底部处理@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德_开屏广告@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德_首页顶部推广@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德_我的页面@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德_搜索框热词@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# --------------------------------------Weibo--------------------------------------
+
+# > 微博_自定义tab皮肤@zmqcherish
+weibo_json = type=http-response,pattern=^https://api.weibo.cn/2/!/client/light_skin,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+# > 微博_非会员设置tab皮肤@zmqcherish
+weibo_json = type=http-response,pattern=^https://new.vip.weibo.cn/littleskin/preview,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+# > 微博_去广告以及去除各部分推广模块@zmqcherish,@ddgksf2013
+weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|messageflow),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+# > 微博国际版_屏蔽开屏广告@ddgksf2013 
+weibo_json = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*get_coopen_ads,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+# > 微博国际版_屏蔽sdkad@ddgksf2013
+weibo_json = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+# > 微博国际版_趋势顶部Card去广告@ddgksf2013
+weibo_json = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=trends,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+# > 微博国际版_屏蔽用户VIP栏@ddgksf2013
+weibo_json = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+# > 微博国际版_热搜处理@ddgksf2013
+weibo_json = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+# -------------------------------------Zhihu--------------------------------------
+
+# 知乎处理用户信息
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/people\/,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎信息流去广告
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/(moments|topstory)(\/|\?)?(recommend|action=|feed_type=)(?!\/people),requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎回答列表去广告
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎获取黑名单
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/settings\/blocked_users,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎官方消息去广告
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/notifications\/v3\/(message|timeline\/entry\/system_message),requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎预置关键词去广告
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/search\/preset_words\?,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 优化软件配置
+zhihu = type=http-response,pattern=^https?:\/\/appcloud2\.zhihu\.com\/v\d+\/config,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎热搜去广告
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/search\/top_search\/tabs\/hot\/items,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎热榜去广告
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/topstory\/hot-lists?(\?|\/),requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎评论去广告
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/(comment_v5\/)?(answers|comments?|articles|pins)\/\d+\/(root_|child_)?comments?,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎回答列表去广告
+zhihu = type=http-response,pattern=^https?:\/\/www\.zhihu\.com\/appview\/v2\/answer\/.*(entry=(?!(preload-topstory|preload-search|preload-subscription)))?,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎屏蔽关键词解锁
+zhihu = type=http-request,pattern=^https?:\/\/api\.zhihu\.com\/feed-root\/block,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# 知乎8.3.0移除推荐页顶部项
+zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/feed-root\/sections\/query\/v2,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+
+# ------------------------------------- Pixiv ---------------------------------------
+pixivAds = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js,script-update-interval=0
+
+
+
+
+
+
+
+[Map Local]
+
+# --------------------------------------高德地图--------------------------------------
+
+# > 高德_搜索框scene@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > 高德_首页左上角gif@ddgksf2013
+^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
+
+# --------------------------------------Weibo--------------------------------------
+
+# > 微博_Spotlight@ddgksf2013
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > 微博国际版_屏蔽hotsearch@ddgksf2013
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > 微博国际版_屏蔽热推荐@ddgksf2013
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > 微博国际版_屏蔽search_suggest@ddgksf2013
+# ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/page\/get_search_suggest data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > 微博国际版_屏蔽searching_info@ddgksf2013
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*user&a=get_searching_info data="https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_info.json"
+
+# > 微博国际版_屏蔽search_topic@ddgksf2013 
+^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic data="https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_topic.json"
+
+# ------------------------------------- Zhihu ---------------------------------------
+
+# 拦截知乎开屏广告
+URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/launch_v2\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 知乎去除最常访问
+^https?:\/\/api\.zhihu\.com\/moments\/recent data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 知乎去除回答下的广告
+^https?:\/\/www\.zhihu\.com\/api\/v4\/answers\/\d+\/recommendations data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 知乎其他广告拦截
+^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count|v\d\/package|me\/guides|drama\/living-info|ad|fringe|commercial|market\/popovers|.*featured-comment-ad|ad-style-service) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 知乎拦截部分预加载
+# ^https?:\/\/www\.zhihu\.com\/appview\/(p|v2\/answer|zvideo)\/.*entry=(preload-topstory|preload-search|preload-subscription) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 知乎网页版去广告
+^https?:\/\/www\.zhihu\.com\/api\/v4/(questions|anwsers)\/\d+/related-readings data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https?:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https?:\/\/www\.zhihu\.com\/commercial_api\/banners_v3\/mobile_banner data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https?:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 知乎品牌提问广告
+^https?:\/\/api\.zhihu\.com\/brand\/question\/\d+/card\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https?:\/\/www\.zhihu\.com\/api\/v\d+\/brand\/question/\d+/card\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 屏蔽消息页面上拉的用户精选
+^https?:\/\/api\.zhihu\.com/moments/hybrid\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 知乎下发的配置，如皮肤等
+^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+
+# 屏蔽知乎“我的”页面推荐开通会员的卡片
+^https?:\/\/api\.zhihu\.com\/people\/self\/new_user_card data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+
+# 知乎去除Tab页关注人头像
+^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+
+
+
+
+
+[MITM]
+hostname = %APPEND% *amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, 103.41.167.236, 103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net
