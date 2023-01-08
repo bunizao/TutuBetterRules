@@ -2,8 +2,35 @@
 #!desc=Crack & Enhance
 #!author=@hututu0
 
-// 🚨注意：为了方便各大懒人使用，本模块是一个集合模块。请避免与以下模块同时使用，因为本模块已包含他们的基本功能。
+# > 🚨 注意：为了方便各大懒人使用，本模块是一个集合模块。请避免与以下模块同时使用，因为本模块已包含他们的基本功能。
+ // - https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/General.sgmodule
+ // - https://github.com/DivineEngine/Profiles/blob/master/Surge/Module/General.sgmodule?raw=True
+ // - https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/UnlockVip/Spotify.conf
+ // - https://gist.githubusercontent.com/ddgksf/35a94372ae4271562f0139d8a80a94e5/raw/ForOwnUse.snippet
+ // - https://raw.githubusercontent.com/zZPiglet/Task/master/UnblockURLinWeChat.sgmodule
+ // - https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/QX-Surge.sgmodule
+ // - https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/FunScript.sgmodule
+ // - https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Netflix_ratings.conf
+ // - https://raw.githubusercontent.com/Orz-3/QuantumultX/master/JD_TB_price.conf
 
+# > 🚨 声明：本模块仅供学习交流使用。大部分脚本来自于 @Cuttlefish，由@hututu0转换至Surge格式。
+
+# > ⛴️ 功能介绍：
+  // General: 跳过代理与真实IP
+  // URL Rewrite:
+     // - 高级设置及通用的 URL 重定向优化
+     // - Google 搜索纠正
+     // - Redirect HTTP to HTTPS
+     // - AbeamTV 区域限制
+  // Script:
+     // - Crack:(Notability, Spotify, Kuwo Music, Scanner, Nicegram, XMind, Picsart, XiChuangZhu, Emby)
+     // - Enhance(Google自动翻页, 解除微信链接限制, 京东历史价格, Netflix Ranking, Bstar login & play, QuantumultX和Surge格式转换)
+
+# > ⚓️ 推荐引用：
+ // - 去广告1.X: https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/All-in-One.sgmodule //使用更小的资源去广告
+ // - 去广告2.x: https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/All-in-One-2.x.sgmodule // 去广告plus, 与1.0互补且不冲突。
+
+ 
 # ------------------------------------- General ---------------------------------------
 
 [General]
@@ -107,15 +134,12 @@ always-real-ip = %INSERT% *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.
 # > Notability 
 notability = type=http-response ^https:\/\/notability\.com\/subscriptions script-path=https://raw.githubusercontent.com/PoetryU/Scientist/master/Scripts/notabilityvip.js, tag=notability,request-body=true
 
-#  Spotify
+# > Spotify
 spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,max-size=3145728,binary-body-mode=1,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js,script-update-interval=0
 
-#  酷我音乐
+# > 酷我音乐
 KuWoMusicProCrack = type=http-response,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
 KuWoMusicProCrack = type=http-request,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui),script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
-
-# > 京东(历史价格)
-京东历史价格 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Script/JDPrice.js
 
 # > 扫描全能王
 CamscannerProCrack = type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/CamscannerProCrack.js,script-update-interval=0
@@ -143,6 +167,9 @@ endlessgoogle = type=http-response,pattern=^https?:\/\/www\.google\..*\/search,r
 # > 解除微信链接限制
 解除微信链接限制 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
 
+# > 京东历史价格
+京东历史价格 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/jnlaoshu/MySelf/main/Script/JDPrice.js
+
 # > Netflix Ranking
 nf_rating.js = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
 nf_rating.js = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
@@ -154,6 +181,7 @@ bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/ga
 
 # Quantumult X <----> Surge
 Q-S_Convert = type=http-request,pattern=qx$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/Surge/main/js/QX_to_Surge.js
+ // - 使用方法：在引用链接后添加「qx」即可
 
 [MITM]
 skip-server-cert-verify = true
