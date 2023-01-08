@@ -1,12 +1,14 @@
 #!name=True Surge PRO
 #!desc=Crack & Enhance
-#!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
+#!author=@hututu0
+
+// 🚨注意：为了方便各大懒人使用，本模块是一个集合模块。请避免与以下模块同时使用，因为本模块已包含他们的基本功能。
 
 # ------------------------------------- General ---------------------------------------
 
 [General]
 
-skip-proxy = %INSERT% 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local, passenger.t3go.cn, captive.apple.com, www.baidu.com, wxh.wo.cn, yunbusiness.ccb.com
+skip-proxy = %INSERT% 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local, passenger.t3go.cn, captive.apple.com, www.baidu.com, wxh.wo.cn, yunbusiness.ccb.com, seed-sequoia.siri.apple.com, sequoia.apple.com
 always-real-ip = %INSERT% *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.logon.battlenet.com.cn, *.logon.battle.net, stun.l.google.com
 
 # ⚠️ 这里与 https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/General.sgmodule 功能重复！请选择其中一个使用。
@@ -150,10 +152,13 @@ nf_rating_season.js = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ft
 bstar_login = type=http-request,pattern=^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/(sms\/send|reg\/sms|oauth2\/access_token|login\/sms),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
 bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/gateway\/v\d\/app\/data\/report\/heartbeat\/mobile|x\/(history|reply)/v\d/add),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
 
+# Quantumult X <----> Surge
+Q-S_Convert = type=http-request,pattern=qx$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/Surge/main/js/QX_to_Surge.js
 
 [MITM]
 skip-server-cert-verify = true
-
-hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, api.m.jd.com, ap*.intsig.net, notability.com, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com
+tcp-connection = true
+h2 = true
+hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, api.m.jd.com, ap*.intsig.net, notability.com, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com
 
 
