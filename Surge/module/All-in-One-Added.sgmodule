@@ -1,0 +1,38 @@
+#!name=AD ByeBye
+#!desc=强力重写去广告，App体验优化。
+#!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
+#------------------------------------------------------
+# 目前包括：高德地图，可能需要卸载重装才会生效
+
+[URL Rewrite]
+
+# > 高德_通用广告请求@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution - reject
+
+[Script]
+
+# > 高德_首页底部处理@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德_开屏广告@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德_首页顶部推广@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德_我的页面@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德_搜索框热词@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+[Map Local]
+
+# > 高德_搜索框scene@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > 高德_首页左上角gif@ddgksf2013
+^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
+
+[MITM]
+hostname = %APPEND% *amap.com
