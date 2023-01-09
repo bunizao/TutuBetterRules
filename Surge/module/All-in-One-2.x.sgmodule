@@ -4,10 +4,11 @@
 #------------------------------------------------------
 # 目前包括：高德地图，微博，知乎，Pixiv
 # 高德地图需要卸载重装才会生效
+# Update: 01.09.2022
 
 [URL Rewrite]
 
-# -------------------------------------- 高德地图 --------------------------------------
+# ------------------------------------- 高德地图 --------------------------------------
 
 # > 高德_通用广告请求@ddgksf2013
 ^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution - reject
@@ -26,26 +27,27 @@
 
 
 
-
+########################################################################################
 
 
 
 [Script]
 
 # --------------------------------------高德地图--------------------------------------
-# > 高德_首页底部处理@ddgksf2013
+
+# > 高德地图_首页底部处理@ddgksf2013
 amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
 
-# > 高德_开屏广告@ddgksf2013
+# > 高德地图_开屏广告@ddgksf2013
 amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
 
-# > 高德_首页顶部推广@ddgksf2013
+# > 高德地图_首页顶部推广@ddgksf2013
 amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
 
-# > 高德_我的页面@ddgksf2013
+# > 高德地图_我的页面@ddgksf2013
 amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
 
-# > 高德_搜索框热词@ddgksf2013
+# > 高德地图_搜索框热词@ddgksf2013
 amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
 
 # --------------------------------------Weibo--------------------------------------
@@ -136,7 +138,7 @@ pixivAds = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(au
 
 
 
-
+########################################################################################
 
 
 
@@ -144,11 +146,17 @@ pixivAds = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(au
 
 # --------------------------------------高德地图--------------------------------------
 
-# > 高德_搜索框scene@ddgksf2013
+# > 高德地图_Tip请求@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+
+# > 高德地图_搜索框scene@ddgksf2013
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 高德_首页左上角gif@ddgksf2013
+# > 高德地图_首页左上角gif@ddgksf2013
 ^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
+
+# > 高德地图_左下天气@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 # --------------------------------------Weibo--------------------------------------
 
@@ -213,7 +221,7 @@ URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/launch_v2\? data="https:/
 ^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 
-
+########################################################################################
 
 
 
