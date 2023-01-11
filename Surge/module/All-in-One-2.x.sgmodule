@@ -8,6 +8,7 @@
 
 [Rule]
 DOMAIN,amdc.m.taobao.com,REJECT // 高德地图
+DOMAIN,sdkapp.uve.weibo.com,DIRECT // 微博
 
 [URL Rewrite]
 
