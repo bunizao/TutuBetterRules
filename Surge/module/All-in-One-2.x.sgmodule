@@ -14,7 +14,7 @@ DOMAIN,sdkapp.uve.weibo.com,DIRECT // 微博
 
 # ------------------------------------- 高德地图 --------------------------------------
 
-# > 高德_通用广告请求@ddgksf2013
+# > 高德地图_通用广告请求@ddgksf2013
 ^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution - reject
 
 # -------------------------------------- Weibo --------------------------------------
@@ -38,6 +38,12 @@ DOMAIN,sdkapp.uve.weibo.com,DIRECT // 微博
 [Script]
 
 # --------------------------------------高德地图--------------------------------------
+
+# > 高德地图_附近页面@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德地图_打车页面@ddgksf2013
+amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
 
 # > 高德地图_首页底部处理@ddgksf2013
 amap = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
@@ -161,6 +167,7 @@ pixivAds = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(au
 
 # > 高德地图_左下天气@ddgksf2013
 ^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
 
 # --------------------------------------Weibo--------------------------------------
 
