@@ -31,7 +31,7 @@
  // - 去广告2.x: https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/All-in-One-2.x.sgmodule // 去广告plus, 与1.0互补且不冲突。
 
  
-# ------------------------------------- General ---------------------------------------
+###################################### General ######################################
 
 [General]
 
@@ -40,7 +40,7 @@ always-real-ip = %INSERT% *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.
 
 # ⚠️ 这里与 https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/General.sgmodule 功能重复！请选择其中一个使用。
 
-# ------------------------------------- Rewrite ---------------------------------------
+###################################### Rewrite ######################################
 
 [URL Rewrite]
 # 高级设置及通用的 URL 重定向优化（如 Google 搜索及地图、AbeamTV 区域限制等）
@@ -130,7 +130,7 @@ always-real-ip = %INSERT% *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.
 https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
 
 
-# ------------------------------------- Script ---------------------------------------
+###################################### Script ######################################
 
 [Script]
 
