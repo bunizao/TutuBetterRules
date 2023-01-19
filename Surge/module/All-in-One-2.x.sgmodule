@@ -40,6 +40,7 @@ DOMAIN,sdkapp.uve.weibo.com,DIRECT // 微博
 [Script]
 
 # --------------------------------------高德地图--------------------------------------
+
 # 搜索框热词 | 附近页面 | 我的页面 | 首页右中
 http-response ^https?:\/\/m5\.amap\.com\/ws\/shield\/(search\/(new_hotword|nearbyrec_smart)|dsp\/profile\/index\/nodefaas|frogserver\/aocs\/updatable) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 # 开屏广告 | 首页底部
@@ -48,6 +49,7 @@ http-response ^https?:\/\/m5\.amap\.com\/ws\/(valueadded\/alimama\/splash_screen
 http-response ^https?:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 # 首页顶部横幅
 http-response ^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
+
 # --------------------------------------Weibo--------------------------------------
 
 # > 微博_自定义tab皮肤@zmqcherish
