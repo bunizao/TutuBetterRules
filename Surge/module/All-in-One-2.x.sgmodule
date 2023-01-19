@@ -7,7 +7,9 @@
 # Update: 01.11.2022
 
 [Rule]
-DOMAIN,amdc.m.taobao.com,REJECT // 高德地图
+
+DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT
+URL-REGEX,\/amdc\/mobileDispatch,REJECT
 DOMAIN,sdkapp.uve.weibo.com,DIRECT // 微博
 
 [URL Rewrite]
@@ -237,4 +239,4 @@ URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/launch_v2\? data="https:/
 
 
 [MITM]
-hostname = %APPEND% *amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, 103.41.167.236, 103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net
+hostname = %APPEND% m5.amap.com, m5-zb.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, 103.41.167.236, 103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net
