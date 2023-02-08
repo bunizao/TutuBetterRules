@@ -2,7 +2,7 @@
 #!desc=与 AD ByeBye 1.x 互补, 以最优性能表现去除各种广告。
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #------------------------------------------------------
-# 目前包括：高德地图，微博，知乎，Pixiv
+# 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧
 # 高德地图需要卸载重装 & 重启手机 才会生效
 # Update: 01.11.2022
 
@@ -11,13 +11,16 @@
 DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT
 URL-REGEX,\/amdc\/mobileDispatch,REJECT
 DOMAIN,sdkapp.uve.weibo.com,DIRECT // 微博
+DOMAIN,180.76.76.200,REJECT-DROP // 百度贴吧
+IP-CIDR,180.76.76.200/32,no-resolve,REJECT-DROP // 百度贴吧
 
 [URL Rewrite]
 
 # ------------------------------------- 高德地图 --------------------------------------
 
-# > 高德地图_通用广告请求@ddgksf2013
+# > 高德地图_通用广告请求
 ^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution - reject
+amdc\.m\.taobao\.com - reject
 
 # -------------------------------------- Weibo --------------------------------------
 
@@ -52,45 +55,53 @@ http-response ^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull requires-body=1,scrip
 
 # --------------------------------------Weibo--------------------------------------
 
+# > 微博_屏蔽发现页面搜索框热词@ddgksf2013
+weibo_json_76 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/\w{5}\/cardlist,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
 # > 微博_自定义tab皮肤@zmqcherish
-weibo_json = type=http-response,pattern=^https://api.weibo.cn/2/!/client/light_skin,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_84 = type=http-response,pattern=^https://api.weibo.cn/2/!/client/light_skin,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
 # > 微博_非会员设置tab皮肤@zmqcherish
-weibo_json = type=http-response,pattern=^https://new.vip.weibo.cn/littleskin/preview,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_86 = type=http-response,pattern=^https://new.vip.weibo.cn/littleskin/preview,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
 # > 微博_去广告以及去除各部分推广模块@zmqcherish,@ddgksf2013
-weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|messageflow),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_88 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|messageflow),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
-weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_89 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
-weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_90 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
-weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_91 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
-weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_92 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
-weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_93 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
-weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_94 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
-weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_95 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
-weibo_json = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_96 = type=http-response,pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
 # > 微博国际版_屏蔽开屏广告@ddgksf2013 
-weibo_json = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*get_coopen_ads,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_106 = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*get_coopen_ads,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
 # > 微博国际版_屏蔽sdkad@ddgksf2013
-weibo_json = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_108 = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
 # > 微博国际版_趋势顶部Card去广告@ddgksf2013
-weibo_json = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=trends,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_110 = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=trends,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
 # > 微博国际版_屏蔽用户VIP栏@ddgksf2013
-weibo_json = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_112 = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
 
 # > 微博国际版_热搜处理@ddgksf2013
-weibo_json = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+weibo_json_114 = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js,script-update-interval=0
+
+# -------------------------------------Tieba--------------------------------------
+
+贴吧json = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js,script-update-interval=0
+贴吧proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js,script-update-interval=0
 
 # -------------------------------------Zhihu--------------------------------------
 
@@ -136,7 +147,21 @@ zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/feed-root\/secti
 # ------------------------------------- Pixiv ---------------------------------------
 pixivAds = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js,script-update-interval=0
 
+# ------------------------------------- Cainiao ---------------------------------------
 
+# > 菜鸟裹裹_首页中部的惊喜福利推广@ddgksf2013
+cainiao_json_19 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.protocol\.homepage\.get\.cn,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js,script-update-interval=0
+
+# > 菜鸟裹裹_搜索框下方今日好物推荐@ddgksf2013
+cainiao_json_21 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js,script-update-interval=0
+
+# > 菜鸟裹裹_首页底部商品推广@ddgksf2013
+cainiao_json_23 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.index\.cn,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js,script-update-interval=0
+
+[Map Local]
+
+# > 菜鸟裹裹_通用广告请求[包含开屏广告]@ddgksf2013
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
 
 ########################################################################################
 
@@ -146,12 +171,18 @@ pixivAds = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(au
 
 # --------------------------------------高德地图--------------------------------------
 
-# 搜索框 | 左下天气
-^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|valueadded\/weather) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
+# 搜索框 | 底栏角标 | 左下天气
+^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|message\/notice\/list|valueadded\/weather) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 # Tip请求，如招聘代驾的广告等
 ^https?:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
 
 # --------------------------------------Weibo--------------------------------------
+
+# > 微博_去除底部超话栏表层浮icon及tips@ddgksf2013
+^https?:\/\/api\.weibo\.cn\/\d\/!\/huati\/discovery_home_bottom_getdotinfo data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > 微博_屏蔽首页左上角每日的弹窗tips@ddgksf2013
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 # > 微博_Spotlight@ddgksf2013
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
@@ -162,14 +193,12 @@ pixivAds = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(au
 # > 微博国际版_屏蔽热推荐@ddgksf2013
 ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 微博国际版_屏蔽search_suggest@ddgksf2013
-# ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/page\/get_search_suggest data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
 # > 微博国际版_屏蔽searching_info@ddgksf2013
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*user&a=get_searching_info data="https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_info.json"
 
 # > 微博国际版_屏蔽search_topic@ddgksf2013 
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic data="https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_topic.json"
+
 
 # ------------------------------------- Zhihu ---------------------------------------
 
@@ -190,11 +219,8 @@ URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/launch_v2\? data="https:/
 
 # 知乎网页版去广告
 ^https?:\/\/www\.zhihu\.com\/api\/v4/(questions|anwsers)\/\d+/related-readings data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
 ^https?:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
 ^https?:\/\/www\.zhihu\.com\/commercial_api\/banners_v3\/mobile_banner data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
 ^https?:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 # 知乎品牌提问广告
@@ -219,4 +245,5 @@ URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/launch_v2\? data="https:/
 
 
 [MITM]
-hostname = %APPEND% m5.amap.com, m5-zb.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, 103.41.167.236, 103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net
+hostname = %APPEND% m5*.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, 103.41.167.236, 103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com
+
