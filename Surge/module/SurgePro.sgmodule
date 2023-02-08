@@ -161,6 +161,9 @@ PicsartProCrack = type=http-response,pattern=^https?:\/\/api\.meiease\.cn\/shop\
 # > 西窗烛
 XiChuangZhuProCrack = type=http-response,pattern=https://lchttpapi.xczim.com/*,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/XiChuangZhuProCrack.js,script-update-interval=0
 
+# > 彩云天气
+CaiyunWeather = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Weather/weather.js
+
 # > Emby
 unlock_emby_premium = requires-body=1,max-size=0,script-path=https://ruleset.skk.moe/Script/fuck_emby.js,script-update-interval=86400,type=http-response,pattern=^https://mb3admin.com/.*
 
@@ -174,6 +177,9 @@ endlessgoogle = type=http-response,pattern=^https?:\/\/www\.google\..*\/search,r
 
 # > 解除微信链接限制
 解除微信链接限制 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
+
+# > B站字幕繁转中
+bilibili_cc = type=http-response,pattern=^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js,script-update-interval=0
 
 # > Netflix Ranking
 nf_rating.js = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
@@ -191,6 +197,6 @@ Q-S_Convert = type=http-request,pattern=qx$,requires-body=1,max-size=0,script-pa
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, ap*.intsig.net, notability.com, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com
+hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, ap*.intsig.net, notability.com, www.xmind.cn, www.xmind.net, restore-access.indream.app, biz.caiyunapp.com, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com
 
 
