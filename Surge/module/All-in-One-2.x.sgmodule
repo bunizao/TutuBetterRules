@@ -4,15 +4,13 @@
 #------------------------------------------------------
 # 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧
 # 高德地图需要卸载重装 & 重启手机 才会生效
-# Update: 01.11.2022
+# Update: 02.16.2022
 
 [Rule]
-
-DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT
-URL-REGEX,\/amdc\/mobileDispatch,REJECT
+# 十分重要！
+https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/AD.Reject.list,REJECT
+https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/AD.Reject-Drop.list,REJECT-DROP
 DOMAIN,sdkapp.uve.weibo.com,DIRECT // 微博
-DOMAIN,180.76.76.200,REJECT-DROP // 百度贴吧
-IP-CIDR,180.76.76.200/32,no-resolve,REJECT-DROP // 百度贴吧
 
 [URL Rewrite]
 
@@ -28,12 +26,6 @@ amdc\.m\.taobao\.com - reject
 ^https?:\/\/(preload-click|preload-impression)\.uve\.weibo\.com\/(interface\/wbpullad\/wbpullad_click\.php|wbapplua\/get_wbpullad_log\.lua) - reject
 # > 微博_屏蔽sdkconfig请求@ddgksf2013
 ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php - reject
-
-# ------------------------------------- Zhihu ---------------------------------------
-
-# 屏蔽知乎8.3.0版本首页顶部的视频角标
-^https?:\/\/api\.zhihu\.com\/explore\/entry\/tips - reject
-
 
 
 ########################################################################################
@@ -104,45 +96,57 @@ weibo_json_114 = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c
 贴吧proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js,script-update-interval=0
 
 # -------------------------------------Zhihu--------------------------------------
+# 获取用户信息 - 隔离用户数据，开启本地会员等
+哲也_处理用户信息 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/people\/,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎处理用户信息
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/people\/,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 关键词屏蔽 - 解锁本地的关键词屏蔽功能，需要开启本地VIP
+哲也_解锁关键词屏蔽 = type=http-request,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/feed-root\/block,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎信息流去广告
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/(moments|topstory)(\/|\?)?(recommend|action=|feed_type=)(?!\/people),requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 优化软件配置 - 优化下发的配置文件来实现某些效果
+哲也_优化软件配置1 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+哲也_优化软件配置2 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/appcloud2\.zhihu\.com\/v\d+\/config,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎回答列表去广告
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 用户信息 - 修改用户盐值
+修改用户盐值 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/user-credit\/basis,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎获取黑名单
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/settings\/blocked_users,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 关注页 - 内容优化及屏蔽转发的黑名单用户想法
+哲也_关注列表优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/moments_v3\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎官方消息去广告
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/notifications\/v3\/(message|timeline\/entry\/system_message),requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 推荐页 - 移除黑名单用户发布的文章、去除广告，及自定义一些屏蔽项目
+哲也_推荐页优化 = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/api\.zhihu\.com\/topstory\/recommend\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎预置关键词去广告
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/search\/preset_words\?,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 黑名单页 - 同步黑名单数据
+哲也_同步黑名单 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/settings\/blocked_users,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 优化软件配置
-zhihu = type=http-response,pattern=^https?:\/\/appcloud2\.zhihu\.com\/v\d+\/config,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 问题的回答列表 - 移除黑名单用户的回答、去除广告
+哲也_回答列表优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎热搜去广告
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/search\/top_search\/tabs\/hot\/items,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 回答信息流 - 移除黑名单用户的回答、去除广告
+哲也_回答信息流优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/next-data,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎热榜去广告
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/topstory\/hot-lists?(\?|\/),requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 回答页底部评论摘要 - 移除黑名单用户发表的评论
+哲也_评论摘要优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/www\.zhihu\.com\/api\/v4\/comment_v5\/answers\/\d+\/abstract_comment\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎评论去广告
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/(comment_v5\/)?(answers|comments?|articles|pins)\/\d+\/(root_|child_)?comments?,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 评论页及子页面 - 去除黑名单用户发表的评论
+哲也_评论优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/(comment_v5\/)?(answers|comments?|articles|pins)\/\d+\/(root_|child_)?comments?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎回答列表去广告
-zhihu = type=http-response,pattern=^https?:\/\/www\.zhihu\.com\/appview\/v2\/answer\/.*(entry=(?!(preload-topstory|preload-search|preload-subscription)))?,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 消息页 - 折叠官方消息、屏蔽营销消息
+哲也_消息优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/notifications\/v3\/(message|timeline\/entry\/system_message),script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎屏蔽关键词解锁
-zhihu = type=http-request,pattern=^https?:\/\/api\.zhihu\.com\/feed-root\/block,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 回答页 - 内容优化，付费、营销、推广内容文首提醒
+哲也_回答内容优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/www\.zhihu\.com\/appview\/v2\/answer\/.*(entry=(?!(preload-topstory|preload-search|preload-subscription)))?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-# 知乎8.3.0移除推荐页顶部项
-zhihu = type=http-response,pattern=^https?:\/\/api\.zhihu\.com\/feed-root\/sections\/query\/v2,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.js,script-update-interval=0
+# 回答页 - 屏蔽下翻出现的黑名单用户的回答
+哲也_回答翻页优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/next\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 文章页 - 去除底部广告
+哲也_文章优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/www\.zhihu\.com\/api\/v\d\/articles\/\d+\/recommendation\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 热榜页 - 去除广告
+哲也_热榜优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/topstory\/hot-lists(\?|\/),script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 搜索页 - 去除预置广告
+哲也_预置关键词优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/search\/preset_words\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
 # ------------------------------------- Pixiv ---------------------------------------
 pixivAds = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js,script-update-interval=0
@@ -202,42 +206,48 @@ cainiao_json_23 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com
 
 # ------------------------------------- Zhihu ---------------------------------------
 
-# 拦截知乎开屏广告
-URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/launch_v2\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https?:\/\/118\.89\.204\.198 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
-# 知乎去除最常访问
-^https?:\/\/api\.zhihu\.com\/moments\/recent data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https?:\/\/103\.41\.167\.237 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
-# 知乎去除回答下的广告
-^https?:\/\/www\.zhihu\.com\/api\/v4\/answers\/\d+\/recommendations data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https?:\/\/2402:4e00:1200:ed00:0:9089:6dac:96b6 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
-# 知乎其他广告拦截
-^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count|v\d\/package|me\/guides|drama\/living-info|ad|fringe|commercial|market\/popovers|.*featured-comment-ad|ad-style-service) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# 屏蔽下发的配置，如皮肤等
+^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json" header="Content-Type: application/x-protobuf"
 
-# 知乎拦截部分预加载
-# ^https?:\/\/www\.zhihu\.com\/appview\/(p|v2\/answer|zvideo)\/.*entry=(preload-topstory|preload-search|preload-subscription) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# 屏蔽我的页面开通会员的卡片
+# ^https?:\/\/api\.zhihu\.com\/unlimited\/go\/my_card data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
-# 知乎网页版去广告
-^https?:\/\/www\.zhihu\.com\/api\/v4/(questions|anwsers)\/\d+/related-readings data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-^https?:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-^https?:\/\/www\.zhihu\.com\/commercial_api\/banners_v3\/mobile_banner data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-^https?:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# 去除底部标签页关注人角标
+^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
-# 知乎品牌提问广告
-^https?:\/\/api\.zhihu\.com\/brand\/question\/\d+/card\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-^https?:\/\/www\.zhihu\.com\/api\/v\d+\/brand\/question/\d+/card\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# 去除消息通知角标
+^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count) data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
-# 屏蔽消息页面上拉的用户精选
-^https?:\/\/api\.zhihu\.com/moments/hybrid\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# 拦截回答下的卡片广告
+^https?:\/\/www\.zhihu\.com\/api\/v\d\/answers\/\d+\/recommendations data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
-# 知乎下发的配置，如皮肤等
-^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+# 拦截应用内弹窗
+^https?:\/\/api\.zhihu\.com\/me\/guides data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
-# 屏蔽知乎“我的”页面推荐开通会员的卡片
-^https?:\/\/api\.zhihu\.com\/people\/self\/new_user_card data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+# 去除关注页最常访问
+^https?:\/\/api\.zhihu\.com\/moments\/recent data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
-# 知乎去除Tab页关注人头像
-^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# 拦截推荐页顶部广告
+^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+
+# 底栏加号的广告
+^https?:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+
+# 推荐页搜索栏左侧图标
+^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/current_reading data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+
+# 疑似推荐页内容更新红点
+^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+
+# 暂不清楚作用
+^https?:\/\/api\.zhihu\.com\/commercial_api\/banners_v3\/app_topstory_banner data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+^https?:\/\/api\.zhihu\.com\/ad-style-service\/request data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
 
 ########################################################################################
