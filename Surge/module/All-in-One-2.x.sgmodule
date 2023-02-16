@@ -2,7 +2,7 @@
 #!desc=与 AD ByeBye 1.x 互补, 以最优性能表现去除各种广告。Repo:https://tuu.cat/repo
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #------------------------------------------------------
-# 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧
+# 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书
 # 高德地图需要卸载重装 & 重启手机 才会生效
 # Update: 02.16.2022
 
@@ -96,6 +96,7 @@ weibo_json_114 = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c
 贴吧proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js,script-update-interval=0
 
 # -------------------------------------Zhihu--------------------------------------
+
 # 获取用户信息 - 隔离用户数据，开启本地会员等
 哲也_处理用户信息 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/people\/,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
@@ -151,7 +152,7 @@ weibo_json_114 = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c
 # ------------------------------------- Pixiv ---------------------------------------
 pixivAds = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js,script-update-interval=0
 
-# ------------------------------------- Cainiao ---------------------------------------
+# ------------------------------------ Cainiao ---------------------------------------
 
 # > 菜鸟裹裹_首页中部的惊喜福利推广@ddgksf2013
 cainiao_json_19 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.protocol\.homepage\.get\.cn,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js,script-update-interval=0
@@ -162,10 +163,24 @@ cainiao_json_21 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com
 # > 菜鸟裹裹_首页底部商品推广@ddgksf2013
 cainiao_json_23 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.index\.cn,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js,script-update-interval=0
 
-[Map Local]
+# ------------------------------------- Xiaohongshu ---------------------------------------
 
-# > 菜鸟裹裹_通用广告请求[包含开屏广告]@ddgksf2013
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+# > XiaoHongShu_小红书_开屏广告@ddgksf2013
+xiaohongshu_17 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/xiaohongshu.js,script-update-interval=0
+
+# > XiaoHongShu_小红书_瀑布流@ddgksf2013
+xiaohongshu_19 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/xiaohongshu.js,script-update-interval=0
+
+# > XiaoHongShu_小红书_启动处理@ddgksf2013
+xiaohongshu_21 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/xiaohongshu.js,script-update-interval=0
+
+# > XiaoHongShu_小红书_热词删除@ddgksf2013
+replaceBody_23 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js,argument="items":\[.+\]->items":[]"
+
+# > XiaoHongShu_小红书_热搜删除@ddgksf2013
+replaceBody_25 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js,argument="queries":\[.+\]->queries":[]"
+
+
 
 ########################################################################################
 
@@ -203,6 +218,10 @@ cainiao_json_23 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com
 # > 微博国际版_屏蔽search_topic@ddgksf2013 
 ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic data="https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_topic.json"
 
+# ------------------------------------ Cainiao ---------------------------------------
+
+# > 菜鸟裹裹_通用广告请求[包含开屏广告]@ddgksf2013
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
 
 # ------------------------------------- Zhihu ---------------------------------------
 
@@ -249,11 +268,31 @@ cainiao_json_23 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com
 ^https?:\/\/api\.zhihu\.com\/commercial_api\/banners_v3\/app_topstory_banner data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 ^https?:\/\/api\.zhihu\.com\/ad-style-service\/request data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
+# ------------------------------------- Xiaohongshu ---------------------------------------
+
+# > XiaoHongShu_小红书_AdEngage@ddgksf2013
+^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/tag\/ads_engage data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > XiaoHongShu_小红书_AdRecord@ddgksf2013
+^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/ads\/apple\/record data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > XiaoHongShu_小红书_AdResource@ddgksf2013
+^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/ads\/resource data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > XiaoHongShu_小红书_Report@ddgksf2013
+^https?:\/\/referee\.xiaohongshu\.com\/v\d\/stateReport data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > XiaoHongShu_小红书_Switches@ddgksf2013
+^https?:\/\/pages\.xiaohongshu\.com\/data\/native\/matrix_switches data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > XiaoHongShu_小红书_Teenager@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/user\/teenager\/status data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
 
 ########################################################################################
 
 
 
 [MITM]
-hostname = %APPEND% m5*.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, 103.41.167.236 ,103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com
+hostname = %APPEND% m5*.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, 103.41.167.236 ,103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com
 
