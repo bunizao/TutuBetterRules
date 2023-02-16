@@ -1,0 +1,20 @@
+############## 仅配合 All-in-One-2.x.sgmodule 使用 #############
+# Get the module: https://github.com/bunizao/TutuBetterRules/edit/tutu/Surge/module/All-in-One-2.x.sgmodule?raw=true
+
+# > 高德地图
+DOMAIN-SUFFIX,amdc.m.taobao.com
+URL-REGEX,\/amdc\/mobileDispatch
+
+# > 知乎
+# 拦截开屏广告
+URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/launch_v2\?
+URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/real_time_launch_v2\?
+# 拦截品牌提问广告
+URL-REGEX,^https?:\/\/api\.zhihu\.com\/brand\/question\/\d+/card\?
+URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v\d+\/brand\/question/\d+/card\?
+# 其他拦截不影响使用的域名
+DOMAIN,mqtt.zhihu.com
+DOMAIN,sugar.zhihu.com
+DOMAIN,crash2.zhihu.com
+DOMAIN,appcloud.zhihu.com
+DOMAIN,appcloud2.in.zhihu.com
