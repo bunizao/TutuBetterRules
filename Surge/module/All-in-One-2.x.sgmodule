@@ -36,10 +36,10 @@ amdc\.m\.taobao\.com - reject
 
 # --------------------------------------高德地图--------------------------------------
 
-# 搜索框热词 | 附近页面 | 我的页面 | 首页右中
+## 搜索框热词 | 附近页面 | 我的页面 | 首页右中
 http-response ^https?:\/\/m5\.amap\.com\/ws\/shield\/(search\/(new_hotword|nearbyrec_smart)|dsp\/profile\/index\/nodefaas|frogserver\/aocs\/updatable) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
-# 开屏广告 | 首页底部
-http-response ^https?:\/\/m5\.amap\.com\/ws\/(valueadded\/alimama\/splash_screen|faas\/amap-navigation\/main-page) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
+# 开屏广告 | 首页底部 | 底栏角标
+http-response ^https?:\/\/m5\.amap\.com\/ws\/(valueadded\/alimama\/splash_screen|faas\/amap-navigation\/main-page|message\/notice\/list) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 # 打车页面
 http-response ^https?:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 # 首页顶部横幅
@@ -255,5 +255,5 @@ cainiao_json_23 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com
 
 
 [MITM]
-hostname = %APPEND% m5*.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, 103.41.167.236, 103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com
+hostname = %APPEND% m5*.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, 103.41.167.236 ,103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com
 
