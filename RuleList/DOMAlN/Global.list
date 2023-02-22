@@ -297,7 +297,7 @@ DOMAIN-SUFFIX,dis.gd
 DOMAIN-SUFFIX,hammerandchisel.ssl.zendesk.com
 DOMAIN-SUFFIX,watchanimeattheoffice.com
 DOMAIN-KEYWORD,discord
-IP-CIDR,66.22.0.0/16,no-reserve // UDP 
+IP-CIDR,66.22.0.0/16,no-resolve // UDP 
 # > Dropbox
 DOMAIN-SUFFIX,dropbox.com
 DOMAIN-SUFFIX,dropboxapi.com
