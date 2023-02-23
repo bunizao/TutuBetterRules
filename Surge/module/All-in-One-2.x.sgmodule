@@ -1,10 +1,10 @@
-#!name=🚫AD ByeBye+ 2.x
-#!desc=与 AD ByeBye 1.x 互补, 以最优性能表现去除各种广告。Repo:https://tuu.cat/repo
+#!name=🚫 AD ByeBye+ 2.x
+#!desc=与 🚫 AD ByeBye 1.x 互补, 以最优性能表现去除各种广告。Repo:https://tuu.cat/repo
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #------------------------------------------------------
 # 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书
 # 高德地图需要卸载重装 & 重启手机 才会生效
-# Update: 02.16.2022
+# Update: 02.23.2022
 
 [Rule]
 # 十分重要！
@@ -36,14 +36,32 @@ amdc\.m\.taobao\.com - reject
 
 # --------------------------------------高德地图--------------------------------------
 
-## 搜索框热词 | 附近页面 | 我的页面 | 首页右中
-http-response ^https?:\/\/m5\.amap\.com\/ws\/shield\/(search\/(new_hotword|nearbyrec_smart)|dsp\/profile\/index\/nodefaas|frogserver\/aocs\/updatable) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
-# 开屏广告 | 首页底部 | 底栏角标
-http-response ^https?:\/\/m5\.amap\.com\/ws\/(valueadded\/alimama\/splash_screen|faas\/amap-navigation\/main-page|message\/notice\/list) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
-# 打车页面
-http-response ^https?:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
-# 首页顶部横幅
-http-response ^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
+# > 高德地图_底部tab栏角标@ddgksf2013
+amap_19 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/message\/notice\/list,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德地图_首页右中广告@ddgksf2013
+amap_23 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德地图_附近页面@ddgksf2013
+amap_25 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德地图_打车页面处理@ddgksf2013
+amap_27 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德地图_首页底部处理@ddgksf2013
+amap_31 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德地图_开屏广告@ddgksf2013
+amap_35 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德地图_首页顶部推广@ddgksf2013
+amap_37 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德地图_我的页面@ddgksf2013
+amap_39 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+
+# > 高德地图_搜索框热词@ddgksf2013
+amap_41 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
 
 # --------------------------------------Weibo--------------------------------------
 
@@ -190,10 +208,20 @@ replaceBody_25 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\
 
 # --------------------------------------高德地图--------------------------------------
 
-# 搜索框 | 底栏角标 | 左下天气
-^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|message\/notice\/list|valueadded\/weather) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
-# Tip请求，如招聘代驾的广告等
-^https?:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
+# > 高德地图_路线规划下方广告@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > 高德地图_Tip请求@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+
+# > 高德地图_搜索框scene@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# > 高德地图_首页左上角gif@ddgksf2013
+^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
+
+# > 高德地图_左下天气@ddgksf2013
+^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 # --------------------------------------Weibo--------------------------------------
 
