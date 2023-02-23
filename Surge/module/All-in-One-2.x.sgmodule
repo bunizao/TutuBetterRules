@@ -36,32 +36,10 @@ amdc\.m\.taobao\.com - reject
 
 # --------------------------------------高德地图--------------------------------------
 
-# > 高德地图_底部tab栏角标@ddgksf2013
-amap_19 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/message\/notice\/list,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
-
-# > 高德地图_首页右中广告@ddgksf2013
-amap_23 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
-
-# > 高德地图_附近页面@ddgksf2013
-amap_25 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
-
-# > 高德地图_打车页面处理@ddgksf2013
-amap_27 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
-
-# > 高德地图_首页底部处理@ddgksf2013
-amap_31 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
-
-# > 高德地图_开屏广告@ddgksf2013
-amap_35 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
-
-# > 高德地图_首页顶部推广@ddgksf2013
-amap_37 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
-
-# > 高德地图_我的页面@ddgksf2013
-amap_39 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
-
-# > 高德地图_搜索框热词@ddgksf2013
-amap_41 = type=http-response,pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js,script-update-interval=0
+http-response ^https?:\/\/m5\.amap\.com\/ws\/shield\/(search\/(new_hotword|nearbyrec_smart)|dsp\/profile\/index\/nodefaas|frogserver\/aocs\/updatable) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
+http-response ^https?:\/\/m5\.amap\.com\/ws\/(valueadded\/alimama\/splash_screen|faas\/amap-navigation\/main-page|message\/notice\/list) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
+http-response ^https?:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
+http-response ^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
 
 # --------------------------------------Weibo--------------------------------------
 
@@ -211,8 +189,8 @@ replaceBody_25 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\
 # > 高德地图_路线规划下方广告@ddgksf2013
 ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 高德地图_Tip请求@ddgksf2013
-^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+# > 高德地图_Tip请求
+^https?:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
 
 # > 高德地图_搜索框scene@ddgksf2013
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
