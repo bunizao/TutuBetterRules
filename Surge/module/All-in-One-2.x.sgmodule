@@ -110,7 +110,7 @@ weibo_json_114 = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c
 哲也_关注列表优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/moments_v3\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
 # 推荐页 - 移除黑名单用户发布的文章、去除广告，及自定义一些屏蔽项目
-哲也_推荐页优化 = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/api\.zhihu\.com\/topstory\/recommend\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+哲也_推荐页优化 = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/api\.zhihu\.com\/topstory\/recommend,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
 # 黑名单页 - 同步黑名单数据
 哲也_同步黑名单 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/settings\/blocked_users,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
@@ -161,21 +161,26 @@ cainiao_json_23 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com
 
 # ------------------------------------- Xiaohongshu ---------------------------------------
 
-# > XiaoHongShu_小红书_开屏广告@ddgksf2013
-xiaohongshu_17 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/xiaohongshu.js,script-update-interval=0
+# > 小红书_开屏广告@ddgksf2013
+redbook_json_17 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
 
-# > XiaoHongShu_小红书_瀑布流@ddgksf2013
-xiaohongshu_19 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/xiaohongshu.js,script-update-interval=0
+# > 小红书_首页瀑布流@ddgksf2013
+redbook_json_19 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
 
-# > XiaoHongShu_小红书_启动处理@ddgksf2013
-xiaohongshu_21 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/xiaohongshu.js,script-update-interval=0
+# > 小红书_启动处理@ddgksf2013
+redbook_json_21 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
 
-# > XiaoHongShu_小红书_热词删除@ddgksf2013
-replaceBody_23 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js,argument="items":\[.+\]->items":[]"
+# > 小红书_热搜发现@ddgksf2013
+redbook_json_23 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
 
-# > XiaoHongShu_小红书_热搜删除@ddgksf2013
-replaceBody_25 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js,argument="queries":\[.+\]->queries":[]"
+# > 小红书_默认填词@ddgksf2013
+redbook_json_25 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hint,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
 
+# > 小红书_去除购物@ddgksf2013
+redbook_json_27 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\/categories,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
+
+# > 小红书_猜你想搜@ddgksf2013
+redbook_json_29 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
 
 
 ########################################################################################
@@ -232,73 +237,55 @@ replaceBody_25 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\
 # ------------------------------------- Zhihu ---------------------------------------
 
 ^https?:\/\/118\.89\.204\.198 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 ^https?:\/\/103\.41\.167\.237 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 ^https?:\/\/2402:4e00:1200:ed00:0:9089:6dac:96b6 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 屏蔽下发的配置，如皮肤等
 ^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json" header="Content-Type: application/x-protobuf"
-
 # 屏蔽我的页面开通会员的卡片
 # ^https?:\/\/api\.zhihu\.com\/unlimited\/go\/my_card data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 去除底部标签页关注人角标
 ^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 去除消息通知角标
 ^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count) data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 拦截回答下的卡片广告
 ^https?:\/\/www\.zhihu\.com\/api\/v\d\/answers\/\d+\/recommendations data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 拦截应用内弹窗
 ^https?:\/\/api\.zhihu\.com\/me\/guides data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 去除关注页最常访问
 ^https?:\/\/api\.zhihu\.com\/moments\/recent data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 拦截推荐页顶部广告
 ^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 底栏加号的广告
 ^https?:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 推荐页搜索栏左侧图标
 ^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/current_reading data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 疑似推荐页内容更新红点
 ^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-
 # 暂不清楚作用
 ^https?:\/\/api\.zhihu\.com\/commercial_api\/banners_v3\/app_topstory_banner data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 ^https?:\/\/api\.zhihu\.com\/ad-style-service\/request data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
 # ------------------------------------- Xiaohongshu ---------------------------------------
 
-# > XiaoHongShu_小红书_AdEngage@ddgksf2013
-^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/tag\/ads_engage data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# > 小红书_通用广告请求@ddgksf2013
+^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/(tag\/)?ads data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > XiaoHongShu_小红书_AdRecord@ddgksf2013
-^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/ads\/apple\/record data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-# > XiaoHongShu_小红书_AdResource@ddgksf2013
-^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/ads\/resource data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-# > XiaoHongShu_小红书_Report@ddgksf2013
+# > 小红书_隐私屏蔽@ddgksf2013
 ^https?:\/\/referee\.xiaohongshu\.com\/v\d\/stateReport data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > XiaoHongShu_小红书_Switches@ddgksf2013
+# > 小红书_Switches@ddgksf2013
 ^https?:\/\/pages\.xiaohongshu\.com\/data\/native\/matrix_switches data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > XiaoHongShu_小红书_Teenager@ddgksf2013
+# > 小红书_青少年请求@ddgksf2013
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/user\/teenager\/status data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
+# > 小红书_启动引导@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/home_guide data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 ########################################################################################
 
 
 
 [MITM]
-hostname = %APPEND% m5*.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, 103.41.167.236 ,103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com
+hostname = %APPEND% m5*.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, m-cloud.zhihu.com, 103.41.167.236 ,103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com
 
