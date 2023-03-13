@@ -129,10 +129,6 @@ always-real-ip = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, n
 # > Revenuecat(Spark)
 https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
 
-# > Unlock browser restrictions for new bing AI search
-^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent \w+\/[\d\.]+$ "AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
-
-
 ###################################### Script ######################################
 
 [Script]
@@ -192,6 +188,9 @@ nf_rating.js = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\
 bstar_login = type=http-request,pattern=^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/(sms\/send|reg\/sms|oauth2\/access_token|login\/sms),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
 bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/gateway\/v\d\/app\/data\/report\/heartbeat\/mobile|x\/(history|reply)/v\d/add),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
 
+# > Unlock browser restrictions for new bing AI search
+bing-edge-ua = type=http-request,pattern=^http(s)?:\/\/(?:.*\.)?bing\.com,script-path=https://gist.github.com/geekdada/6d136126daee8811f24c2d4e79b7baa5/raw/edge-useragent.js,requires-body=false
+
 # Quantumult X <----> Surge
 Q-S_Convert = type=http-request,pattern=qx$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/Surge/main/js/QX_to_Surge.js
  // - 使用方法：在引用链接后添加「qx」即可
@@ -200,6 +199,6 @@ Q-S_Convert = type=http-request,pattern=qx$,requires-body=1,max-size=0,script-pa
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, ap*.intsig.net, notability.com, www.xmind.cn, www.xmind.net, restore-access.indream.app, biz.caiyunapp.com, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, www.bing.com
+hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, ap*.intsig.net, notability.com, www.xmind.cn, www.xmind.net, restore-access.indream.app, biz.caiyunapp.com, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, *.bing.com, bing.com
 
 
