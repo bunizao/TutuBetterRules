@@ -129,6 +129,9 @@ always-real-ip = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, n
 # > Revenuecat(Spark)
 https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
 
+# > Unlock browser restrictions for new bing AI search
+^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent \w+\/[\d\.]+$ "AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
+
 
 ###################################### Script ######################################
 
@@ -197,6 +200,6 @@ Q-S_Convert = type=http-request,pattern=qx$,requires-body=1,max-size=0,script-pa
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, ap*.intsig.net, notability.com, www.xmind.cn, www.xmind.net, restore-access.indream.app, biz.caiyunapp.com, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com
+hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, ap*.intsig.net, notability.com, www.xmind.cn, www.xmind.net, restore-access.indream.app, biz.caiyunapp.com, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, www.bing.com
 
 
