@@ -129,6 +129,8 @@ always-real-ip = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, n
 # > Revenuecat(Spark)
 https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
 
+# > Unlock browser restrictions for new bing AI search
+^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent \w+\/[\d\.]+$ "AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
 ###################################### Script ######################################
 
 [Script]
@@ -189,7 +191,7 @@ bstar_login = type=http-request,pattern=^https?:\/\/passport\.biliintl\.com\/x\/
 bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/gateway\/v\d\/app\/data\/report\/heartbeat\/mobile|x\/(history|reply)/v\d/add),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
 
 # > Unlock browser restrictions for new bing AI search
-bing-edge-ua = type=http-request,pattern=^http(s)?:\/\/(?:.*\.)?bing\.com,script-path=https://gist.github.com/geekdada/6d136126daee8811f24c2d4e79b7baa5/raw/edge-useragent.js,requires-body=false
+bing-edge-ua = type=http-request,pattern=^http(s)?:\/\/(?:.*\.)?bing\.com,script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/bing.js,requires-body=false
 
 # Quantumult X <----> Surge
 Q-S_Convert = type=http-request,pattern=qx$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/Surge/main/js/QX_to_Surge.js
