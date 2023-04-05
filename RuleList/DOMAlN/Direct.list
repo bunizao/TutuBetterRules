@@ -28,6 +28,7 @@ PROCESS-NAME,NetTransport
 PROCESS-NAME,Thunder
 PROCESS-NAME,Transmission
 PROCESS-NAME,uTorrent
+PROCESS-NAME,qbittorrent
 PROCESS-NAME,WebTorrent
 PROCESS-NAME,WebTorrent Helper
 # > Spotify
