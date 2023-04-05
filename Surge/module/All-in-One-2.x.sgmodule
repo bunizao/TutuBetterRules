@@ -159,6 +159,9 @@ cainiao_json_21 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com
 # > 菜鸟裹裹_首页底部商品推广@ddgksf2013
 cainiao_json_23 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.index\.cn,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js,script-update-interval=0
 
+# > 菜鸟裹裹_支付宝小程序_中部的寄件推广[导致的空白占位后续处理]@ddgksf2013
+cainiao_json_33 = type=http-response,pattern=^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js,script-update-interval=0
+
 # ------------------------------------- Xiaohongshu ---------------------------------------
 
 # > 小红书_开屏广告@ddgksf2013
@@ -231,8 +234,17 @@ redbook_json_29 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com
 
 # ------------------------------------ Cainiao ---------------------------------------
 
-# > 菜鸟裹裹_通用广告请求[包含开屏广告]@ddgksf2013
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+# > 菜鸟裹裹_通用广告请求@ddgksf2013
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn\/ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+
+# > 菜鸟裹裹_支付宝小程序_通用广告请求@ddgksf2013
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.show data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+
+# > 菜鸟裹裹_支付宝小程序_底部商品推广@ddgksf2013
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+
+# > 菜鸟裹裹_支付宝小程序_匿名选择@ddgksf2013
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.consultmerge data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
 
 # ------------------------------------- Zhihu ---------------------------------------
 
@@ -287,5 +299,5 @@ redbook_json_29 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com
 
 
 [MITM]
-hostname = %APPEND% m5*.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, m-cloud.zhihu.com, 103.41.167.236 ,103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com
+hostname = %APPEND% m5*.amap.com, sns.amap.com, *api.weibo*, *uve.weibo.com, new.vip.weibo.cn, 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, m-cloud.zhihu.com, 103.41.167.236 ,103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com
 
