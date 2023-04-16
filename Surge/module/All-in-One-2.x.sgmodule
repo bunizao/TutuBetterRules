@@ -2,7 +2,7 @@
 #!desc=与 🚫 AD ByeBye 1.x 互补, 以最优性能表现去除各种广告。Repo:https://tuu.cat/repo
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #------------------------------------------------------
-# 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书
+# 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书, 微信小程序（试验性支持）
 # 高德地图需要卸载重装 & 重启手机 才会生效
 # Update: 02.23.2022
 
@@ -146,6 +146,7 @@ weibo_json_134 = type=http-response,pattern=^https?:\/\/weibointl\.api\.weibo\.c
 哲也_预置关键词优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/search\/preset_words\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
 # ------------------------------------- Pixiv ---------------------------------------
+
 pixivAd = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js,script-update-interval=0
 
 # ------------------------------------ Cainiao ---------------------------------------
@@ -185,6 +186,10 @@ redbook_json_27 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com
 # > 小红书_猜你想搜@ddgksf2013
 redbook_json_29 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
 
+# ------------------------------------- MiniProgram ---------------------------------------
+
+# > 喜茶
+heytea = type=http-response, pattern=^https:\/\/go\.heytea\.com\/api\/service-portal\/vip, requires-body=1, max-size=3145728, script-path = https://raw.githubusercontent.com/jizhi0520/QX/main/heytea.js, script-update-interval=0
 
 ########################################################################################
 
@@ -297,10 +302,37 @@ redbook_json_29 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com
 # > 小红书_启动引导@ddgksf2013
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/home_guide data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
+# ------------------------------------- MiniProgram ---------------------------------------
+
+# > 麦当劳
+^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# > 必胜客
+^https:\/\/res\.pizzahut\.com\.cn\/CRM data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# > 肯德基
+^https:\/\/orders\.kfc\.com\.cn\/preorder-portal\/api\/v2\/coupon data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/dynamicad\.kfc\.com\.cn\/api data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/custom_v2\/wxapp data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/orders\.kfc\.com\.cn\/preorder-portal\/api\/v2\/activity data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# > 星巴克
+^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/popup data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/banner data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/3pp\.starbucks\.com\.cn\/wxmem\/index\/global data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# > 丰巢
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/dsp\.fcbox\.com data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# > 奈雪点单
+^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2 data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# > 青桔单车
+^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=prd\.task data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/star\.xiaojukeji\.com\/config data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
 ########################################################################################
 
 
 
 [MITM]
-hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.*, *.api.weibo.*, mapi.weibo.*,  *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com,  118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, m-cloud.zhihu.com, 103.41.167.236 ,103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com
+hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.*, *.api.weibo.*, mapi.weibo.*,  *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com,  118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, m-cloud.zhihu.com, 103.41.167.236 ,103.41.167.234, 103.41.167.235, 103.41.167.226, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com,dsp.fcbox.com, go.heytea.com
 
