@@ -10,10 +10,6 @@
 # 十分重要！
 RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/AD.Reject.list,REJECT
 RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/AD.Reject-Drop.list,REJECT-DROP
-# > 微博_应用内弹窗广告@ddgksf2013
-^https?:\/\/(preload-click|preload-impression)\.uve\.weibo\.com\/(interface\/wbpullad\/wbpullad_click\.php|wbapplua\/get_wbpullad_log\.lua) - reject
-# > 微博_屏蔽sdkconfig请求@ddgksf2013
-^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php - reject
 DOMAIN,sdkapp.uve.weibo.com,DIRECT // 微博
 
 [URL Rewrite]
