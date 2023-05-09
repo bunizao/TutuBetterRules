@@ -5,6 +5,11 @@
 DOMAIN,aod.itunes.apple.com //Apple Music
 DOMAIN-SUFFIX,store.apple.com // Apple Store Online
 
+# > Maps
+DOMAIN,gspe19-cn-ssl.ls.apple.com
+DOMAIN,gspe1-ssl.ls.apple.com // Country Code
+PROCESS-NAME,storedownloadd
+PROCESS-NAME,com.apple.geod
 
 # --------DOWNLOAD--------
 # > Store
@@ -16,7 +21,7 @@ DOMAIN,osxapps.itunes.apple.com
 # > Testflight
 DOMAIN,testflight.apple.com
 
-#  >Update
+#  > Update
 DOMAIN,updates.cdn-apple.com //system update
 DOMAIN,supportdownload.apple.com
 DOMAIN,appldnld.apple.com
