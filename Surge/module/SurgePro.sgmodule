@@ -1,6 +1,6 @@
 #!name=True Surge PRO
 #!desc=Crack & Enhance
-#!author=@hututu0
+#!author=@hututu0 & @bunizao
 
 # > 🚨 注意：为了方便各大懒人使用，本模块是一个集合模块。请避免与以下模块同时使用，因为本模块已包含他们的基本功能。
  // - https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/General.sgmodule
@@ -13,7 +13,7 @@
  // - https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Netflix_ratings.conf
  // - https://raw.githubusercontent.com/Orz-3/QuantumultX/master/JD_TB_price.conf
 
-# > 🚨 声明：本模块仅供学习交流使用。大部分脚本来自于 @Cuttlefish，由@hututu0转换至Surge格式。
+# > 🚨 声明：本模块仅供学习交流使用。
 
 # > ⛴️ 功能介绍：
   // General: 跳过代理与真实IP
@@ -194,8 +194,10 @@ bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/ga
 # > Unlock browser restrictions for new bing AI search
 bing-edge-ua = type=http-request,pattern=^http(s)?:\/\/(?:.*\.)?bing\.com,script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/bing.js,requires-body=false
 
-# Quantumult X <----> Surge
+# Quantumult X & Loon <----> Surge
 Q-S_Convert = type=http-request,pattern=\/[^/]+\.[^/]+qx$|qx\?(jsc|hnadd|hndel|n|y|x|del|i)=, requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/stash/main/js/QX_Rewrite_Parser.js
+L-S_Convert = type=http-request,pattern=plugin$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/Surge/main/js/Loon_to_Surge.js, timeout=120
+
  // - 使用方法：在引用链接后添加「qx」即可
 
 [MITM]
