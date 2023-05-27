@@ -1,6 +1,8 @@
 # >  Merge @DivineEngine & @VirgilClyne
 PROCESS-NAME,org.telegram.messenger //🆕
+PROCESS-NAME,Telegram
 DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,tx.me
 DOMAIN-SUFFIX,tdesktop.com
 DOMAIN-SUFFIX,telegra.ph
 DOMAIN-SUFFIX,telegram.me
@@ -20,6 +22,7 @@ IP-CIDR,185.76.151.0/24,no-resolve
 IP-CIDR,109.239.140.0/24,no-resolve // Telegram Messenger LLP
 IP-CIDR,5.28.195.205/32,no-resolve // IPFFM - Internet Provider Frankfurt GmbH
 IP-CIDR,5.28.195.163/32,no-resolve //Germany - Hesse - Frankfurt am Main / AS1273
+IP-CIDR,5.28.195.37/32,no-resolve //Germany - Hesse - Frankfurt am Main / AS1273
 IP-CIDR6,2a0a:f280::/32,no-resolve
 IP-CIDR6,2001:b28:f23d::/48,no-resolve
 IP-CIDR6,2001:b28:f23f::/48,no-resolve
