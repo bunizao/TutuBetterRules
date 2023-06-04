@@ -1,5 +1,5 @@
 #!name=🚫 AD ByeBye+ 2.x
-#!desc=(2.x)以最优性能表现去除各种繁杂广告。|・Repo: https://tuu.cat/repo・Update: 05/20/2023・Support: @bunizao
+#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 05/35/2023・Support: @bunizao
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #------------------------------------------------------
 # 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书, 微信小程序（试验性支持）
@@ -170,26 +170,35 @@ cainiao_json_33 = type=http-response, pattern=^https?:\/\/guide-acs\.m\.taobao\.
 
 # ------------------------------------- Xiaohongshu ---------------------------------------
 
+# > 小红书_短视频流去水印+强制开启保存功能@ddgksf2013
+redbook_json_19 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/redtube\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
+
+# > 小红书_信息流视频去水印+强制开启保存功能@ddgksf2013
+redbook_json_21 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/videofeed\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
+
+# > 小红书_信息流图片去水印@ddgksf2013
+redbook_json_23 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/feed\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
+
 # > 小红书_开屏广告@ddgksf2013
-redbook_json_17 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
+redbook_json_25 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
 # > 小红书_首页瀑布流@ddgksf2013
-redbook_json_19 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
+redbook_json_27 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
 # > 小红书_启动处理@ddgksf2013
-redbook_json_21 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
+redbook_json_29 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
 # > 小红书_热搜发现@ddgksf2013
-redbook_json_23 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
+redbook_json_31 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
 # > 小红书_默认填词@ddgksf2013
-redbook_json_25 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hint,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
+redbook_json_33 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hint, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
 # > 小红书_去除购物@ddgksf2013
-redbook_json_27 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\/categories,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
+redbook_json_35 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\/categories, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
 # > 小红书_猜你想搜@ddgksf2013
-redbook_json_29 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js,script-update-interval=0
+redbook_json_37 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
 # ------------------------------------- MiniProgram ---------------------------------------
 
@@ -296,6 +305,9 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 ^https?:\/\/api\.zhihu\.com\/ad-style-service\/request data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
 # ------------------------------------- Xiaohongshu ---------------------------------------
+
+# > 小红书_视频播放页商品推广@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 # > 小红书_通用广告请求@ddgksf2013
 ^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/(tag\/)?ads data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
