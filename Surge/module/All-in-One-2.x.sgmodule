@@ -203,7 +203,7 @@ redbook_json_37 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.co
 # ------------------------------------- MiniProgram ---------------------------------------
 
 # > 喜茶
-heytea = type=http-response, pattern=^https:\/\/go\.heytea\.com\/api\/service-portal\/vip, requires-body=1, max-size=3145728, script-path= https://raw.githubusercontent.com/jizhi0520/QX/main/heytea.js, script-update-interval=0
+# heytea = type=http-response, pattern=^https:\/\/go\.heytea\.com\/api\/service-portal\/vip, requires-body=1, max-size=3145728, script-path= https://raw.githubusercontent.com/jizhi0520/QX/main/heytea.js, script-update-interval=0
 # > 青桔
 qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig, requires-body=1, max-size=3145728, script-path= https://raw.githubusercontent.com/jizhi0520/QX/main/qingju.js, script-update-interval=0
 
