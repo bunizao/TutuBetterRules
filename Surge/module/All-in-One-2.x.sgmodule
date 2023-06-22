@@ -1,5 +1,5 @@
 #!name=🚫 AD ByeBye+ 2.x
-#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 06/20/2023・Support: @bunizao
+#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 06/22/2023・Support: @bunizao
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #------------------------------------------------------
 # 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书, 微信小程序（试验性支持）
@@ -98,28 +98,15 @@ weibo_json_144 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.
 
 知乎 = type=http-response,pattern=^https:\/\/(appcloud2\.zhihu\.com\/v3\/config$|www\.zhihu\.com\/api\/v4\/(answers\/\d+\/recommendations|articles\/\d+\/recommendation)|api\.zhihu\.com\/(topstory\/recommend|commercial_api\/(real_time_launch_v2|app_float_layer$)|questions\/\d+\/feeds\?|v4\/questions\/\d+\/answers\?)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/zhihu.js
 
-
-
 # ------------------------------------- Pixiv ---------------------------------------
 
 pixivAd = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js,script-update-interval=0
 
 # ------------------------------------ Cainiao ---------------------------------------
 
-# > 菜鸟裹裹_amdc处理
-amdc_17 = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amdc.js, timeout=60, script-update-interval=0
+cainiao_01 = type=http-response,pattern=^https?:\/\/(cn-acs\.m\.cainiao|guide-acs\.m\.taobao)\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show,requires-body=1,max-size=0,script-update-interval=-1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/cainiao.js
 
-# > 菜鸟裹裹_首页中部的惊喜福利推广@ddgksf2013
-cainiao_json_19 = type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.protocol\.homepage\.get\.cn, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js, timeout=60, script-update-interval=0
-
-# > 菜鸟裹裹_搜索框下方今日好物推荐@ddgksf2013
-cainiao_json_21 = type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js, timeout=60, script-update-interval=0
-
-# > 菜鸟裹裹_首页底部商品推广@ddgksf2013
-cainiao_json_23 = type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.index\.cn, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js, timeout=60, script-update-interval=0
-
-# > 菜鸟裹裹_支付宝小程序_中部的寄件推广[导致的空白占位后续处理]@ddgksf2013
-cainiao_json_33 = type=http-response, pattern=^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/cainiao_json.js, timeout=60, script-update-interval=0
+cainiao_02 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|pickup\.empty\.page|protocol\.homepage)\.get\.cn,requires-body=1,max-size=0,script-update-interval=-1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/cainiao.js
 
 # ------------------------------------- Xiaohongshu ---------------------------------------
 
@@ -202,17 +189,10 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 
 # ------------------------------------ Cainiao ---------------------------------------
 
-# > 菜鸟裹裹_通用广告请求@ddgksf2013
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn\/ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.(nbmensa\.research\.researchservice\.consultmerge|adx\.flyad\.getad) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn\/\d\. data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
 
-# > 菜鸟裹裹_支付宝小程序_通用广告请求@ddgksf2013
-^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.show data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
-
-# > 菜鸟裹裹_支付宝小程序_底部商品推广@ddgksf2013
-^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
-
-# > 菜鸟裹裹_支付宝小程序_匿名选择@ddgksf2013
-^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.consultmerge data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(guoguo\.nbnetflow\.ads\.index\.cn\/\d\.|adkeyword\.get\.cn\/1\d\.|nbmensa\.research\.researchservice\.(acquire|event|close)\.cn\/\d\.) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
 
 # ------------------------------------- Zhihu ---------------------------------------
 
