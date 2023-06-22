@@ -10,6 +10,7 @@
 RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/AD.Reject.list,REJECT
 RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/AD.Reject-Drop.list,REJECT-DROP
 DOMAIN,sdkapp.uve.weibo.com,DIRECT
+
 [URL Rewrite]
 
 # ------------------------------------- 高德地图 --------------------------------------
