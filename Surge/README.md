@@ -9,11 +9,11 @@
 #### 点击`从URL下载配置` 引用以下链接：
  * PRO版：
 ```
-https://raw.iqiq.io/bunizao/TutuBetterRules/tutu/Surge/Surge.conf
+https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/Surge.conf
 ```
  * 青春版： 
 ```
-https://raw.iqiq.io/bunizao/TutuBetterRules/tutu/Surge/Surge_lite.conf
+https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/Surge_lite.conf
 ```
 
  * 区别介绍：
