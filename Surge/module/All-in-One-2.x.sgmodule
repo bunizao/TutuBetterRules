@@ -21,7 +21,6 @@ amdc\.m\.taobao\.com - reject
 
 # -------------------------------------- Weibo --------------------------------------
 
-^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php$|sdkconfig\.php\?) - reject
 # > 微博_应用内弹窗广告@ddgksf2013
 ^https?:\/\/(preload-click|preload-impression)\.uve\.weibo\.com\/(interface\/wbpullad\/wbpullad_click\.php|wbapplua\/get_wbpullad_log\.lua) - reject
 # > 微博_屏蔽sdkconfig请求@ddgksf2013
@@ -145,6 +144,9 @@ cainiao_01 = type=http-response,pattern=^https?:\/\/(cn-acs\.m\.cainiao|guide-ac
 cainiao_02 = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|pickup\.empty\.page|protocol\.homepage)\.get\.cn,requires-body=1,max-size=0,script-update-interval=-1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/cainiao.js
 
 # ------------------------------------- Xiaohongshu ---------------------------------------
+
+# > 小红书_视频播放页商品推广@ddgksf2013
+redbook_json_17 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
 # > 小红书_短视频流去水印+强制开启保存功能@ddgksf2013
 redbook_json_19 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/redtube\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
@@ -308,5 +310,5 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 
 
 [MITM]
-hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com, shop.sc.weibo.com, t.cn, sinaurl.cn, api.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com
+hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com, shop.sc.weibo.com, t.cn, sinaurl.cn, api.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com
 
