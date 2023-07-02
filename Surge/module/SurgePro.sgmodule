@@ -23,7 +23,7 @@
      // - Redirect HTTP to HTTPS
      // - AbeamTV 区域限制
   // Script:
-     // - Crack:(Notability, Spotify, Kuwo Music, Scanner, Nicegram, XMind, Picsart, XiChuangZhu, Emby)
+     // - Crack:(Kuwo Music, Scanner, Nicegram, XMind, Picsart, XiChuangZhu, Emby)
      // - Enhance(Google自动翻页, 解除微信链接限制, 京东历史价格, Netflix Ranking, Bstar login & play, QuantumultX和Surge格式转换)
 
 # > ⚓️ 推荐引用：
@@ -126,7 +126,8 @@ always-real-ip = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, n
 ^http:\/\/(www.)?aicoin\.cn\/$ https://www.aicoin.com/ 302
 
 [Header Rewrite]
-# > Revenuecat(Spark)
+
+# > Revenuecat (Spark...)
 https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
 
 # > Unlock browser restrictions for new bing AI search
@@ -137,12 +138,6 @@ https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
 [Script]
 
 # ------------------------------------- Crack ---------------------------------------
-
-# > Notability 
-notability = type=http-response ^https:\/\/notability\.com\/subscriptions script-path=https://raw.githubusercontent.com/PoetryU/Scientist/master/Scripts/notabilityvip.js, tag=notability,request-body=true
-
-# > Spotify
-spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,max-size=3145728,binary-body-mode=1,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js,script-update-interval=0
 
 # > 酷我音乐
 KuWoMusicProCrack = type=http-response,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
@@ -164,7 +159,7 @@ PicsartProCrack = type=http-response,pattern=^https?:\/\/api\.meiease\.cn\/shop\
 XiChuangZhuProCrack = type=http-response,pattern=https://lchttpapi.xczim.com/*,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/XiChuangZhuProCrack.js,script-update-interval=0
 
 # > 彩云天气
-CaiyunWeather = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Weather/weather.js
+CaiyunWeather = type=http-response, pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, timeout=60, script-update-interval=0
 
 # > Emby
 unlock_emby_premium = requires-body=1,max-size=0,script-path=https://ruleset.skk.moe/Script/fuck_emby.js,script-update-interval=86400,type=http-response,pattern=^https://mb3admin.com/.*
@@ -194,9 +189,8 @@ bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/ga
 # > Unlock browser restrictions for new bing AI search
 bing-edge-ua = type=http-request,pattern=^http(s)?:\/\/(?:.*\.)?bing\.com,script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/bing.js,requires-body=false
 
-# Quantumult X & Loon <----> Surge
+# Quantumult X <----> Surge
 Q-S_Convert = type=http-request,pattern=\/[^/]+\.[^/]+qx$|qx\?(jsc|hnadd|hndel|n|y|x|del|i)=, requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/stash/main/js/QX_Rewrite_Parser.js
-L-S_Convert = type=http-request,pattern=plugin$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/Surge/main/js/Loon_to_Surge.js, timeout=120
 
  // - 使用方法：在引用链接后添加「qx」即可
 
@@ -204,6 +198,6 @@ L-S_Convert = type=http-request,pattern=plugin$,requires-body=1,max-size=0,scrip
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, ap*.intsig.net, notability.com, www.xmind.cn, www.xmind.net, restore-access.indream.app, biz.caiyunapp.com, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, *.bing.com, bing.com
+hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, biz.caiyunapp.com, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, *.bing.com, bing.com
 
 
