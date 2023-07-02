@@ -27,7 +27,7 @@
      // - Enhance(Google自动翻页, 解除微信链接限制, 京东历史价格, Netflix Ranking, Bstar login & play, QuantumultX和Surge格式转换)
 
 # > ⚓️ 推荐引用：
- // - 去广告1.X: https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/All-in-One.sgmodule //使用更小的资源去广告
+ // - 去广告1.X: https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/All-in-One.sgmodule //使用更小的资源去除广告。
  // - 去广告2.x: https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/All-in-One-2.x.sgmodule // 去广告plus, 与1.0互补且不冲突。
 
  
@@ -35,9 +35,10 @@
 
 [General]
 
-skip-proxy = localhost, *.local, captive.apple.com, e.crashlytics.com, sequoia.apple.com, seed-sequoia.siri.apple.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, cable.auth.com, *.id.ui.direct, *.sgponte, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.1/32, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, 224.0.0.0/4, 240.0.0.0/4, 255.255.255.255/32, ::1/128, fc00::/7, fd00::/8, fe80::/10, ff00::/8, 2001::/32, 2001:db8::/32, 2002::/16, ::ffff:0:0:0:0/1, ::ffff:128:0:0:0/1
+skip-proxy = %INSERT% localhost, *.local, captive.apple.com, e.crashlytics.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, fe80::/10
 
-always-real-ip = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, localhost.*.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
+always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, cable.auth.com, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
+
 # ⚠️ 这里与 https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/General.sgmodule 功能重复！请选择其中一个使用。
 
 ###################################### Rewrite ######################################
@@ -139,6 +140,9 @@ https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
 
 # ------------------------------------- Crack ---------------------------------------
 
+# > Flightradar24
+flightradar24 = type=http-request, pattern=^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|\w{9}), script-path=https://github.com/ddgksf2013/dev/raw/main/flightradar24.js, timeout=60, script-update-interval=0
+
 # > 酷我音乐
 KuWoMusicProCrack = type=http-response,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
 KuWoMusicProCrack = type=http-request,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui),script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
@@ -189,15 +193,17 @@ bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/ga
 # > Unlock browser restrictions for new bing AI search
 bing-edge-ua = type=http-request,pattern=^http(s)?:\/\/(?:.*\.)?bing\.com,script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/bing.js,requires-body=false
 
-# Quantumult X <----> Surge
+# Resource Converter
 Q-S_Convert = type=http-request,pattern=\/[^/]+\.[^/]+qx$|qx\?(jsc|hnadd|hndel|n|y|x|del|i)=, requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chengkongyiban/stash/main/js/QX_Rewrite_Parser.js
-
  // - 使用方法：在引用链接后添加「qx」即可
 
 [MITM]
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, notability.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, biz.caiyunapp.com, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, *.bing.com, bing.com
+hostname = %APPEND% boxjs.com, mobile.flightradar24.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, biz.caiyunapp.com, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.cn, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, *.bing.com, bing.com
+
+# 不可MitM也不应该被打断连接的域名
+hostname = %INSERT% -gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, -pan.baidu.com
 
 
