@@ -13,7 +13,7 @@ DOMAIN,sdkapp.uve.weibo.com,DIRECT
 
 [URL Rewrite]
 
-# ------------------------------------- 高德地图 --------------------------------------
+# ------------------------------------- Amap --------------------------------------
 
 # > 高德地图_通用广告请求
 ^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution - reject
@@ -43,7 +43,7 @@ amdc\.m\.taobao\.com - reject
 
 [Script]
 
-# --------------------------------------高德地图--------------------------------------
+# --------------------------------------Amap--------------------------------------
 
 http-response ^http:\/\/amdc\.m\.taobao\.com requires-body=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 http-response ^https?:\/\/m5\.amap\.com\/ws\/shield\/(search\/(new_hotword|nearbyrec_smart)|dsp\/profile\/index\/nodefaas|frogserver\/aocs\/updatable) requires-body=1,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/amap.js
@@ -178,6 +178,12 @@ redbook_json_35 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.co
 # > 小红书_猜你想搜@ddgksf2013
 redbook_json_37 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
+# ------------------------------------- Tieba ---------------------------------------
+
+tieba_json = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js,script-update-interval=0
+tieba_proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js,script-update-interval=0
+
+
 # ------------------------------------- MiniProgram ---------------------------------------
 
 # > 喜茶
@@ -191,7 +197,7 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 
 [Map Local]
 
-# --------------------------------------高德地图--------------------------------------
+# --------------------------------------Amap--------------------------------------
 
 ^https?:\/\/m5\.amap\.com\/ws\/(shield\/scene\/recommend|valueadded\/weather) data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank_dict.json"
 ^https?:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/\w{8}_information data="https://raw.githubusercontent.com/kokoryh/Script/master/data/blank.txt"
