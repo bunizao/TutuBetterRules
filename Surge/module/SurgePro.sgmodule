@@ -23,7 +23,7 @@
      // - Redirect HTTP to HTTPS
      // - AbeamTV 区域限制
   // Script:
-     // - Crack:(Kuwo Music, Scanner, Nicegram, XMind, Picsart, XiChuangZhu, Emby)
+     // - Crack:(Kuwo Music, Scanner, Nicegram, XMind, Picsart, XiChuangZhu, Emby, CaiyunWeather)
      // - Enhance(Google自动翻页, 解除微信链接限制, 京东历史价格, Netflix Ranking, Bstar login & play, QuantumultX和Surge格式转换)
 
 # > ⚓️ 推荐引用：
@@ -163,7 +163,7 @@ PicsartProCrack = type=http-response,pattern=^https?:\/\/api\.meiease\.cn\/shop\
 XiChuangZhuProCrack = type=http-response,pattern=https://lchttpapi.xczim.com/*,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/XiChuangZhuProCrack.js,script-update-interval=0
 
 # > 彩云天气
-CaiyunWeather = type=http-response, pattern=^https:\/\/biz\.caiyunapp\.com\/v2\/user\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, timeout=60, script-update-interval=0
+CaiyunWeather = type=http-response,requires-body=1,max-size=0,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/CaiYun.js,script-update-interval=0
 
 # > Emby
 unlock_emby_premium = requires-body=1,max-size=0,script-path=https://ruleset.skk.moe/Script/fuck_emby.js,script-update-interval=86400,type=http-response,pattern=^https://mb3admin.com/.*
