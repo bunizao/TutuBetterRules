@@ -310,8 +310,19 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 # > 哈啰出行
 ^https:\/\/api\.hellobike\.com\/api\?adx data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-# > 顺丰速运
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+# > 顺丰速运(❗️Alpha)
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+# > 猫眼(❗️Alpha)
+^https:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0 data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v2\/list\.json data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+
+
 
 
 ########################################################################################
@@ -319,5 +330,6 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 
 
 [MITM]
-hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com, shop.sc.weibo.com, t.cn, sinaurl.cn, api.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com
+hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com, shop.sc.weibo.com, t.cn, sinaurl.cn, api.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, vod-movie.maoyan.com, api.maoyan.com 
+
 
