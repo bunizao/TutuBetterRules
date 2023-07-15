@@ -1,5 +1,5 @@
 #!name=🚫 AD ByeBye+ 2.x
-#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 07/09/2023・Support: @bunizao
+#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 07/15/2023・Support: @bunizao
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #------------------------------------------------------
 # 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书, 微信小程序（Alpha）
@@ -54,56 +54,56 @@ http-response ^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull requires-body=1,scrip
 # --------------------------------------Weibo--------------------------------------
 
 # > 微博_开屏广告预加载处理@ddgksf2013
-weibo_json_94 = type=http-response, pattern=^https?:\/\/boot.*weibo\.com\/v\d\/ad\/preload, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_95 = type=http-response, pattern=^https?:\/\/boot.*weibo\.com\/v\d\/ad\/preload, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博_未登陆状态下首页信息流处理@ddgksf2013
-weibo_json_96 = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d\/\w{5}\/(statuses_unread_hot_timeline|timeline), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_97 = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d\/\w{5}\/(statuses_unread_hot_timeline|timeline), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博_视频信息处理@ddgksf2013
-weibo_json_100 = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d\/video\/tiny_stream_mid_detail, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_101 = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d\/video\/tiny_stream_mid_detail, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博_屏蔽发现页面搜索框热词@ddgksf2013
-weibo_json_106 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/\w{5}\/cardlist, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_107 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/\w{5}\/cardlist, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博_自定义tab皮肤@zmqcherish
-weibo_json_114 = type=http-response, pattern=^https://api.weibo.cn/2/!/client/light_skin, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_115 = type=http-response, pattern=^https://api.weibo.cn/2/!/client/light_skin, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博_非会员设置tab皮肤@zmqcherish
-weibo_json_116 = type=http-response, pattern=^https://new.vip.weibo.cn/littleskin/preview, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_117 = type=http-response, pattern=^https://new.vip.weibo.cn/littleskin/preview, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博_去广告以及去除各部分推广模块@zmqcherish,@ddgksf2013
-weibo_json_118 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|messageflow), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_119 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|messageflow), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
-weibo_json_119 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_120 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
-weibo_json_120 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_121 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
-weibo_json_121 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_122 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
-weibo_json_122 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_123 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
-weibo_json_123 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_124 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
-weibo_json_124 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_125 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
-weibo_json_125 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_126 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
-weibo_json_126 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_127 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博国际版_屏蔽开屏广告@ddgksf2013 
-weibo_json_136 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*get_coopen_ads, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_137 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*get_coopen_ads, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博国际版_屏蔽sdkad@ddgksf2013
-weibo_json_138 = type=http-response, pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_139 = type=http-response, pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博国际版_趋势顶部Card去广告@ddgksf2013
-weibo_json_140 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=trends, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_141 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=trends, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博国际版_屏蔽用户VIP栏@ddgksf2013
-weibo_json_142 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_143 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # > 微博国际版_热搜处理@ddgksf2013
-weibo_json_144 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_json_145 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
 
 # 跳过重定向页面以直接访问 // weibo.cn, shop.sc.weibo.com, t.cn, sinaurl.cn
 
@@ -310,9 +310,9 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 # > 哈啰出行
 ^https:\/\/api\.hellobike\.com\/api\?adx data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-# > 顺丰速运(❗️Alpha)
+# > 顺丰速运
 ^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
-# > 猫眼(❗️Alpha)
+# > 猫眼
 ^https:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0 data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
@@ -320,9 +320,7 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 ^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 ^https:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v2\/list\.json data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-
-
+^https:\/\/ad\.maoyan\.com\/api\/position\/detail data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 
 ########################################################################################
@@ -330,6 +328,6 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 
 
 [MITM]
-hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com, shop.sc.weibo.com, t.cn, sinaurl.cn, api.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, vod-movie.maoyan.com, api.maoyan.com 
+hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com, shop.sc.weibo.com, t.cn, sinaurl.cn, api.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, vod-movie.maoyan.com, api.maoyan.com, ad.maoyan.com, wx.maoyan.com
 
 
