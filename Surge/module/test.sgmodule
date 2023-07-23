@@ -1,8 +1,0 @@
-#!name=Test
-#!desc=
-
-
-[URL Rewrite]
-^https:\/\/raw\.githubusercontent\.com\/(.*?)$ https://raw.tuu.cat/$1 302
-
-

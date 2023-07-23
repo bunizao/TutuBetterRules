@@ -1,0 +1,8 @@
+#!name=全局Github加速访问
+#!desc=由 https://raw.tuu.cat 提供的公益Github反向代理，频道@hututu00
+
+
+[URL Rewrite]
+^https:\/\/raw\.githubusercontent\.com\/(.*?)$ https://raw.tuu.cat/$1 302
+
+
