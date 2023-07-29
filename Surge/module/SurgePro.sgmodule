@@ -143,8 +143,8 @@ https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
 flightradar24 = type=http-request, pattern=^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|\w{9}), script-path=https://github.com/ddgksf2013/dev/raw/main/flightradar24.js, timeout=60, script-update-interval=0
 
 # > 酷我音乐
-KuWoMusicProCrack = type=http-response,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
-KuWoMusicProCrack = type=http-request,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui),script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
+KuWoMusicProCrack_response = type=http-response,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
+KuWoMusicProCrack_request = type=http-request,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui),script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
 
 # > 扫描全能王
 CamscannerProCrack = type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/CamscannerProCrack.js,script-update-interval=0
@@ -203,8 +203,8 @@ bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/ga
 bing-edge-ua = type=http-request,pattern=^http(s)?:\/\/(?:.*\.)?bing\.com,script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/bing.js,requires-body=false
 
 # Resource Converter
-Q-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(qx$|qx\?.+=), requires-body=1, max-size=0, script-path=https://github.com/chengkongyiban/stash/raw/main/js/QX_Rewrite_Parser.js ,timeout=60
-Loon-Surge_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(ln$|ln\?.+=), requires-body=1, max-size=0, script-path=https://github.com/chengkongyiban/stash/raw/main/js/Loon_Rewrite_Parser.js ,timeout=60
+Q-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(qx$|qx\?.+=), requires-body=1, max-size=0, script-path=https://github.com/bunizao/TutuBetterRules/raw/tutu/Surge/script/Parser.js ,timeout=60
+L-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(ln$|ln\?.+=), requires-body=1, max-size=0, script-path=https://github.com/chengkongyiban/stash/raw/main/js/Loon_Rewrite_Parser.js ,timeout=60
 
  // - 使用方法：在原qx引用链接后添加「qx」, 在原来loon引用链接后添加「ln」，即可自动转化为适用于Surge的链接。
 
