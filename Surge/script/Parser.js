@@ -1,3 +1,15 @@
+/****************************
+
+[Experimental] 原作者@chengkongyiban计划归档此脚本，对原脚本进行了Fork和一些修改。
+功能：支持将Quantumult X重写解析至 Surge / Shadowrocket / Loon / Stash。
+原脚本链接（可能失效）： https://raw.githubusercontent.com/chengkongyiban/stash/main/js/QX_Rewrite_Parser.js
+
+Surge建议使用如下配置：
+# Resource Parser
+ResourceParser = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(qx$|qx\?.+=), requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/Parser.js ,timeout=60
+
+或直接引用 SurgePro模块：https://github.com/bunizao/TutuBetterRules/raw/tutu/Surge/module/SurgePro.sgmodule
+
 ***************************/
 const isEgern = 'object' == typeof egern;
 const isLanceX = 'undefined' !== typeof $native;
