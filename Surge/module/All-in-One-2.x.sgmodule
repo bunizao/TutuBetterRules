@@ -6,7 +6,7 @@
 # 高德地图需要卸载重装 & 重启手机 才会生效
 
 [General]
-force-http-engine-hosts = api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com
+force-http-engine-hosts = %APPEND% api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com
 [Rule]
 # 十分重要！
 RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/AD.Reject.list,REJECT
