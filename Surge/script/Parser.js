@@ -11,6 +11,7 @@ ResourceParser = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(qx$|qx\
 或直接引用 SurgePro模块：https://github.com/bunizao/TutuBetterRules/raw/tutu/Surge/module/SurgePro.sgmodule
 
 ***************************/
+
 const isEgern = 'object' == typeof egern;
 const isLanceX = 'undefined' !== typeof $native;
 if (isEgern || isLanceX){
@@ -19,6 +20,7 @@ if (isEgern || isLanceX){
 const isStashiOS = 'undefined' !== typeof $environment && $environment['stash-version'];
 const isSurgeiOS = 'undefined' !== typeof $environment && $environment['surge-version'];
 const isShadowrocket = 'undefined' !== typeof $rocket;
+const isLooniOS = 'undefined' != typeof $loon;
 
 var jsctype
 if (isStashiOS){
@@ -96,18 +98,6 @@ if (isShadowrocket || isLooniOS ||isSurgeiOS){
 	desc = 'desc: ' + '"' + decodeURIComponent(desc) + '"';
 };
 let npluginDesc = name + "\n" + desc;
-
-//随机图标开关，不传入参数默认为开
-if(isLooniOS && iconStatus == "启用" && iconLibrary2 != "Pokemon"){
-	const stickerStartNum = 1001;
-const stickerSum = iconLibrary1.split("(")[1].split("P")[0];
-let randomStickerNum = parseInt(stickerStartNum + Math.random() * stickerSum).toString();
-   icon = "#!icon=" + "https://github.com/Toperlock/Quantumult/raw/main/icon/" + iconLibrary2 + "/" + iconLibrary2 + "-" + randomStickerNum + iconFormat;
-}else if (isLooniOS && iconStatus == "启用" && iconLibrary2 == "Pokemon"){
-    icon = "#!icon=" + pluginPokemonIcon;
-};
-const pluginIcon = icon;
-console.log("插件图标：" + pluginIcon);
 
 !(async () => {
   let body
@@ -728,3 +718,26 @@ ${providers}`
 		.replace(/(#.+\n)\n+(?!\[)/g,'$1')
 		.replace(/\n{2,}/g,'\n\n')
 };
+
+if (isSurgeiOS || isStashiOS) {
+           others !="" && $notification.post("不支持的类型已跳过",others,"点击查看原文，长按可展开查看剩余不支持内容",{url:req});
+        } else if (isLooniOS || isShadowrocket) {
+       others !="" && $notification.post("不支持的类型已跳过","第" + others,"点击查看原文，长按可展开查看剩余不支持内容",req);};
+
+ $done({ response: { status: 200 ,body:body ,headers: {'Content-Type': 'text/plain; charset=utf-8'} } });
+}//判断是否断网的反括号
+
+
+})()
+.catch((e) => {
+		$notification.post(`${e}`,'','');
+		$done()
+	})
+
+function http(req) {
+  return new Promise((resolve, reject) =>
+    $httpClient.get(req, (err, resp,data) => {
+  resolve(data)
+  })
+)
+}
