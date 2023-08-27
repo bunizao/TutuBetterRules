@@ -1,12 +1,12 @@
-#!name=🚫 AD ByeBye+ 2.x
-#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 07/31/2023・Support: @bunizao
+#!name=AD ByeBye+ 2.x
+#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 08/27/2023・Support: @bunizao
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #------------------------------------------------------
 # 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书, 微信小程序（Alpha）
 # 高德地图需要卸载重装 & 重启手机 才会生效
 
 [General]
-force-http-engine-hosts = %APPEND% api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com
+force-http-engine-hosts = %APPEND% api.weibo.cn, *.uve.weibo.com, card.weibo.com, weibo.com, weibo.cn, shop.sc.weibo.com, t.cn, sinaurl.cn
 [Rule]
 # 十分重要！
 RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/AD.Reject.list,REJECT
@@ -28,17 +28,6 @@ amdc\.m\.taobao\.com - reject
 # > 微博_屏蔽sdkconfig请求@ddgksf2013
 ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php - reject
 
-# ------------------------------------- Zhihu --------------------------------------
-
-^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card$ - reject
-^https:\/\/www\.zhihu\.com\/appview\/v2\/zhmore\? - reject
-^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config$ - reject
-^https:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation - reject
-^https:\/\/www\.zhihu\.com\/api\/v4\/mcn\/v2\/linkcards\? - reject
-^https:\/\/www\.zhihu\.com\/api\/v4/(questions|anwsers)\/\d+/related-readings - reject
-^https:\/\/www\.zhihu\.com\/commercial_api\/banners_v3\/mobile_banner - reject
-^https:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation - reject
-
 ########################################################################################
 
 
@@ -55,85 +44,102 @@ http-response ^https?:\/\/sns\.amap\.com\/ws\/msgbox\/pull requires-body=1,scrip
 
 # --------------------------------------Weibo--------------------------------------
 
-# > 微博_开屏广告预加载处理@ddgksf2013
-weibo_json_95 = type=http-response, pattern=^https?:\/\/boot.*weibo\.com\/v\d\/ad\/preload, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+# 首页 签到,发布按钮,侧边栏,右上角红包,侧边栏提醒,超话tab悬浮,顶部直播
+weibo_5 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-# > 微博_未登陆状态下首页信息流处理@ddgksf2013
-weibo_json_97 = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d\/\w{5}\/(statuses_unread_hot_timeline|timeline), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+# 详情页 超话,评论区,看图界面,个人主页,我的页面,信息流,商品橱窗,视频流,视频号,视频调查,话题卡片
+weibo_9 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-# > 微博_视频信息处理@ddgksf2013
-weibo_json_101 = type=http-response, pattern=^https?:\/\/api\.weibo\.cn\/\d\/video\/tiny_stream_mid_detail, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_10 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-# > 微博_屏蔽发现页面搜索框热词@ddgksf2013
-weibo_json_107 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/\w{5}\/cardlist, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_12 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-# > 微博_自定义tab皮肤@zmqcherish
-weibo_json_115 = type=http-response, pattern=^https://api.weibo.cn/2/!/client/light_skin, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_14 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|me)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-# > 微博_非会员设置tab皮肤@zmqcherish
-weibo_json_117 = type=http-response, pattern=^https://new.vip.weibo.cn/littleskin/preview, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_15 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-# > 微博_去广告以及去除各部分推广模块@zmqcherish,@ddgksf2013
-weibo_json_119 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(searchall|page\?|messageflow), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_16 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-weibo_json_120 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(unread_)?friends(/|_)timeline, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_18 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-weibo_json_121 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/groups/timeline, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_20 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-weibo_json_122 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/statuses/(container_timeline|unread_hot_timeline|extend|video_mixtimeline|unread_topic_timeline), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+# 消息页
+weibo_23 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-weibo_json_123 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/profile/(me|container_timeline), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_24 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-weibo_json_124 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind_info|tiny_stream_video_list), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_27 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-weibo_json_125 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_28 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/searchall\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-weibo_json_126 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_34 = type=http-response, pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-weibo_json_127 = type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_36 = type=http-response, pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-# > 微博国际版_屏蔽开屏广告@ddgksf2013 
-weibo_json_137 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*get_coopen_ads, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+weibo_37 = type=http-response, pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, timeout=60, script-update-interval=0
 
-# > 微博国际版_屏蔽sdkad@ddgksf2013
-weibo_json_139 = type=http-response, pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+# 跳过重定向页面以直接访问 //weibo.cn, shop.sc.weibo.com, t.cn, sinaurl.cn
 
-# > 微博国际版_趋势顶部Card去广告@ddgksf2013
-weibo_json_141 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=trends, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+noRedirect_42 = type=http-request, pattern=^https:\/\/weibo\.cn\/sinaurl\?(.*&)?(u|toasturl|goto)=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, timeout=60, script-update-interval=0
 
-# > 微博国际版_屏蔽用户VIP栏@ddgksf2013
-weibo_json_143 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=user_center, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
+noRedirect_43 = type=http-request, pattern=^https:\/\/shop\.sc\.weibo\.com\/h5\/jump\/error\?(.*&)?url=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, timeout=60, script-update-interval=0
 
-# > 微博国际版_热搜处理@ddgksf2013
-weibo_json_145 = type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=search_topic, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, timeout=60, script-update-interval=0
-
-# 跳过重定向页面以直接访问 // weibo.cn, shop.sc.weibo.com, t.cn, sinaurl.cn
-
-noRedirect_41 = type=http-request, pattern=^https:\/\/weibo\.cn\/sinaurl\?(.*&)?(u|toasturl|goto)=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, timeout=60, script-update-interval=0
-
-noRedirect_42 = type=http-request, pattern=^https:\/\/shop\.sc\.weibo\.com\/h5\/jump\/error\?(.*&)?url=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, timeout=60, script-update-interval=0
-
-noRedirect_43 = type=http-response, pattern=^https:\/\/(sinaurl|t)\.cn\/, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, timeout=60, script-update-interval=0
+noRedirect_44 = type=http-response, pattern=^https:\/\/(sinaurl|t)\.cn\/, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, timeout=60, script-update-interval=0
 
 # -------------------------------------Zhihu--------------------------------------
 
-zhihu_5 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer$, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
+# 获取用户信息 - 隔离用户数据，开启本地会员等
+哲也_处理用户信息 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/people\/,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-zhihu_9 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/(moments_v3|topstory\/recommend(_v2)?)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
+# 关键词屏蔽 - 解锁本地的关键词屏蔽功能，需要开启本地VIP
+哲也_解锁关键词屏蔽 = type=http-request,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/feed-root\/block,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-zhihu_11 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
+# 优化软件配置 - 优化下发的配置文件来实现某些效果
+哲也_优化软件配置1 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+哲也_优化软件配置2 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/appcloud2\.zhihu\.com\/v\d+\/config,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-replaceBody_19 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\?, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, timeout=60, argument=""recommend_queries":\{.+\}->"recommend_queries":{}"
+# 用户信息 - 修改用户盐值
+修改用户盐值 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/user-credit\/basis,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-zhihu_22 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/next-(bff|data)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
+# 关注页 - 内容优化及屏蔽转发的黑名单用户想法
+哲也_关注列表优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/moments_v3\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-zhihu_23 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+\/(feeds|answers)\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
+# 推荐页 - 移除黑名单用户发布的文章、去除广告，及自定义一些屏蔽项目
+哲也_推荐页优化 = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/api\.zhihu\.com\/topstory\/recommend,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-zhihu_24 = type=http-response, pattern=^https:\/\/www\.zhihu\.com\/api\/v4\/(answers|articles)\/\d+\/recommendations?\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
+# 黑名单页 - 同步黑名单数据
+哲也_同步黑名单 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/settings\/blocked_users,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-zhihu_28 = type=http-response, pattern=^https:\/\/appcloud2\.zhihu\.com\/v3\/config$, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
+# 问题的回答列表 - 移除黑名单用户的回答、去除广告
+哲也_回答列表优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
-zhihu_30 = type=http-response, pattern=^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
+# 回答信息流 - 移除黑名单用户的回答、去除广告
+哲也_回答信息流优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/next-(data|bff|render),script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 回答页底部评论摘要 - 移除黑名单用户发表的评论
+哲也_评论摘要优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/www\.zhihu\.com\/api\/v4\/comment_v5\/answers\/\d+\/abstract_comment\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 评论页及子页面 - 去除黑名单用户发表的评论
+哲也_评论优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/(comment_v5\/)?(answers|comments?|articles|pins)\/\d+\/(root_|child_)?comments?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 消息页 - 折叠官方消息、屏蔽营销消息
+哲也_消息优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/notifications\/v3\/(message|timeline\/entry\/system_message),script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 回答页 - 内容优化，付费、营销、推广内容文首提醒
+哲也_回答内容优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/www\.zhihu\.com\/appview\/v2\/answer\/.*(entry=(?!(preload-topstory|preload-search|preload-subscription)))?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 回答页 - 屏蔽下翻出现的黑名单用户的回答
+哲也_回答翻页优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/next\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 文章页 - 去除底部广告
+哲也_文章优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/www\.zhihu\.com\/api\/v\d\/articles\/\d+\/recommendation\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 热榜页 - 去除广告
+哲也_热榜优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/topstory\/hot-lists(\?|\/),script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# 搜索页 - 去除预置广告
+哲也_预置关键词优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/search\/preset_words\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
 
 # ------------------------------------- Pixiv ---------------------------------------
 
@@ -186,12 +192,6 @@ tieba_json = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu
 tieba_proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js,script-update-interval=0
 
 
-# ------------------------------------- MiniProgram ---------------------------------------
-
-# > 喜茶
-# heytea = type=http-response, pattern=^https:\/\/go\.heytea\.com\/api\/service-portal\/vip, requires-body=1, max-size=3145728, script-path= https://raw.githubusercontent.com/jizhi0520/QX/main/heytea.js, script-update-interval=0
-# > 青桔
-qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig, requires-body=1, max-size=3145728, script-path= https://raw.githubusercontent.com/jizhi0520/QX/main/qingju.js, script-update-interval=0
 
 ########################################################################################
 
@@ -206,32 +206,36 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 
 # --------------------------------------Weibo--------------------------------------
 
-# > 微博_用户推荐弹窗@ddgksf2013
-^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/(ug\/checkin\/list|push\/daily)\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 微博_每日一次的开屏广告请求@ddgksf2013
-^https?:\/\/boot.*weibo\.com\/v\d\/ad\/realtime data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 微博_去除底部超话栏表层浮icon及tips@ddgksf2013
-^https?:\/\/api\.weibo\.cn\/\d\/!\/huati\/discovery_home_bottom_getdotinfo data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 微博_屏蔽首页左上角每日的弹窗tips@ddgksf2013
-^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/photo\/info\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 微博_Spotlight@ddgksf2013
-^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_positive|push_info)\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 微博国际版_屏蔽hotsearch@ddgksf2013
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/vote\/get_vote_detail\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 微博国际版_屏蔽热推荐@ddgksf2013
-^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 微博国际版_屏蔽searching_info@shiro
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*user&a=get_searching_info data="https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_info.json"
+# 发现页 热门微博信息流,搜索列表,热搜提醒,猜你想搜,视频流红包
+^https:\/\/api\.weibo\.cn\/2\/search\/container_discover\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# > 微博国际版_屏蔽search_topic@shiro
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic data="https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_topic.json"
+^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/api\.weibo\.cn\/!\/sug\/list\/finderchange\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 开屏广告 //*.uve.weibo.com
+^https:\/\/bootrealtime\.uve\.weibo\.com\/v3\/ad\/realtime data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 微博长文章推广
+^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uvead)\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 # ------------------------------------ Cainiao ---------------------------------------
 
@@ -242,28 +246,36 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 
 # ------------------------------------- Zhihu ---------------------------------------
 
-^https:\/\/api\.zhihu\.com\/commercial_api\/(banners_v3\/app_topstory_banner$|launch_v2\?|real_time_launch_v2\?) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list)$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https:\/\/api\.zhihu\.com\/root\/window$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https:\/\/api\.zhihu\.com\/me\/guides\?? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https:\/\/api\.zhihu\.com\/feed\/render\/revisit\/current_reading$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https:\/\/api\.zhihu\.com\/search\/preset_words\?? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/(answer|article)\/\d+ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https:\/\/api\.zhihu\.com\/ad-style-service\/request$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-# > 网页版
-^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+^https?:\/\/118\.89\.204\.198 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+^https?:\/\/103\.41\.167\.237 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+^https?:\/\/2402:4e00:1200:ed00:0:9089:6dac:96b6 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 屏蔽下发的配置，如皮肤等
+^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json" header="Content-Type: application/x-protobuf"
+# 屏蔽我的页面开通会员的卡片
+# ^https?:\/\/api\.zhihu\.com\/unlimited\/go\/my_card data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 去除底部标签页关注人角标
+^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 去除消息通知角标
+^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count) data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 拦截回答下的卡片广告
+^https?:\/\/www\.zhihu\.com\/api\/v\d\/answers\/\d+\/recommendations data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 拦截应用内弹窗
+^https?:\/\/api\.zhihu\.com\/me\/guides data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 去除关注页最常访问
+^https?:\/\/api\.zhihu\.com\/moments\/recent data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 拦截推荐页顶部广告
+^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 底栏加号的广告
+^https?:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 推荐页搜索栏左侧图标
+^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/current_reading data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 疑似推荐页内容更新红点
+^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 去除回答页的相关搜索
+^https?:\/\/www\.zhihu\.com\/api\/v\d+\/search\/related_queries\/answer data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 暂不清楚作用
+^https?:\/\/api\.zhihu\.com\/commercial_api\/banners_v3\/app_topstory_banner data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+^https?:\/\/api\.zhihu\.com\/ad-style-service\/request data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
 # ------------------------------------- Xiaohongshu ---------------------------------------
 
@@ -330,7 +342,7 @@ qingju = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway
 
 
 [MITM]
-hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.*, *.api.weibo.*, mapi.weibo.*, *.uve.weibo.com, new.vip.weibo.cn, boot.biz.weibo.com, shop.sc.weibo.com, t.cn, sinaurl.cn, api.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, vod-movie.maoyan.com, api.maoyan.com, ad.maoyan.com, wx.maoyan.com
+hostname = %APPEND% m5*.amap.com, sns.amap.com, api.weibo.cn, *.uve.weibo.com, card.weibo.com, weibo.com, weibo.cn, shop.sc.weibo.com, t.cn, sinaurl.cn, api.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com, edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, vod-movie.maoyan.com, api.maoyan.com, ad.maoyan.com, wx.maoyan.com, 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, 103.41.167.236, 103.41.167.234, 103.41.167.235, 103.41.167.226
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
