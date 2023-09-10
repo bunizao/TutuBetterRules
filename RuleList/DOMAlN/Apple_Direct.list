@@ -19,7 +19,7 @@ DOMAIN,iosapps.itunes.apple.com
 DOMAIN,osxapps.itunes.apple.com
 
 # > Testflight
-DOMAIN,testflight.apple.com
+#DOMAIN,testflight.apple.com
 
 #  > Update
 DOMAIN,updates.cdn-apple.com //system update
