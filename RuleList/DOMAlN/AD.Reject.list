@@ -24,3 +24,7 @@ DOMAIN,appcloud2.in.zhihu.com
 
 # 微博
 DOMAIN,boot.biz.weibo.com
+
+# 字节跳动
+DOMAIN,ad.zijieapi.com
+DOMAIN-KEYWORD,-ad-sign.byteimg.com
