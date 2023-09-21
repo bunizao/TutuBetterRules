@@ -201,9 +201,6 @@ nf_rating.js_response = type=http-response,requires-body=1,pattern=^https?:\/\/i
 bstar_login = type=http-request,pattern=^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/(sms\/send|reg\/sms|oauth2\/access_token|login\/sms),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
 bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/gateway\/v\d\/app\/data\/report\/heartbeat\/mobile|x\/(history|reply)/v\d/add),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
 
-# > Unlock browser restrictions for new bing AI search
-bing-edge-ua = type=http-request,pattern=^http(s)?:\/\/(?:.*\.)?bing\.com,script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/bing.js,requires-body=false
-
 # Resource Converter
 Q-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(qx$|qx\?.+=), requires-body=1, max-size=0, script-path=https://github.com/bunizao/TutuBetterRules/raw/tutu/Surge/script/Parser.js ,timeout=60
 L-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(ln$|ln\?.+=), requires-body=1, max-size=0, script-path=https://github.com/chengkongyiban/stash/raw/main/js/Loon_Rewrite_Parser.js ,timeout=60
@@ -214,4 +211,4 @@ L-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(ln$|ln\?.+
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, mobile.flightradar24.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.*, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, *.bing.com, bing.com, asia.gikken.co, explorer.tratao.com, drive*.quark.cn, notability.com, isi.csan.goodnotes.com
+hostname = %APPEND% boxjs.com, mobile.flightradar24.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.*, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, asia.gikken.co, explorer.tratao.com, drive*.quark.cn, notability.com, isi.csan.goodnotes.com
