@@ -126,9 +126,6 @@ always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com
 
 [Header Rewrite]
 
-# > Revenuecat
-# https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
-
 # > Unlock browser restrictions for new bing AI search
 ^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent \w+\/[\d\.]+$ "AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
 
@@ -167,15 +164,12 @@ XiChuangZhuProCrack = type=http-response,pattern=https://lchttpapi.xczim.com/*,r
 unlock_emby_premium = requires-body=1,max-size=0,script-path=https://ruleset.skk.moe/Script/fuck_emby.js,script-update-interval=86400,type=http-response,pattern=^https://mb3admin.com/.*
 
 # > Revenuecat Universal
-revenuecat = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, timeout=60, script-update-interval=0
+revenuecat1 = type=http-response,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js
+revenuecat2 = type=http-request,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=0,max-size=0,script-path= https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js,script-update-interval=0
 
 # > VSCO
 VSCO = type=http-response,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/vsco.js, script-update-interval=0
 
-# > Not Boring
-NotBoring_9 = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Revenuecat/NotBoring.js, timeout=60, script-update-interval=0
-
-NotBoring_10 = type=http-request, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Revenuecat/NotBoring.js, timeout=60, script-update-interval=0
 # Mate Translator
 Mate = type=http-response,pattern=^https?:\/\/asia\.gikken\.co\/matesync\/(subscription|login|register_user|check_user),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/mate.js
 
