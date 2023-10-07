@@ -1,15 +1,4 @@
-/*
 
-Revenuecat解锁合集，已解锁APP及下载地址请见说明：https://github.com/Guding88/Script/blob/main/Readme.md
-
-[rewrite_local]
-^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-response-body https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js
-//^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$) url script-request-header https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js
-
-[MITM]
-hostname = api.revenuecat.com
-
-*/
 const guding = {};
 const guding6 = JSON.parse(typeof $response != "undefined" && $response.body || null);
 if (typeof $response == "undefined") {
@@ -44,9 +33,9 @@ if (typeof $response == "undefined") {
     
   };
   const data = {
-    "expires_date": "6666-06-06T06:06:06Z",
-    "original_purchase_date": "2023-06-06T06:06:06Z",
-    "purchase_date": "2023-06-06T06:06:06Z",
+    "expires_date": "2099-10-12T11:45:14Z",
+    "original_purchase_date": "2022-09-01T11:45:14Z",
+    "purchase_date": "2022-09-01T11:45:14Z",
     "ownership_type": "PURCHASED",
     "store": "app_store"
   };
