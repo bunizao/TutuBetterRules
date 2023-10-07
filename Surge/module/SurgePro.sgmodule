@@ -167,7 +167,7 @@ DailyArt = type=http-response, pattern=^https?:\/\/api\.getdailyart\.com\/api\/(
 unlock_emby_premium = requires-body=1,max-size=0,script-path=https://ruleset.skk.moe/Script/fuck_emby.js,script-update-interval=86400,type=http-response,pattern=^https://mb3admin.com/.*
 
 # > Revenuecat Universal
-revenuecat = type=http-response,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js
+revenuecat = type=http-response,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/Revenuecat.js
 
 # Mate Translator
 Mate = type=http-response,pattern=^https?:\/\/asia\.gikken\.co\/matesync\/(subscription|login|register_user|check_user),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/mate.js
@@ -178,6 +178,8 @@ Quark = type=http-response,pattern=^https?:\/\/drive.*\.quark\.cn\/.+\/clouddriv
 # xCurrency
 xCurrency = type=http-response,pattern=^https?:\/\/explorer\.tratao\.com\/api\/client\/xtool\/vip,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/jjhl.js
 
+# CARROT Weather
+CARROT Weather= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/carrotweather\.herokuapp\.com\/parse\/functions\/findSubscriptionsForUserId,script-path=https://raw.githubusercontent.com/Guding88/Script/main/CARROTWeather.js
 # ------------------------------------- Enhance ---------------------------------------
 
 # > Google自动翻页
