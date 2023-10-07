@@ -175,6 +175,7 @@ DOMAIN-SUFFIX,worldcat.org
 DOMAIN-SUFFIX,wsj.com
 DOMAIN-SUFFIX,wsj.net
 DOMAIN-SUFFIX,x.co
+DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,yandex.ru
 DOMAIN-SUFFIX,you-get.org
 DOMAIN-SUFFIX,zaobao.com
@@ -239,8 +240,6 @@ DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,zynamics.com
 DOMAIN-KEYWORD,.blogspot.
 DOMAIN-SUFFIX,goog
-# > Apple
-DOMAIN,testflight.apple.com
 # > Automattic
 DOMAIN-SUFFIX,gravatar.com
 DOMAIN-SUFFIX,tumblr.com
@@ -385,6 +384,8 @@ DOMAIN-SUFFIX,twitter.jp
 DOMAIN-SUFFIX,vine.co
 # > Vercel
 DOMAIN-SUFFIX,vercel.app
+DOMAIN-SUFFIX,vercel.ai
+DOMAIN-SUFFIX,vercel.com
 # > Wikimedia Foundation
 DOMAIN-SUFFIX,mediawiki.org
 DOMAIN-SUFFIX,wikibooks.org
@@ -425,3 +426,4 @@ DOMAIN-SUFFIX,linkedin.com
 DOMAIN-SUFFIX,licdn.com
 DOMAIN-SUFFIX,msn.com
 DOMAIN-SUFFIX,skype.com
+
