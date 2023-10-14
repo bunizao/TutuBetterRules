@@ -166,11 +166,11 @@ DailyArt = type=http-response, pattern=^https?:\/\/api\.getdailyart\.com\/api\/(
 # > Emby
 unlock_emby_premium = requires-body=1,max-size=0,script-path=https://ruleset.skk.moe/Script/fuck_emby.js,script-update-interval=86400,type=http-response,pattern=^https://mb3admin.com/.*
 
-# > Revenuecat Universal
-revenuecat_func = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, timeout=60, script-update-interval=0
-
 # Endel
 Endel = type=http-response, pattern=^https?:\/\/api-production\.endel\.io\/v\d\/call, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Endel.js, timeout=60, script-update-interval=0
+
+# > Revenuecat Universal
+revenuecat_func = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, timeout=60, script-update-interval=0
 
 # Quark
 Quark = type=http-response,pattern=^https?:\/\/drive.*\.quark\.cn\/.+\/clouddrive\/(member.+|distribute\/detail.+|capacity\/growth\/info),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuake.js
