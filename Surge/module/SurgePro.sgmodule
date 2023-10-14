@@ -169,8 +169,8 @@ unlock_emby_premium = requires-body=1,max-size=0,script-path=https://ruleset.skk
 # > Revenuecat Universal
 revenuecat_func = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, timeout=60, script-update-interval=0
 
-# Mate Translator
-Mate = type=http-response,pattern=^https?:\/\/asia\.gikken\.co\/matesync\/(subscription|login|register_user|check_user),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/mate.js
+# Endel
+Endel = type=http-response, pattern=^https?:\/\/api-production\.endel\.io\/v\d\/call, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Endel.js, timeout=60, script-update-interval=0
 
 # Quark
 Quark = type=http-response,pattern=^https?:\/\/drive.*\.quark\.cn\/.+\/clouddrive\/(member.+|distribute\/detail.+|capacity\/growth\/info),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuake.js
@@ -210,4 +210,4 @@ L-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(ln$|ln\?.+
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, mobile.flightradar24.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.*, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, asia.gikken.co, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com
+hostname = %APPEND% boxjs.com, mobile.flightradar24.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.*, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, asia.gikken.co, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com, api-production.endel.io
