@@ -167,6 +167,7 @@ DailyArt = type=http-response, pattern=^https?:\/\/api\.getdailyart\.com\/api\/(
 unlock_emby_premium = requires-body=1,max-size=0,script-path=https://ruleset.skk.moe/Script/fuck_emby.js,script-update-interval=86400,type=http-response,pattern=^https://mb3admin.com/.*
 
 # > Revenuecat Universal
+revenuecat_func = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, timeout=60, script-update-interval=0
 revenuecat = type=http-response,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/Revenuecat.js
 
 # Mate Translator
@@ -180,6 +181,7 @@ xCurrency = type=http-response,pattern=^https?:\/\/explorer\.tratao\.com\/api\/c
 
 # CARROT Weather
 CARROT Weather= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/carrotweather\.herokuapp\.com\/parse\/functions\/findSubscriptionsForUserId,script-path=https://raw.githubusercontent.com/Guding88/Script/main/CARROTWeather.js
+
 # ------------------------------------- Enhance ---------------------------------------
 
 # > Google自动翻页
