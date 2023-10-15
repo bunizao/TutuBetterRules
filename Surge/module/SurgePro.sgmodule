@@ -43,6 +43,7 @@ always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com
 ###################################### Rewrite ######################################
 
 [URL Rewrite]
+
 # 高级设置及通用的 URL 重定向优化（如 Google 搜索及地图、AbeamTV 区域限制等）
 # Redirect Google Search Service
 ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
@@ -136,10 +137,10 @@ always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com
 # ------------------------------------- Crack ---------------------------------------
 
 # > Flightradar24
-flightradar24 = type=http-request, pattern=^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|\w{9}), script-path=https://github.com/ddgksf2013/dev/raw/main/flightradar24.js, timeout=60, script-update-interval=0
+Flightradar24 = type=http-response,pattern=^https:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|subscribe),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Flightradar24.js
 
 # Endel
-Endel = type=http-response, pattern=^https?:\/\/api-production\.endel\.io\/v\d\/call, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Endel.js, timeout=60, script-update-interval=0
+Endel = type=http-response,pattern=^https?:\/\/api-production\.endel\.io\/v\d\/call,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Endel.js
 
 # > 酷我音乐
 KuWoMusicProCrack_response = type=http-response,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
