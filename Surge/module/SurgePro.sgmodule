@@ -125,11 +125,6 @@ always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com
 # AICoin
 ^http:\/\/(www.)?aicoin\.cn\/$ https://www.aicoin.com/ 302
 
-[Header Rewrite]
-
-# > Unlock browser restrictions for new bing AI search
-^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent \w+\/[\d\.]+$ "AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
-
 ###################################### Script ######################################
 
 [Script]
@@ -168,7 +163,8 @@ XiChuangZhuProCrack = type=http-response,pattern=https://lchttpapi.xczim.com/*,r
 DailyArt = type=http-response, pattern=^https?:\/\/api\.getdailyart\.com\/api\/(subscription\/verified|auth\/login|check-logged), requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/DailyArt.js, timeout=60, script-update-interval=0
 
 # > Revenuecat Universal
-revenuecat_func = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, timeout=60, script-update-interval=0
+revenuecat1 = type=http-response,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js
+revenuecat2 = type=http-request,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=0,max-size=0,script-path= https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js,script-update-interval=0
 
 # Quark
 Quark = type=http-response,pattern=^https?:\/\/drive.*\.quark\.cn\/.+\/clouddrive\/(member.+|distribute\/detail.+|capacity\/growth\/info),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuake.js
@@ -180,9 +176,6 @@ xCurrency = type=http-response,pattern=^https?:\/\/explorer\.tratao\.com\/api\/c
 CARROT Weather= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/carrotweather\.herokuapp\.com\/parse\/functions\/findSubscriptionsForUserId,script-path=https://raw.githubusercontent.com/Guding88/Script/main/CARROTWeather.js
 
 # ------------------------------------- Enhance ---------------------------------------
-
-# > Google自动翻页
-endlessgoogle = type=http-response,pattern=^https?:\/\/www\.google\..*\/search,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/langkhach270389/Surge-LK/main/scripts/langkhach/endlessgoogle.js,script-update-interval=0
 
 # > 解除微信链接限制
 解除微信链接限制 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
@@ -208,4 +201,4 @@ L-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(ln$|ln\?.+
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, www.google.*, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, carrotweather.herokuapp.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com
+hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, carrotweather.herokuapp.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com
