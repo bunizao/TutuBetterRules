@@ -172,9 +172,6 @@ Quark = type=http-response,pattern=^https?:\/\/drive.*\.quark\.cn\/.+\/clouddriv
 # xCurrency
 xCurrency = type=http-response,pattern=^https?:\/\/explorer\.tratao\.com\/api\/client\/xtool\/vip,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/jjhl.js
 
-# CARROT Weather
-CARROT Weather= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/carrotweather\.herokuapp\.com\/parse\/functions\/findSubscriptionsForUserId,script-path=https://raw.githubusercontent.com/Guding88/Script/main/CARROTWeather.js
-
 # ------------------------------------- Enhance ---------------------------------------
 
 # > 解除微信链接限制
@@ -201,4 +198,5 @@ L-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(ln$|ln\?.+
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, carrotweather.herokuapp.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com
+hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, spclient.wg.spotify.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, github.com, raw.githubusercontent.com, gist.githubusercontent.com, gitlab.com, api.revenuecat.com, *.hdslb.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com, www.google.cn
+
