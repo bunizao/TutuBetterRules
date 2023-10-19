@@ -14,3 +14,7 @@ IP-CIDR,39.97.130.51/32,no-resolve
 
 # 菜鸟
 AND,((OR,((USER-AGENT,Cainiao*), (USER-AGENT,AMap*))), (URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$))
+
+# 腾讯视频
+OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve))))
+
