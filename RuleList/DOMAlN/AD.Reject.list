@@ -28,3 +28,6 @@ DOMAIN,boot.biz.weibo.com
 # 字节跳动
 DOMAIN,ad.zijieapi.com
 DOMAIN-KEYWORD,-ad-sign.byteimg.com
+
+# 腾讯视频
+DOMAIN,config.ab.qq.com
