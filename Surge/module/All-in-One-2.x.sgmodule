@@ -94,11 +94,11 @@ weibo_46 = type=http-response, pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appic
 
 # 跳过重定向页面以直接访问 //weibo.cn, shop.sc.weibo.com, t.cn, sinaurl.cn
 
-no_redirect_11 = type=http-request, pattern=^https?:\/\/weibo\.cn\/sinaurl\?(.*&)?(u|toasturl|goto)=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/no_redirect.js, timeout=60, script-update-interval=0
+no_redirect_11 = type=http-request, pattern=^https?:\/\/weibo\.cn\/sinaurl\?(.*&)?(u|toasturl|goto)=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, timeout=60, script-update-interval=0
 
-no_redirect_12 = type=http-request, pattern=^https:\/\/shop\.sc\.weibo\.com\/h5\/jump\/error\?(.*&)?url=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/no_redirect.js, timeout=60, script-update-interval=0
+no_redirect_12 = type=http-request, pattern=^https:\/\/shop\.sc\.weibo\.com\/h5\/jump\/error\?(.*&)?url=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, timeout=60, script-update-interval=0
 
-no_redirect_13 = type=http-response, pattern=^https?:\/\/(sinaurl|t)\.cn\/, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/no_redirect.js, timeout=60, script-update-interval=0
+no_redirect_13 = type=http-response, pattern=^https?:\/\/(sinaurl|t)\.cn\/, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, timeout=60, script-update-interval=0
 
 # -------------------------------------Zhihu--------------------------------------
 
