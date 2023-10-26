@@ -22,7 +22,7 @@
      // - Redirect HTTP to HTTPS
      // - AbeamTV 区域限制
   // Script:
-     // - Crack: (xCurrency, Quark, Mate Translator, Revenuecat, VSCO, Emby, 西窗烛, Picsart, Notability, XMind, Nicegram, 扫描全能王, 酷我音乐, Flightradar24)
+     // - Crack: (xCurrency, Quark, Mate Translator, Revenuecat, VSCO, 西窗烛, Picsart, Notability, XMind, Nicegram, 扫描全能王, 酷我音乐, Flightradar24)
      // - Enhance: (Google自动翻页, 解除微信链接限制, Netflix Ranking, Bstar login & play, Bing解除UA限制，QuantumultX 和 Surge 格式转换)
 
 # > ⚓️ 推荐引用：
@@ -138,9 +138,6 @@ Endel = type=http-response,pattern=^https?:\/\/api-production\.endel\.io\/v\d\/c
 # > 酷我音乐
 KuWoMusicProCrack_response = type=http-response,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
 KuWoMusicProCrack_request = type=http-request,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui),script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
-
-# > 扫描全能王
-CamscannerProCrack = type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/CamscannerProCrack.js,script-update-interval=0
 
 # > Notability
 Notability = type=http-response,pattern=^https?:\/\/notability\.com\/(global|subscriptions),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/notability.js
