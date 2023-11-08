@@ -187,9 +187,6 @@ bstar_login = type=http-request,pattern=^https?:\/\/passport\.biliintl\.com\/x\/
 bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/gateway\/v\d\/app\/data\/report\/heartbeat\/mobile|x\/(history|reply)/v\d/add),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
 
 # Resource Converter
-Q-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(qx$|qx\?.+=), requires-body=1, max-size=0, script-path=https://github.com/bunizao/TutuBetterRules/raw/tutu/Surge/script/Parser.js ,timeout=60
-L-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(ln$|ln\?.+=), requires-body=1, max-size=0, script-path=https://github.com/chengkongyiban/stash/raw/main/js/Loon_Rewrite_Parser.js ,timeout=60
-
  // - 使用方法：在原qx引用链接后添加「qx」, 在原来loon引用链接后添加「ln」，即可自动转化为适用于Surge的链接。
 
 [MITM]
