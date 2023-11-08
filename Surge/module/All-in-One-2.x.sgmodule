@@ -277,7 +277,7 @@ cnftp_80 = type=http-response, pattern=^https:\/\/un-acs\.youku\.com\/gw\/mtop\.
 
 # ------------------------------------- JD --------------------------------------
 
-JD = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=personinfoBusiness, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/JD/JD_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
+JD = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(personinfoBusiness|start), script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/JD/JD_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
 
 ########################################################################################
 
@@ -464,6 +464,10 @@ JD = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?fun
 
 # 播放页弹窗动图
 ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.(pisp\.scripts\.get|xspace\.play\.position\.preload\.query|xspace\.poplayer\.position\.query) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# ------------------------------------- JD --------------------------------------
+
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=uniformRecommend data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 ########################################################################################
 
