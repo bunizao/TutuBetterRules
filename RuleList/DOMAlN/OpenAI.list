@@ -1,6 +1,6 @@
 DOMAIN-SUFFIX,openai.com
 DOMAIN,cdn.auth0.com
 DOMAIN,openaiapi-site.azureedge.net
-DOMAIN,o33249.ingest.sentry.io // Error Monitoring
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN,api.statsig.com
+DOMAIN,o33249.ingest.sentry.io // Tracing
+DOMAIN-SUFFIX,oaistatic.com // Stats
+DOMAIN,api.statsig.com // Stats
