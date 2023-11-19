@@ -8,4 +8,4 @@ DOMAIN,smtp-mail.outlook.com
 DOMAIN,smtp.gmail.com
 DOMAIN,smtp.office365.com
 DOMAIN-SUFFIX,m.hotmail.com
-DOMAIN-SUFFIX,mail.me.com
+AND,((DEST-PORT,587), (DOMAIN-SUFFIX,mail.me.com))
