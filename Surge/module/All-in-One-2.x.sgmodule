@@ -1,7 +1,7 @@
 #!name=AD ByeBye+ 2.x
 #!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 11/28/2023・Support: @bunizao
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
-#!source=Rules@hututu0 | Weibo@Rucu6 | CNFTP@Rucu6 | Zhihu@Rucu6 | Xiaohongshu@ddgksf2013 | Amap@kokoryh | Cainiao@Keywos | JD@ibilibili | Tools@ScriptHub
+#!source=Rules@hututu0 | Xiaohongshu@ddgksf2013 | Amap@kokoryh | Cainiao@Keywos | Tools@ScriptHub
 #------------------------------------------------------
 # 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书, 微信小程序, 爱奇艺，优酷，腾讯视频
 # 高德地图需要卸载重装 & 重启手机 才会生效
