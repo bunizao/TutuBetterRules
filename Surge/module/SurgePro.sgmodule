@@ -6,7 +6,7 @@
  // - https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/General.sgmodule
  // - https://github.com/DivineEngine/Profiles/blob/master/Surge/Module/General.sgmodule?raw=True
  // - https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/UnlockVip/Spotify.conf
- // - https://gist.githubusercontent.com/ddgksf/35a94372ae4271562f0139d8a80a94e5/raw/ForOwnUse.snippet
+ // - https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
  // - https://raw.githubusercontent.com/zZPiglet/Task/master/UnblockURLinWeChat.sgmodule
  // - https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/QX-Surge.sgmodule
  // - https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/FunScript.sgmodule
@@ -158,8 +158,7 @@ XiChuangZhuProCrack = type=http-response,pattern=https://lchttpapi.xczim.com/*,r
 DailyArt = type=http-response, pattern=^https?:\/\/api\.getdailyart\.com\/api\/(subscription\/verified|auth\/login|check-logged), requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/DailyArt.js, timeout=60, script-update-interval=0
 
 # > Revenuecat Universal
-revenuecat1 = type=http-response,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js
-revenuecat2 = type=http-request,pattern= ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=0,max-size=0,script-path= https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js,script-update-interval=0
+revenuecat = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/Revenuecat.js, timeout=60, script-update-interval=0
 
 # Quark
 Quark = type=http-response,pattern=^https?:\/\/drive.*\.quark\.cn\/.+\/clouddrive\/(member.+|distribute\/detail.+|capacity\/growth\/info),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuake.js
@@ -167,7 +166,7 @@ Quark = type=http-response,pattern=^https?:\/\/drive.*\.quark\.cn\/.+\/clouddriv
 # xCurrency
 xCurrency = type=http-response, pattern=^https?:\/\/(xremit\.xcurrency|explorer.tratao)\.com\/api\/client\/xtool\/vip, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/jijianhuilv.js, timeout=60, script-update-interval=0
 
-#CamScanner
+# CamScanner
 CamScanner = type=http-response, pattern=^https:\/\/.*\.(intsig\.net|camscanner\.com), requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js, timeout=60, script-update-interval=0
 
 # ------------------------------------- Enhance ---------------------------------------
@@ -188,9 +187,7 @@ bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/ga
 
 # Resource Converter
  // - 使用方法：在原qx引用链接后添加「qx」, 在原来loon引用链接后添加「ln」，即可自动转化为适用于Surge的链接。
-
 Q-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(qx$|qx\?.+=), requires-body=1, max-size=0, script-path=https://github.com/bunizao/TutuBetterRules/raw/tutu/Surge/script/Parser.js ,timeout=60
-L-S_Convert = type=http-request, pattern=^https?:\/\/.+\/[^/]+\.[^/]+(ln$|ln\?.+=), requires-body=1, max-size=0, script-path=https://github.com/chengkongyiban/stash/raw/main/js/Loon_Rewrite_Parser.js ,timeout=60
 
 [MITM]
 skip-server-cert-verify = true
