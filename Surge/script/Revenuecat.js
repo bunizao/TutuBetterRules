@@ -1,168 +1,5 @@
-// Source@ https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
+# > ScriptURL https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
 
-// 兼容性转换 via @ScriptHub
-
-
-if (typeof $request !== 'undefined') {
-  const lowerCaseRequestHeaders = Object.fromEntries(
-    Object.entries($request.headers).map(([k, v]) => [k.toLowerCase(), v])
-  );
-
-  $request.headers = new Proxy(lowerCaseRequestHeaders, {
-    get: function (target, propKey, receiver) {
-      return Reflect.get(target, propKey.toLowerCase(), receiver);
-    },
-    set: function (target, propKey, value, receiver) {
-      return Reflect.set(target, propKey.toLowerCase(), value, receiver);
-    },
-  });
-}
-if (typeof $response !== 'undefined') {
-  const lowerCaseResponseHeaders = Object.fromEntries(
-    Object.entries($response.headers).map(([k, v]) => [k.toLowerCase(), v])
-  );
-
-  $response.headers = new Proxy(lowerCaseResponseHeaders, {
-    get: function (target, propKey, receiver) {
-      return Reflect.get(target, propKey.toLowerCase(), receiver);
-    },
-    set: function (target, propKey, value, receiver) {
-      return Reflect.set(target, propKey.toLowerCase(), value, receiver);
-    },
-  });
-}
-
-
-// QX 相关
-var setInterval = () => {}
-var clearInterval = () => {}
-var $task = {
-  fetch: url => {
-    return new Promise((resolve, reject) => {
-      if (url.method == 'POST') {
-        $httpClient.post(url, (error, response, data) => {
-          if (response) {
-            response.body = data
-            resolve(response, {
-              error: error,
-            })
-          } else {
-            resolve(null, {
-              error: error,
-            })
-          }
-        })
-      } else {
-        $httpClient.get(url, (error, response, data) => {
-          if (response) {
-            response.body = data
-            resolve(response, {
-              error: error,
-            })
-          } else {
-            resolve(null, {
-              error: error,
-            })
-          }
-        })
-      }
-    })
-  },
-}
-
-var $prefs = {
-  valueForKey: key => {
-    return $persistentStore.read(key)
-  },
-  setValueForKey: (val, key) => {
-    return $persistentStore.write(val, key)
-  },
-}
-
-var $notify = (title = '', subt = '', desc = '', opts) => {
-  const toEnvOpts = (rawopts) => {
-    if (!rawopts) return rawopts 
-    if (typeof rawopts === 'string') {
-      if ('undefined' !== typeof $loon) return rawopts
-      else if('undefined' !== typeof $rocket) return rawopts
-      else return { url: rawopts }
-    } else if (typeof rawopts === 'object') {
-      if ('undefined' !== typeof $loon) {
-        let openUrl = rawopts.openUrl || rawopts.url || rawopts['open-url']
-        let mediaUrl = rawopts.mediaUrl || rawopts['media-url']
-        return { openUrl, mediaUrl }
-      } else {
-        let openUrl = rawopts.url || rawopts.openUrl || rawopts['open-url']
-        if('undefined' !== typeof $rocket) return openUrl
-        return { url: openUrl }
-      }
-    } else {
-      return undefined
-    }
-  }
-  console.log(title, subt, desc, toEnvOpts(opts))
-  $notification.post(title, subt, desc, toEnvOpts(opts))
-}
-var _scriptSonverterOriginalDone = $done
-var _scriptSonverterDone = (val = {}) => {
-  let result
-  if (
-    (typeof $request !== 'undefined' &&
-    typeof val === 'object' &&
-    typeof val.status !== 'undefined' &&
-    typeof val.headers !== 'undefined' &&
-    typeof val.body !== 'undefined') || true
-  ) {
-    try {
-      for (const part of val?.status?.split(' ')) {
-        const statusCode = parseInt(part, 10)
-        if (!isNaN(statusCode)) {
-          val.status = statusCode
-          break
-        }
-      }
-    } catch (e) {}
-    if (!val.status) {
-      val.status = 200
-    }
-    if (!val.headers) {
-      val.headers = {
-        'Content-Type': 'text/plain; charset=UTF-8',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST,GET,OPTIONS,PUT,DELETE',
-        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-      }
-    }
-    result = { response: val }
-  } else {
-    result = val
-  }
-  console.log('$done')
-  try {
-    console.log(JSON.stringify(result))
-  } catch (e) {
-    console.log(result)
-  }
-  _scriptSonverterOriginalDone(result)
-}
-var window = globalThis
-window.$done = _scriptSonverterDone
-var global = globalThis
-global.$done = _scriptSonverterDone
-
-/***********************************
-
-> ScriptName        RevenueCat多合一脚本[墨鱼版]
-> Author            @ddgksf2013
-> ForHelp           若有屏蔽广告的需求，可公众号后台回复APP名称
-> WechatID          墨鱼手记
-> TgChannel         https://t.me/ddgksf2021
-> Contribute        https://t.me/ddgksf2013_bot
-> Feedback          📮 ddgksf2013@163.com 📮
-> UpdateTime        2023-11-25
-> Suitable          自行观看“# > ”注释内容，解锁是暂时的，购买也不是永久的[订阅、跑路]
-> Attention         如需引用请注明出处，谢谢合作！
-> ScriptURL         https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
 
 # ========解锁列表======== #
 # > 01 白云天气
@@ -185,6 +22,10 @@ https://apps.apple.com/cn/app/id878691772
 https://apps.apple.com/cn/app/id1365531024
 # > 10 VSCO
 https://apps.apple.com/cn/app/id588013838
+# > 11 谜底时钟
+https://apps.apple.com/cn/app/id1536358464
+# > 12 谜底黑胶
+https://apps.apple.com/cn/app/id1606306441
 # > 13 OffScreen
 https://apps.apple.com/cn/app/id1474340105
 # > 14 花样文字
@@ -277,6 +118,12 @@ https://apps.apple.com/cn/app/id1444636541
 https://apps.apple.com/cn/app/id1466785009
 # > 58 structured
 https://apps.apple.com/cn/app/id1499198946
+# > 59 卡片馆
+https://apps.apple.com/cn/app/id1441120440
+# > 60 ColorWidgets
+https://apps.apple.com/cn/app/id1531594277
+# > 61 pdfviewer
+https://apps.apple.com/cn/app/id1120099014
 
 
 [rewrite_local]
@@ -293,8 +140,6 @@ hostname=api.revenuecat.com
 
 
 
-
-//固定头部, tg频道：https://t.me/ddgksf2021
 
 var ua = $request.headers['User-Agent'] || $request.headers['user-agent'];
 var cuttlefish = {"Attention":"恭喜你抓到元数据！由墨鱼分享，请勿售卖或分享他人！","request_date_ms":1662599120248,"request_date":"2022-09-08T01:05:20Z","subscriber":{"non_subscriptions":{},"first_seen":"2022-09-08T01:04:03Z","original_application_version":"8","other_purchases":{},"management_url":"https://apps.apple.com/account/subscriptions","subscriptions":{},"entitlements":{},"original_purchase_date":"2022-09-07T13:05:43Z","original_app_user_id":"$RCAnonymousID:ddgksf2013","last_seen":"2022-09-08T01:04:03Z"}};
@@ -344,6 +189,12 @@ else if(ua.indexOf('VSCO') != -1) {//VSCO
 }
 else if(ua.indexOf('UTC') != -1) {//花样文字
 	obj['subscriber']['entitlements']['Entitlement.Pro']=ddgksf2021;	
+}
+else if(ua.indexOf('%E8%AC%8E%E5%BA%95%E9%BB%91%E8%86%A0') != -1) {//谜底黑胶
+	obj['subscriber']['entitlements']['Entitlement.Pro']=ddgksf2021;	
+}
+else if(ua.indexOf('%E8%AC%8E%E5%BA%95%E6%99%82%E9%90%98') != -1) {//谜底时钟
+	obj['subscriber']['entitlements']['Entitlement.Pro']=ddgksf2021;
 }
 else if(ua.indexOf('OffScreen') != -1) {//OffScreen
 	obj['subscriber']['entitlements']['Entitlement.Pro']=ddgksf2021;	
@@ -478,7 +329,13 @@ else if(ua.indexOf('One4Wall') != -1) {
 else if(ua.indexOf('OneWidget') != -1) {
 	obj['subscriber']['entitlements']['allaccess']=ddgksf2021;
 }
+else if(ua.indexOf('CardPhoto') != -1) {
+	obj['subscriber']['entitlements']['premium']=ddgksf2021;	
+}
+else if(ua.indexOf('PDF%20Viewer') != -1) {
+	obj['subscriber']['entitlements']['sub.pro']=ddgksf2021;	
+}
 else{
   obj['subscriber']['entitlements']['pro']=ddgksf2021;
 }
-_scriptSonverterDone({body: JSON.stringify(obj)});
+$done({body: JSON.stringify(obj)});
