@@ -185,10 +185,6 @@ https://apps.apple.com/cn/app/id878691772
 https://apps.apple.com/cn/app/id1365531024
 # > 10 VSCO
 https://apps.apple.com/cn/app/id588013838
-# > 11 谜底时钟
-https://apps.apple.com/cn/app/id1536358464
-# > 12 谜底黑胶
-https://apps.apple.com/cn/app/id1606306441
 # > 13 OffScreen
 https://apps.apple.com/cn/app/id1474340105
 # > 14 花样文字
@@ -348,12 +344,6 @@ else if(ua.indexOf('VSCO') != -1) {//VSCO
 }
 else if(ua.indexOf('UTC') != -1) {//花样文字
 	obj['subscriber']['entitlements']['Entitlement.Pro']=ddgksf2021;	
-}
-else if(ua.indexOf('%E8%AC%8E%E5%BA%95%E9%BB%91%E8%86%A0') != -1) {//谜底黑胶
-	obj['subscriber']['entitlements']['Entitlement.Pro']=ddgksf2021;	
-}
-else if(ua.indexOf('%E8%AC%8E%E5%BA%95%E6%99%82%E9%90%98') != -1) {//谜底时钟
-	obj['subscriber']['entitlements']['Entitlement.Pro']=ddgksf2021;
 }
 else if(ua.indexOf('OffScreen') != -1) {//OffScreen
 	obj['subscriber']['entitlements']['Entitlement.Pro']=ddgksf2021;	
