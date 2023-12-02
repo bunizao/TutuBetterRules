@@ -1,6 +1,3 @@
-# > ScriptURL https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
-
-
 # ========解锁列表======== #
 # > 01 白云天气
 https://apps.apple.com/cn/app/id1575901953
