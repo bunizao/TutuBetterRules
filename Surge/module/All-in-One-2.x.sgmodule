@@ -1,5 +1,5 @@
 #!name=AD ByeBye+ 2.x
-#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 11/25/2023・Support: @bunizao
+#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 12/02/2023・Support: @bunizao
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #!source=Rules@hututu0 | Xiaohongshu@ddgksf2013 | Amap@kokoryh | Cainiao@Keywos | Weibo@Rucu6 | Zhihu@Rucu6 | Tools@ScriptHub
 #------------------------------------------------------
@@ -52,6 +52,13 @@ amdc\.m\.taobao\.com - reject
 # ------------------------------------- JD --------------------------------------
 
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|uniformRecommend) - reject
+
+# ------------------------------------- Eleme --------------------------------------
+^https:\/\/elemecdn.com\/.+\/sitemap - reject
+^https:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4} - reject
+^https:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4} - reject
+^https:\/\/fuss10.elemecdn.com\/.+\.mp4 - reject
+^https:\/\/www1.elecfans.com\/www\/delivery - reject
 
 ########################################################################################
 
@@ -139,6 +146,7 @@ zhihu_26 = type=http-response, pattern=^https:\/\/www\.zhihu\.com\/api\/v4\/(art
 zhihu_30 = type=http-response, pattern=^https:\/\/appcloud2\.zhihu\.com\/v3\/config, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
 
 zhihu_33 = type=http-response, pattern=^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
+
 # ------------------------------------- Pixiv ---------------------------------------
 
 pixivAd = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js,script-update-interval=0
@@ -272,7 +280,7 @@ cnftp_80 = type=http-response, pattern=^https:\/\/un-acs\.youku\.com\/gw\/mtop\.
 
 # ------------------------------------- JD --------------------------------------
 
-JD = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(personinfoBusiness|start), script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/JD/JD_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
+JD = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/jingdong.js, requires-body=true, max-size=-1, script-updata-interval=0, timeout=60
 
 ########################################################################################
 
@@ -419,7 +427,7 @@ JD = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?fun
 ^https:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v2\/list\.json data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 ^https:\/\/ad\.maoyan\.com\/api\/position\/detail data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# ------------------------------------- Meituan (Alpha) ---------------------------------------
+# ------------------------------------- Meituan ---------------------------------------
 
 ^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
