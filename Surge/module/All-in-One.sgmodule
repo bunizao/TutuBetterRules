@@ -2,7 +2,7 @@
 #!desc=Kill 200+ common AD. Repo:https://tuu.cat/repo
 #!Maintain by @bunizao
 
-[# ======= 0~9 ======= #
+# ======= 0~9 ======= #
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer url reject
