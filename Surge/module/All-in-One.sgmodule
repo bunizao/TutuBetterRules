@@ -493,14 +493,14 @@ baidumap_66 = type=http-response, pattern=^https:\/\/newclient\.map\.baidu\.com\
 caixinads_116 = type=http-response, pattern=^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/caixinads.js, timeout=60, script-update-interval=0
 
 #BahamutAnimeAds_140 = type=http-response, pattern=^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d\/(token|m3u8).php\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js, timeout=60, script-update-interval=0
-replaceBody_178 = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="adv->ddgksf2013"
+replaceBody_178 = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="adv->ddgksf2013"
 
 fly_179 = type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/fly.js, timeout=60, script-update-interval=0
 
 hanglvzongheng_218 = type=http-response, pattern=^https?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js, timeout=60, script-update-interval=0
 
 # > i3
-#replaceBody_229 = type=http-response, pattern=^https?:\/\/www\.i3zh\.com, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="cm-pop-up-banners->ddgksf2013"
+#replaceBody_229 = type=http-response, pattern=^https?:\/\/www\.i3zh\.com, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="cm-pop-up-banners->ddgksf2013"
 # > iQiYi
 iqiyi_open_ads_231 = type=http-response, pattern=^https?:\/\/.*cupid\.iqiyi\.com\/mixer\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/iqiyi_open_ads.js, timeout=60, script-update-interval=0
 
@@ -512,7 +512,7 @@ jd_json_241 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.a
 # > jingdonglite
 replaceBody_245 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="jdLiteAdvertisingVO->ddgksf2013"
 
-replaceBody_246 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="pushData->ddgksf2013"
+replaceBody_246 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="pushData->ddgksf2013"
 
 # > ku'an
 coolapk_275 = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, timeout=60, script-update-interval=0
@@ -523,7 +523,7 @@ coolapk_276 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/main\
 quark_284 = type=http-response, pattern=^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/quark.js, timeout=60, script-update-interval=0
 
 # > manmanmai
-replaceBody_329 = type=http-response, pattern=^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="splashAD->ddgksf2013"
+replaceBody_329 = type=http-response, pattern=^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="splashAD->ddgksf2013"
 
 # > pupumarket
 pupumarket_377 = type=http-response, pattern=^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v\d\?position, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pupumarket.js, timeout=60, script-update-interval=0
@@ -532,10 +532,10 @@ pupumarket_377 = type=http-response, pattern=^https?:\/\/j1\.pupuapi\.com\/clien
 stay_420 = type=http-response, pattern=^https?:\/\/api\.shenyin\.name\/stay-fork\/browse\/featured$, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/stay.js, timeout=60, script-update-interval=0
 
 # > tianfutong
-replaceBody_438 = type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="officialAdvertResultVo->ddgksf2013"
+replaceBody_438 = type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="officialAdvertResultVo->ddgksf2013"
 
 # > XiaoTe
-replaceBody_515 = type=http-response, pattern=^https?:\/\/lcen\.xiaote\.net\/api\/graphql, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="screenSplashAd->ddgksf2013"
+replaceBody_515 = type=http-response, pattern=^https?:\/\/lcen\.xiaote\.net\/api\/graphql, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="screenSplashAd->ddgksf2013"
 
 # > Zhihu
 zhihu_openads_602 = type=http-response, pattern=^https?:\/\/api\.zhihu\.com\/commercial_api.*launch_v2, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/zhihu_openads.js, timeout=60, script-update-interval=0
