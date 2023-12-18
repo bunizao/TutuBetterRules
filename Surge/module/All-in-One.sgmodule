@@ -510,7 +510,7 @@ startup_237 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/api\?func
 jd_json_241 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms), requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/jd_json.js, timeout=60, script-update-interval=0
 
 # > jingdonglite
-replaceBody_245 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="jdLiteAdvertisingVO->ddgksf2013"
+replaceBody_245 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/major/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="jdLiteAdvertisingVO->ddgksf2013"
 
 replaceBody_246 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush, requires-body=true, max-size=3145728, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/CommonScript/replace-body.js, timeout=60, argument="pushData->ddgksf2013"
 
