@@ -148,6 +148,9 @@ Nicegram = type=http-request,pattern=^https?:\/\/restore-access\.indream\.app\/r
 # > XMind
 Xmind = type=http-response,pattern=https?:\/\/www\.xmind\.(cn|net)\/\_res\/devices,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Xmind/Script/Xmind.js,script-update-interval=0
 
+# > Fantastical
+Fantastical = type=http-response, pattern=^https:\/\/api\.flexibits\.com\/v1\/account\/details\/\?, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Fantastical.js, requires-body=true, max-size=-1, timeout=60
+
 # > Picsart
 PicsartProCrack = type=http-response,pattern=^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/PicsartProCrack.js,script-update-interval=0
 
@@ -190,7 +193,7 @@ bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/ga
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, gitlab.com, api.revenuecat.com, *.hdslb.com, xremit.xcurrency.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com, www.google.cn, *.camscanner.com, *.intsig.net
+hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, gitlab.com, api.revenuecat.com, *.hdslb.com, xremit.xcurrency.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com, www.google.cn, *.camscanner.com, *.intsig.net, api.flexibits.com
 
 
 	
