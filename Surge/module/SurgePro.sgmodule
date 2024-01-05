@@ -15,7 +15,6 @@
 # > 🚨 声明：本模块仅供学习交流使用。
 
 # > ⛴️ 功能介绍：
-  // General: 跳过代理与真实IP
   // URL Rewrite:
      // - 高级设置及通用的 URL 重定向优化
      // - Google 搜索纠正
@@ -34,9 +33,7 @@
 
 [General]
 
-always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, cable.auth.com, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
-
-# ⚠️ 这里与 https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/General.sgmodule 功能重复！请选择其中一个使用。
+// 推荐使用 https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/General.sgmodule
 
 ###################################### Rewrite ######################################
 
@@ -193,7 +190,7 @@ bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/ga
 skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, gitlab.com, api.revenuecat.com, *.hdslb.com, xremit.xcurrency.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com, www.google.cn, *.camscanner.com, *.intsig.net, api.flexibits.com
+hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, api.revenuecat.com, *.hdslb.com, xremit.xcurrency.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com, www.google.cn, *.camscanner.com, *.intsig.net, api.flexibits.com
 
 
 	
