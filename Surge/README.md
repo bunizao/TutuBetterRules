@@ -45,7 +45,7 @@ https://raw.tuu.cat/bunizao/TutuBetterRules/tutu/Surge/Surge_lite.conf
 
 ---
 ### Advanced Introduction/进阶教程
-  * 1.本配置独家支援`🆕 Anti-IPCheck 混淆大陆app的ip查询`功能，**默认开启**。
+  * 1.本配置独家支援`🆕 Anti-IPCheck 混淆大陆app的ip查询`功能，**默认关闭**。
 ```
 144 # > 🆕 Anti-IPCheck 混淆大陆app的ip查询
 145 RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/Anti-IPCheck.list,𝐏𝐫𝐨𝐱𝐲
@@ -77,14 +77,14 @@ https://raw.tuu.cat/bunizao/TutuBetterRules/tutu/Surge/Surge_lite.conf
 https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/panel/AllPanel.sgmodule
 ```
   * 5.Module/模块
-    * 彩云天气通知：定时通知您身边的天气状态。  （ios16+不可用）
-[CaiYunWeather.sgmodule](https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/CaiYunWeather.sgmodule)
+     🚫AD ByeBye 1.x: 在占用最少资源的同时去除各种广告，覆盖超过200+应用。
+[All-in-One.sgmodule](https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/All-in-One.sgmodule)
 
-    * TikTok解锁：使用本脚本可以解锁TikTok对MCC检测的限制(台湾🇹🇼)。  
-[Tiktok-UnlockTW.sgmodule](https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/Tiktok-UnlockTW.sgmodule)
+    * 🚫AD ByeBye+ 2.x: 与 AD ByeBye 1.x 互补, 以最优性能表现去除各种广告。（仅包含高德地图，微博，知乎，Pixiv等 不断更新 详见模块内注释） 
+[All-in-One-2.x.sgmodule](https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/All-in-One-2.x.sgmodule)
 
-    * 一些个破解合集  
-[破解合集.sgmodule](https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/FunScript.sgmodule)
+    * （可能是）史上最厉害的Surge 增强模块。
+[SurgePro.sgmodule](https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/module/SurgePro.sgmodule)
 
     * 🧱墙裂推荐：[iRingo](https://github.com/VirgilClyne/iRingo#iringo)-解锁完整的Apple功能和集成服务
       * [ iRingo for Location Services.sgmodule](https://github.com/VirgilClyne/iRingo/blob/main/sgmodule/Location.sgmodule?raw=true)
@@ -92,9 +92,7 @@ https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/panel/AllPa
       * [ iRingo for Weather.sgmodule](https://github.com/VirgilClyne/iRingo/blob/beta/sgmodule/Weather.beta.sgmodule?raw=true) //iOS16+不可用
       * [ iRingo for News.sgmodule](https://github.com/VirgilClyne/iRingo/blob/main/sgmodule/News.sgmodule?raw=true)
       * [ iRingo for TV app.sgmodule](https://github.com/VirgilClyne/iRingo/blob/main/sgmodule/TV.sgmodule?raw=true)
-   
-    * 🧱墙裂推荐：[🌐 DNS分流模块](https://github.com/VirgilClyne/GetSomeFries/wiki/%F0%9F%8C%90-DNS)
-      * [🌐 DNS for Router and Companys.sgmodule](https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/sgmodule/DNS.sgmodule)
+
       ---
       ### Announsment/声明
       ### [简体中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_SimplifiedChinese.md)｜[繁體中文](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_TradiationalChinese.md)｜[English](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_English.md)｜[日本語](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_Japanese.md)｜[Deutsche](https://github.com/bunizao/TutuBetterRules/blob/tutu/Announcement/Announcement_German.md)
