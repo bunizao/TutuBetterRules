@@ -1,3 +1,4 @@
-DOMAIN_KEYWORD,content.icloud
+DOMAIN-KEYWORD,content.icloud
+DOMAIN-SUFFIX,icloud-content.com
 DOMAIN-SUFFIX,gcs-content-storage-upload.googleapis.com
 DOMAIN-SUFFIX,gcs-content-storage-download.googleapis.com
