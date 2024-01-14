@@ -1,0 +1,31 @@
+# Domains of Parallels Desktop
+  # > Source from: https://github.com/alsyundawy/Parallels?tab=readme-ov-file#hosts
+
+# DOMAIN,download.parallels.com
+DOMAIN,update.parallels.com
+# DOMAIN,desktop.parallels.com
+# DOMAIN,download.parallels.com.cdn.cloudflare.net
+DOMAIN,update.parallels.com.cdn.cloudflare.net
+# DOMAIN,desktop.parallels.com.cdn.cloudflare.net
+DOMAIN,www.parallels.cn
+DOMAIN,www.parallels.com
+DOMAIN,www.parallels.de
+DOMAIN,www.parallels.es
+DOMAIN,www.parallels.fr
+DOMAIN,www.parallels.nl
+DOMAIN,www.parallels.pt
+DOMAIN,www.parallels.ru
+DOMAIN,www.parallelskorea.com
+DOMAIN,reportus.parallels.com
+DOMAIN,parallels.cn
+DOMAIN,parallels.com
+DOMAIN,parallels.de
+DOMAIN,parallels.es
+DOMAIN,parallels.fr
+DOMAIN,parallels.nl
+DOMAIN,parallels.pt
+DOMAIN,parallels.ru
+DOMAIN,parallelskorea.com
+DOMAIN,pax-manager.myparallels.com
+DOMAIN,myparallels.com
+DOMAIN,my.parallels.com
