@@ -1,5 +1,5 @@
 #!name=AD ByeBye+ 2.x
-#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 12/17/2023・Support: @bunizao
+#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 01/19/2024・Support: @bunizao
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
 #!source=Rules@hututu0 | Xiaohongshu@ddgksf2013 | Amap@kokoryh | Cainiao@Keywos | Weibo@Rucu6 | Zhihu@Rucu6 | Tools@ScriptHub
 #------------------------------------------------------
@@ -79,7 +79,7 @@ weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/buil
 
 weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/destroy\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
 
 weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
 
@@ -104,16 +104,9 @@ weibo = type=http-response, pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v1\
 weibo = type=http-response, pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
 
 weibo = type=http-response, pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+
 # 会员图标
-weibo_46 = type=http-response, pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, script-updata-interval=0, timeout=60
-
-# 跳过重定向页面以直接访问 //weibo.cn, shop.sc.weibo.com, t.cn, sinaurl.cn
-noRedirect_48 = type=http-request, pattern=^https:\/\/weibo\.cn\/sinaurl\?(.*&)?(u|toasturl|goto)=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, script-updata-interval=0, timeout=60
-
-noRedirect_49 = type=http-request, pattern=^https:\/\/shop\.sc\.weibo\.com\/h5\/jump\/error\?(.*&)?url=, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, script-updata-interval=0, timeout=60
-
-noRedirect_50 = type=http-response, pattern=^https:\/\/(sinaurl|t)\.cn\/, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, script-updata-interval=0, timeout=60
-
+weibo = type=http-response, pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
 # -------------------------------------Zhihu--------------------------------------
 
 zhihu_5 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, timeout=60, script-update-interval=0
@@ -157,12 +150,11 @@ redbook_json_19 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.co
 # > 小红书_信息流视频去水印+强制开启保存功能@ddgksf2013
 redbook_json_21 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/videofeed\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
 
-# > 小红书_信息流图片去水印@ddgksf2013
-redbook_json_23 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/feed\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
-
+# > 小红书_信息流图片去水印
+xiaohongshu_remove_watermark = type=http-response, pattern=https://edith.xiaohongshu.com/api/sns/v2/note/feed, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
+xiaohongshu_remove_watermark_live_photo = type=http-response, pattern=https://edith.xiaohongshu.com/api/sns/v1/note/live_photo/save, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/red_book_live_v2.js, requires-body=true, max-size=-1, timeout=60
 # > 小红书_开屏广告@ddgksf2013
 redbook_json_25 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
-xiaohongshu = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/xiaohongshu.js, requires-body=true, max-size=-1, timeout=60
 
 # > 小红书_首页瀑布流@ddgksf2013
 redbook_json_27 = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\?, requires-body=true, max-size=3145728, script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, timeout=60, script-update-interval=0
