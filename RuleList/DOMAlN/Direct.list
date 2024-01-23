@@ -1,6 +1,6 @@
 # 本规则仅作为配置简化使用 // Direct_Necessary
 # 放在规则最前面 使用方法⬇️
-# # > Direct(Google|Proxy|Download|Spotify)
+# # > Direct(Google|Proxy|Download)
 # RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/Direct.list,DIRECT
 
 # > Google
