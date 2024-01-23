@@ -31,8 +31,6 @@ PROCESS-NAME,uTorrent
 PROCESS-NAME,qbittorrent
 PROCESS-NAME,WebTorrent
 PROCESS-NAME,WebTorrent Helper
-# > Spotify
-DOMAIN-SUFFIX,ap.spotify.com
 # > nexsub
 DOMAIN-SUFFIX,xvvrkb.lol
 # > qiniup
