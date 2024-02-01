@@ -1,8 +1,8 @@
 // Domains restricted to (with optimal) access from ** Hong Kong ** IP addresses
 
 # > CSL Wifi Calling
-csl.prod.ondemandconnectivity.com
-hhk.prod.ondemandconnectivity.com
-epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
-ss.epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
-ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
+DOMAIN,csl.prod.ondemandconnectivity.com
+DOMAIN,hhk.prod.ondemandconnectivity.com
+DOMAIN,epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
