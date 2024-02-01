@@ -1,6 +1,7 @@
 #!name=🚫AD ByeBye 1.x
 #!desc=Kill 200+ common AD. Repo:https://tuu.cat/repo
-#!Maintain by @bunizao
+#!category=🚫 AD Block
+#!Maintainer=@bunizao & @hututu0
 
 [URL Rewrite]
 # > 58
