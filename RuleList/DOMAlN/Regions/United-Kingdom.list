@@ -1,0 +1,4 @@
+// Domains restricted to (with optimal) access from ** the United Kingdom ** IP addresses
+
+# > Monzo
+DOMAIN-SUFFIX,monzo.com
