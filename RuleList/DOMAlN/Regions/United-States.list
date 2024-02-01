@@ -1,0 +1,46 @@
+// Domains restricted to (with optimal) access from ** the United States ** IP addresses
+
+# ------------- Streaming Media -------------
+# > Peacock
+DOMAIN-SUFFIX,peacocktv.com
+USER-AGENT,PeacockMobile*
+
+# > (HBO) Max
+DOMAIN-SUFFIX,cinemax.com
+DOMAIN-SUFFIX,hbomax.com
+DOMAIN-SUFFIX,hbomaxcdn.com
+DOMAIN-SUFFIX,hbomaxdash.s.llnwi.net
+DOMAIN-SUFFIX,hbonow.com
+DOMAIN-SUFFIX,maxgo.com
+USER-AGENT,HBOMAX*
+PROCESS-NAME,com.hbo.hbonow
+
+# ------------- Carriers & Banks -------------
+# > T-Mobile (Ultra Mobile)
+IP-CIDR,66.94.0.0/19,no-resolve
+IP-CIDR,206.29.177.36/32,no-resolve
+IP-CIDR,208.54.0.0/16,no-resolve
+DOMAIN-SUFFIX,t-mobile.com
+DOMAIN-SUFFIX,ultramobile.com
+DOMAIN,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
+DOMAIN,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org // [UDP]Port:4500
+DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+
+# ------------- Others -------------
+# > News
+DOMAIN,news-edge.apple.com
+DOMAIN,news-events.apple.com
+DOMAIN,apple.comscoreresearch.com
+URL-REGEX,^https?:\/\/news-assets\.apple\.com\/(audio-narrative|podcast\/audio)\/.* // News+ Audio
+
+
+
+// Source:
+
+# https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Peacock/Peacock.list  @blackmatrix7
+# https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/HBOUSA/HBOUSA.list  @blackmatrix7
+# https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/T-Mobile.list  @bunizao
+# https://raw.githubusercontent.com/VirgilClyne/iRingo/main/RuleSet/News.list  @VirgilClyne
+
+# Thanks!
