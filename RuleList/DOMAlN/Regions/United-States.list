@@ -34,6 +34,9 @@ DOMAIN,news-events.apple.com
 DOMAIN,apple.comscoreresearch.com
 URL-REGEX,^https?:\/\/news-assets\.apple\.com\/(audio-narrative|podcast\/audio)\/.* // News+ Audio
 
+# Google (Search & Bard)
+DOMAIN-KEYWORD,www.google.
+DOMAIN,bard.google.com
 
 
 // Source:
@@ -42,5 +45,6 @@ URL-REGEX,^https?:\/\/news-assets\.apple\.com\/(audio-narrative|podcast\/audio)\
 # https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/HBOUSA/HBOUSA.list  @blackmatrix7
 # https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/T-Mobile.list  @bunizao
 # https://raw.githubusercontent.com/VirgilClyne/iRingo/main/RuleSet/News.list  @VirgilClyne
+# https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/Google_Search.list  @bunizao
 
 # Thanks!
