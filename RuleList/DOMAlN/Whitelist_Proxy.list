@@ -5,4 +5,4 @@ DOMAIN-SUFFIX,t.co
 DOMAIN,analytics.twitter.com
 DOMAIN-SUFFIX,notion.site
 DOMAIN,login.live.com
-
+URL-REGEX,^https?://youtubei.googleapis.com/youtubei/.+log_
