@@ -499,4 +499,5 @@ JD = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?fun
 [MITM]
 hostname = %APPEND% m5*.amap.com, sns.amap.com, *.weibo.cn, *.weibo.com, sinaurl.cn, t.cnweibo.cn, *.zhihu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, vod-movie.maoyan.com, api.maoyan.com, ad.maoyan.com, wx.maoyan.com, -i.vip.iqiyi.com, *.iqiyi.com, *.mgtv.com, vv.video.qq.com, acs.youku.com, push.m.youku.com, un-acs.youku.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, api.m.jd.com
 h2 = true
+tcp-connection = true
 
