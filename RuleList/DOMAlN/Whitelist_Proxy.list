@@ -3,3 +3,4 @@ DOMAIN,ad.doubleclick.net
 DOMAIN-SUFFIX,t.co
 DOMAIN,analytics.twitter.com
 DOMAIN-SUFFIX,amplitude.com
+URL-REGEX,^https?://youtubei.googleapis.com/youtubei/.+log_ // Maybe fix slow Youtube speed issues
