@@ -158,7 +158,7 @@ XiChuangZhuProCrack = type=http-response,pattern=https://lchttpapi.xczim.com/*,r
 DailyArt = type=http-response, pattern=^https?:\/\/api\.getdailyart\.com\/api\/(subscription\/verified|auth\/login|check-logged), requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/DailyArt.js, timeout=60, script-update-interval=0
 
 # > Revenuecat Universal
-revenuecat = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/Revenuecat.js, timeout=60, script-update-interval=0
+revenuecat = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, timeout=60, script-update-interval=0
 replaceHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/subscribers\/[^/]+/(offerings|attributes)$, script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/replace-header/index.js, timeout=60, argument="(\r\n)X-RevenueCat-ETag:.+(\r\n)->$1X-RevenueCat-ETag:$2"
 
 # Quark Scanner
