@@ -1,128 +1,217 @@
+
+
+// 兼容性转换
+if (typeof $request !== 'undefined') {
+  const lowerCaseRequestHeaders = Object.fromEntries(
+    Object.entries($request.headers).map(([k, v]) => [k.toLowerCase(), v])
+  );
+
+  $request.headers = new Proxy(lowerCaseRequestHeaders, {
+    get: function (target, propKey, receiver) {
+      return Reflect.get(target, propKey.toLowerCase(), receiver);
+    },
+    set: function (target, propKey, value, receiver) {
+      return Reflect.set(target, propKey.toLowerCase(), value, receiver);
+    },
+  });
+}
+if (typeof $response !== 'undefined') {
+  const lowerCaseResponseHeaders = Object.fromEntries(
+    Object.entries($response.headers).map(([k, v]) => [k.toLowerCase(), v])
+  );
+
+  $response.headers = new Proxy(lowerCaseResponseHeaders, {
+    get: function (target, propKey, receiver) {
+      return Reflect.get(target, propKey.toLowerCase(), receiver);
+    },
+    set: function (target, propKey, value, receiver) {
+      return Reflect.set(target, propKey.toLowerCase(), value, receiver);
+    },
+  });
+}
+Object.getOwnPropertyNames($httpClient).forEach(method => {
+  if(typeof $httpClient[method] === 'function') {
+    $httpClient[method] = new Proxy($httpClient[method], {
+      apply: (target, ctx, args) => {
+        for (let field in args?.[0]?.headers) {
+          if (['host'].includes(field.toLowerCase())) {
+            delete args[0].headers[field];
+          } else if (['number'].includes(typeof args[0].headers[field])) {
+            args[0].headers[field] = args[0].headers[field].toString();
+          }
+        }
+        return Reflect.apply(target, ctx, args);
+      }
+    });
+  }
+})
+
+
+// QX 相关
+var setInterval = () => {}
+var clearInterval = () => {}
+var $task = {
+  fetch: url => {
+    return new Promise((resolve, reject) => {
+      if (url.method == 'POST') {
+        $httpClient.post(url, (error, response, data) => {
+          if (response) {
+            response.body = data
+            resolve(response, {
+              error: error,
+            })
+          } else {
+            resolve(null, {
+              error: error,
+            })
+          }
+        })
+      } else {
+        $httpClient.get(url, (error, response, data) => {
+          if (response) {
+            response.body = data
+            resolve(response, {
+              error: error,
+            })
+          } else {
+            resolve(null, {
+              error: error,
+            })
+          }
+        })
+      }
+    })
+  },
+}
+
+var $prefs = {
+  removeValueForKey: key => {
+    let result
+    try {
+      result = $persistentStore.write('', key)
+    } catch (e) {
+    }
+    if ($persistentStore.read(key) == null) return result
+    try {
+      result = $persistentStore.write(null, key)
+    } catch (e) {
+    }
+    if ($persistentStore.read(key) == null) return result
+    const err = '无法模拟 removeValueForKey 删除 key: ' + key
+    console.log(err)
+    $notification.post('Script Hub: 脚本转换', '❌ revenuecat.js', err)
+    return result
+  },
+  valueForKey: key => {
+    return $persistentStore.read(key)
+  },
+  setValueForKey: (val, key) => {
+    return $persistentStore.write(val, key)
+  },
+}
+
+var $notify = (title = '', subt = '', desc = '', opts) => {
+  const toEnvOpts = (rawopts) => {
+    if (!rawopts) return rawopts 
+    if (typeof rawopts === 'string') {
+      if ('undefined' !== typeof $loon) return rawopts
+      else if('undefined' !== typeof $rocket) return rawopts
+      else return { url: rawopts }
+    } else if (typeof rawopts === 'object') {
+      if ('undefined' !== typeof $loon) {
+        let openUrl = rawopts.openUrl || rawopts.url || rawopts['open-url']
+        let mediaUrl = rawopts.mediaUrl || rawopts['media-url']
+        return { openUrl, mediaUrl }
+      } else {
+        let openUrl = rawopts.url || rawopts.openUrl || rawopts['open-url']
+        if('undefined' !== typeof $rocket) return openUrl
+        return { url: openUrl }
+      }
+    } else {
+      return undefined
+    }
+  }
+  console.log(title, subt, desc, toEnvOpts(opts))
+  $notification.post(title, subt, desc, toEnvOpts(opts))
+}
+var _scriptSonverterOriginalDone = $done
+var _scriptSonverterDone = (val = {}) => {
+  let result
+  if (
+    (typeof $request !== 'undefined' &&
+    typeof val === 'object' &&
+    typeof val.status !== 'undefined' &&
+    typeof val.headers !== 'undefined' &&
+    typeof val.body !== 'undefined') || false
+  ) {
+    try {
+      for (const part of val?.status?.split(' ')) {
+        const statusCode = parseInt(part, 10)
+        if (!isNaN(statusCode)) {
+          val.status = statusCode
+          break
+        }
+      }
+    } catch (e) {}
+    if (!val.status) {
+      val.status = 200
+    }
+    if (!val.headers) {
+      val.headers = {
+        'Content-Type': 'text/plain; charset=UTF-8',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST,GET,OPTIONS,PUT,DELETE',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+      }
+    }
+    result = { response: val }
+  } else {
+    result = val
+  }
+  console.log('$done')
+  try {
+    console.log(JSON.stringify(result))
+  } catch (e) {
+    console.log(result)
+  }
+  _scriptSonverterOriginalDone(result)
+}
+var window = globalThis
+window.$done = _scriptSonverterDone
+var global = globalThis
+global.$done = _scriptSonverterDone
+
 /***********************************
 
+> ScriptName        𝐑𝐞𝐯𝐞𝐧𝐮𝐞𝐂𝐚𝐭多合一脚本[墨鱼版]
+> Author            @ddgksf2013
+> ForHelp           若有屏蔽广告的需求，可公众号后台回复APP名称
+> WechatID          墨鱼手记
+> TgChannel         https://t.me/ddgksf2021
+> Contribute        https://t.me/ddgksf2013_bot
+> Feedback          📮 𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑@𝟏𝟔𝟑.𝐜𝐨𝐦 📮
+> UpdateTime        2024-02-14
+> Suitable          自行观看“# > ”注释内容，解锁是暂时的，购买也不是永久的[订阅、跑路]
+> Attention         📣个别失效的APP请相关需求者自行降级、或寻找替代品、或购买支持
+> Attention         如需引用请注明出处，谢谢合作！
+> ScriptURL         https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
+
+
 # ========解锁列表======== #
-# > 01 白云天气
-https://apps.apple.com/cn/app/id1575901953
-# > 02 图图记账
-https://apps.apple.com/cn/app/id1546356856
-# > 03 Aphrodite
-https://apps.apple.com/cn/app/id1568289454
-# > 04 Apollo
-https://apps.apple.com/cn/app/id1616467801
-# > 05 pandora
-https://apps.apple.com/cn/app/id1470560916
-# > 06 widgetart
-https://apps.apple.com/cn/app/id1539097448
-# > 07 Spark
-https://apps.apple.com/cn/app/id997102246
-# > 08 Pillow
-https://apps.apple.com/cn/app/id878691772
-# > 09 1Blocker
-https://apps.apple.com/cn/app/id1365531024
-# > 10 VSCO
-https://apps.apple.com/cn/app/id588013838
-# > 11 谜底时钟
-https://apps.apple.com/cn/app/id1536358464
-# > 12 谜底黑胶
-https://apps.apple.com/cn/app/id1606306441
-# > 13 OffScreen
-https://apps.apple.com/cn/app/id1474340105
-# > 14 花样文字
-https://apps.apple.com/cn/app/id1438854446
-# > 15 ScannerPro
-https://apps.apple.com/cn/app/id333710667
-# > 16 车票票
-https://apps.apple.com/cn/app/id6446212291
-# > 17 HTTPBot
-https://apps.apple.com/us/app/id1232603544
-# > 18 Audiomack
-https://apps.apple.com/cn/app/id921765888
-# > 19 ServerBee
-https://apps.apple.com/cn/app/id6443553714
-# > 20 NotBoring天气
-https://apps.apple.com/cn/app/id1531063436
-# > 21 NotBoring习惯
-https://apps.apple.com/cn/app/id1593891243
-# > 22 NotBoring计算器
-https://apps.apple.com/cn/app/id1533591596
-# > 23 NotBoring计时器
-https://apps.apple.com/cn/app/id1531048091
-# > 24 NotBoringVibes
-https://apps.apple.com/cn/app/id1661440185
-# > 25 倒数鸭
-https://apps.apple.com/cn/app/id6457201223
-# > 26 iptv-ultra
-https://apps.apple.com/cn/app/id1549657742
-# > 27 happy-days
-https://apps.apple.com/cn/app/id1564858029
-# > 28 chatai[非国区旧版V3.6]
-https://apps.apple.com/us/app/id1661016696
-# > 29 aptv[旧版V1.25]
-https://apps.apple.com/us/app/id1630403500
-# > 30 TouchRetouch
-https://apps.apple.com/cn/app/id373311252
-# > 31 方弗相机
-https://apps.apple.com/cn/app/id1621425556
-# > 32 Myjumplab
-https://apps.apple.com/us/app/id1554077178
-# > 33 目标地图
-https://apps.apple.com/cn/app/id1555022550
-# > 34 Paku
-https://apps.apple.com/cn/app/id1534130193
-# > 35 AwesomeHabits
-https://apps.apple.com/cn/app/id1514915737
-# > 36 Gear
-https://apps.apple.com/cn/app/id1458962238
-# > 37 MoneyThings
-https://apps.apple.com/cn/app/id1549694221
-# > 38 Anybox
-https://apps.apple.com/us/app/id1593408455
-# > 39 noto
-https://apps.apple.com/us/app/id1459055246
-# > 40 Widgetsmith
-https://apps.apple.com/cn/app/id1523682319
-# > 41 Percento
-https://apps.apple.com/cn/app/id1494319934
-# > 42 Planny
-https://apps.apple.com/cn/app/id1515324201
-# > 43 loopsie
-https://apps.apple.com/us/app/id1259909228
-# > 44 手机硬件管家
-https://apps.apple.com/cn/app/id1329937809
-# > 45 ImageX
-https://apps.apple.com/us/app/id1668530080
-# > 46 我的时间
-https://apps.apple.com/cn/app/id1481796842
-# > 47 Fin
-https://apps.apple.com/cn/app/id1489698531
-# > 48 星垂日记
-https://apps.apple.com/cn/app/id1663588935
-# > 49 星垂专注
-https://apps.apple.com/cn/app/id6446450915
-# > 50 Locket
-https://apps.apple.com/cn/app/id1600525061
-# > 51 one4wall
-https://apps.apple.com/us/app/id6446678464
-# > 52 mizframa
-https://apps.apple.com/cn/app/id6444951894
-# > 53 极简时钟
-https://apps.apple.com/cn/app/id1265404088
-# > 54 极简日记
-https://apps.apple.com/cn/app/id1568936702
-# > 55 治愈时钟
-https://apps.apple.com/cn/app/id1599856748
-# > 56 photomator
-https://apps.apple.com/cn/app/id1444636541
-# > 57 奇妙组件
-https://apps.apple.com/cn/app/id1466785009
-# > 58 structured
-https://apps.apple.com/cn/app/id1499198946
-# > 59 卡片馆
-https://apps.apple.com/cn/app/id1441120440
-# > 60 ColorWidgets
-https://apps.apple.com/cn/app/id1531594277
-# > 61 pdfviewer
-https://apps.apple.com/cn/app/id1120099014
+https://appraven.net/collection/77299969
+
+[rewrite_local]
+
+# ～ RevenueCat@ddgksf2013
+^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) url script-response-body https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js
+^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js
+
+[mitm]
+
+hostname=api.revenuecat.com
+
+***********************************/
+
 
 
 
@@ -131,6 +220,8 @@ const mapping = {
   '%E8%BD%A6%E7%A5%A8%E7%A5%A8': ['vip+watch_vip'],
   'FinancialNote': ['category'],
   'Precious/': ['Pro'],
+  'FoJiCam/': ['ProVersionLifeTime'],
+  'pdfai_app/': ['premium'],
   'LUTCamera': ['ProVersion', 'com.uzero.funforcam.monthlysub'],
   'totowallet': ['all', 'com.ziheng.totowallet.yearly'],
   'Aphrodite': ['all'],
@@ -266,4 +357,4 @@ const mapping = {
 
 // =========    固定部分  ========= // 
 // =========  @ddgksf2021 ========= // 
-var ua=$request.headers["User-Agent"]||$request.headers["user-agent"],obj=JSON.parse($response.body);obj.Attention="恭喜你抓到元数据！由墨鱼分享，请勿售卖或分享他人！";var ddgksf2013={is_sandbox:!1,ownership_type:"PURCHASED",billing_issues_detected_at:null,period_type:"normal",expires_date:"2099-12-18T01:04:17Z",grace_period_expires_date:null,unsubscribe_detected_at:null,original_purchase_date:"2022-09-08T01:04:18Z",purchase_date:"2022-09-08T01:04:17Z",store:"app_store"},ddgksf2021={grace_period_expires_date:null,purchase_date:"2022-09-08T01:04:17Z",product_identifier:"com.ddgksf2013.premium.yearly",expires_date:"2099-12-18T01:04:17Z"};const match=Object.keys(mapping).find(e=>ua.includes(e));if(match){let[e,s]=mapping[match];s?(ddgksf2021.product_identifier=s,obj.subscriber.subscriptions[s]=ddgksf2013):obj.subscriber.subscriptions["com.ddgksf2013.premium.yearly"]=ddgksf2013,obj.subscriber.entitlements[e]=ddgksf2021}else obj.subscriber.subscriptions["com.ddgksf2013.premium.yearly"]=ddgksf2013,obj.subscriber.entitlements.pro=ddgksf2021;$done({body:JSON.stringify(obj)});
+var ua=$request.headers["User-Agent"]||$request.headers["user-agent"],obj=JSON.parse($response.body);obj.Attention="恭喜你抓到元数据！由墨鱼分享，请勿售卖或分享他人！";var ddgksf2013={is_sandbox:!1,ownership_type:"PURCHASED",billing_issues_detected_at:null,period_type:"normal",expires_date:"2099-12-18T01:04:17Z",grace_period_expires_date:null,unsubscribe_detected_at:null,original_purchase_date:"2022-09-08T01:04:18Z",purchase_date:"2022-09-08T01:04:17Z",store:"app_store"},ddgksf2021={grace_period_expires_date:null,purchase_date:"2022-09-08T01:04:17Z",product_identifier:"com.ddgksf2013.premium.yearly",expires_date:"2099-12-18T01:04:17Z"};const match=Object.keys(mapping).find(e=>ua.includes(e));if(match){let[e,s]=mapping[match];s?(ddgksf2021.product_identifier=s,obj.subscriber.subscriptions[s]=ddgksf2013):obj.subscriber.subscriptions["com.ddgksf2013.premium.yearly"]=ddgksf2013,obj.subscriber.entitlements[e]=ddgksf2021}else obj.subscriber.subscriptions["com.ddgksf2013.premium.yearly"]=ddgksf2013,obj.subscriber.entitlements.pro=ddgksf2021;_scriptSonverterDone({body:JSON.stringify(obj)});
