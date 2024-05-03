@@ -2,3 +2,6 @@
 
 # > Dcard 
 DOMAIN-SUFFIX,dcard.tw
+
+# > gov.tw
+DOMAIN-KEYWORD,gov.tw
