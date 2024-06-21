@@ -129,7 +129,7 @@
 # > Flightradar24
 Flightradar24 = type=http-response,pattern=^https:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|subscribe),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Flightradar24.js
 
-# Endel
+# > Endel
 Endel = type=http-response,pattern=^https?:\/\/api-production\.endel\.io\/v\d\/call,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Endel.js
 
 # > 酷我音乐
@@ -154,20 +154,20 @@ PicsartProCrack = type=http-response,pattern=^https?:\/\/api\.meiease\.cn\/shop\
 # > 西窗烛
 XiChuangZhuProCrack = type=http-response,pattern=https://lchttpapi.xczim.com/*,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/XiChuangZhuProCrack.js,script-update-interval=0
 
-# DailyArt
+# > DailyArt
 DailyArt = type=http-response, pattern=^https?:\/\/api\.getdailyart\.com\/api\/(subscription\/verified|auth\/login|check-logged), requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/DailyArt.js, timeout=60, script-update-interval=0
 
 # > Revenuecat Universal
 revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://github.com/bunizao/TutuBetterRules/raw/tutu/Surge/script/Revenuecat.js, requires-body=true, max-size=-1, timeout=60
 deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60
 
-# Quark Scanner
+# > Quark Scanner
 Quark Scanner = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.sm\.order\.service\.member\.getmemberinfo,script-path=https://raw.githubusercontent.com/Guding88/Script/main/kuakesaomiaowang.js
 
-# xCurrency
+# > xCurrency
 xCurrency = type=http-response, pattern=^https?:\/\/(xremit\.xcurrency|explorer.tratao)\.com\/api\/client\/xtool\/vip, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/jijianhuilv.js, timeout=60, script-update-interval=0
 
-# CamScanner
+# > CamScanner
 CamScanner = type=http-response, pattern=^https:\/\/.*\.(intsig\.net|camscanner\.com), requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js, timeout=60, script-update-interval=0
 
 # ------------------------------------- Enhance ---------------------------------------
@@ -181,10 +181,6 @@ bilibili_cc = type=http-response,pattern=^https?:\/\/i.\.hdslb\.com\/bfs\/subtit
 # > Netflix Ranking
 nf_rating.js_request = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
 nf_rating.js_response = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
-
-# > Bstar login & play
-bstar_login = type=http-request,pattern=^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/(sms\/send|reg\/sms|oauth2\/access_token|login\/sms),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
-bstar_play = type=http-request,pattern=^https?:\/\/app\.biliintl\.com\/(intl\/gateway\/v\d\/app\/data\/report\/heartbeat\/mobile|x\/(history|reply)/v\d/add),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Rewrite/bstar.js,script-update-interval=0
 
 [MITM]
 #skip-server-cert-verify = true
