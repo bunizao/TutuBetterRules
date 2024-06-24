@@ -28,16 +28,10 @@ DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
 
 # ------------- Others -------------
-# > News
-DOMAIN,news-edge.apple.com
-DOMAIN,news-events.apple.com
-DOMAIN,apple.comscoreresearch.com
-URL-REGEX,^https?:\/\/news-assets\.apple\.com\/(audio-narrative|podcast\/audio)\/.* // News+ Audio
 
 # Google (Search & Bard)
 DOMAIN-KEYWORD,www.google.
 DOMAIN,bard.google.com
-
 
 // Source:
 
