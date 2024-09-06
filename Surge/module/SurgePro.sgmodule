@@ -126,15 +126,11 @@
 
 # ------------------------------------- Crack ---------------------------------------
 
-# > Flightradar24
-Flightradar24 = type=http-response,pattern=^https:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|subscribe),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Flightradar24.js
+# > flighttradar 24
+flightradar24 = type=http-request, pattern=^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|\w{9}), script-path=https://github.com/ddgksf2013/dev/raw/main/flightradar24.js, timeout=60
 
 # > Endel
 Endel = type=http-response,pattern=^https?:\/\/api-production\.endel\.io\/v\d\/call,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Endel.js
-
-# > 酷我音乐
-KuWoMusicProCrack_response = type=http-response,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use),requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
-KuWoMusicProCrack_request = type=http-request,pattern=^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui),script-path=https://github.com/ddgksf/Scripts/raw/dev/KuWoMusicProCrack.js,script-update-interval=0
 
 # > Notability
 Notability = type=http-response,pattern=^https?:\/\/notability\.com\/(global|subscriptions),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/notability.js
@@ -145,20 +141,12 @@ Nicegram = type=http-request,pattern=^https?:\/\/restore-access\.indream\.app\/r
 # > XMind
 Xmind = type=http-response,pattern=https?:\/\/www\.xmind\.(cn|net)\/\_res\/devices,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Xmind/Script/Xmind.js,script-update-interval=0
 
-# > Fantastical
-Fantastical = type=http-response, pattern=^https:\/\/api\.flexibits\.com\/v1\/account\/details\/\?, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Fantastical.js, requires-body=true, max-size=-1, timeout=60
-
-# > Picsart
-PicsartProCrack = type=http-response,pattern=^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/PicsartProCrack.js,script-update-interval=0
-
-# > 西窗烛
-XiChuangZhuProCrack = type=http-response,pattern=https://lchttpapi.xczim.com/*,requires-body=1,max-size=3145728,script-path=https://github.com/ddgksf/Scripts/raw/dev/XiChuangZhuProCrack.js,script-update-interval=0
-
 # > DailyArt
 DailyArt = type=http-response, pattern=^https?:\/\/api\.getdailyart\.com\/api\/(subscription\/verified|auth\/login|check-logged), requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/DailyArt.js, timeout=60, script-update-interval=0
 
 # > Revenuecat Universal
-revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://github.com/bunizao/TutuBetterRules/raw/tutu/Surge/script/Revenuecat.js, requires-body=true, max-size=-1, timeout=60
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, requires-body=true, max-size=-1, timeout=60
+
 deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60
 
 # > Quark Scanner
