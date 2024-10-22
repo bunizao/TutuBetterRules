@@ -178,7 +178,7 @@ nf_rating.js_response = type=http-response,requires-body=1,pattern=^https?:\/\/i
 #skip-server-cert-verify = true
 tcp-connection = true
 h2 = true
-hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, api.revenuecat.com, *.hdslb.com, xremit.xcurrency.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com, www.google.cn, *.camscanner.com, *.intsig.net, api.flexibits.com, acs.m.taobao.com
+hostname = %APPEND% boxjs.com, api-production.endel.io, mobile.flightradar24.com, ap*.intsig.net, www.xmind.cn, www.xmind.net, restore-access.indream.app, *.baidu.com, api.meiease.cn, lchttpapi.xczim.com, security.wechat.com, weixin110.qq.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, www.firefox.com.cn, api.*.abema-tv.com, app.biliintl.com, passport.biliintl.com, api.revenuecat.com, *.hdslb.com, xremit.xcurrency.com, explorer.tratao.com, drive*.quark.cn, notability.com, api.getdailyart.com, www.google.cn, *.camscanner.com, *.intsig.net, api.flexibits.com, acs.m.taobao.com, carrotweather.herokuapp.com
 
 
 	
