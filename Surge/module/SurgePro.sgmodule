@@ -160,6 +160,7 @@ CamScanner = type=http-response, pattern=^https:\/\/.*\.(intsig\.net|camscanner\
 
 # > Carrot Weather
 carrot = type=http-request, pattern=^https:\/\/carrotweather\.herokuapp\.com\/parse\/functions\/findSubscriptionsForUserId, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/carrot2.js, timeout=60
+
 # ------------------------------------- Enhance ---------------------------------------
 
 # > 解除微信链接限制
