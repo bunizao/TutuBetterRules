@@ -247,6 +247,81 @@ redbook_json = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/
 tieba_json = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js,script-update-interval=0
 tieba_proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js,argument=per_filter_video_thread=1
 
+# -------------------------------------- CNFTP --------------------------------------
+
+# 首页信息流广告
+cnftp = type=http-response, pattern=^http:\/\/[\d\.]+\/3f1\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^http:\/\/access\.if\.iqiyi\.com\/3f1\/cards\.iqiyi\.com\/(views_category\/3\.0\/category_home|views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/(category_home|categorylib_content|film_hybrid)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 播放详情页
+cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/views_plt\/3\.0\/player_tabs_v2\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 搜索页列表
+cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/views_search\/3\.0\/(hot_query_)?search\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 评论区
+cnftp = type=http-response, pattern=^https:\/\/comment-card\.iqiyi\.com\/views_comment\/3\.0\/long_video_comments\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 我的页面菜单
+cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 首页左上角天气
+cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 通用控制,各tab页二楼
+cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/common_switch\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 底部tab,顶部tab
+cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/views\/3\.0\/(bottom_theme|home_top_menu)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 搜索框填充词
+cnftp = type=http-response, pattern=^https:\/\/search\.video\.iqiyi\.com\/q\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 开屏广告,播放广告
+cnftp = type=http-response, pattern=^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 我的页面
+cnftp = type=http-response, pattern=^https:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 首页信息流,顶部tab
+cnftp = type=http-response, pattern=^http:\/\/mob-st\.bz\.mgtv\.com\/odin\/c1\/channel\/index\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https?:\/\/dc2?\.bz\.mgtv\.com\/dynamic\/v1\/channel\/(index|vrsList)\/\w, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 底部tab
+cnftp = type=http-response, pattern=^https:\/\/mobile\.api\.mgtv\.com\/mobile\/config\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/mobile\.api\.mgtv\.com\/v10\/video\/info\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/info\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v2\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+replaceBody = type=http-request, pattern=^https?:\/\/vv\.video\.qq\.com\/getvinfo, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd-%3E%26sppreviewtype%3D0%241%26spsrt%3D0
+
+# 播放详情页,首页信息流,顶部tab,我的页面,评论区
+cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(gateway\.new\.execute|home\.feed|home\.query|uc\.query|ycp\.query), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 底部tab
+cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 青少年模式弹窗
+cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 搜索列表
+cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.soku\.yksearch, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 热剧弹窗
+cnftp = type=http-response, pattern=^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 开屏广告
+cnftp = type=http-response, pattern=^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
 ########################################################################################
 
 
@@ -410,6 +485,43 @@ tieba_proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baid
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 ^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 ^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# -------------------------------------- CNFTP --------------------------------------
+
+# 播放页开通会员提示
+^https:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show\? data-type=text data="{}" status-code=200
+
+# 播放页多余动效
+^https:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\? data-type=text data="{}" status-code=200
+
+# 播放页升级白金会员按钮
+^https:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\? data-type=text data="{}" status-code=200
+
+# 青少年弹窗
+^https:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\? data-type=text data="{}" status-code=200
+
+# 首页左上角推广
+^http:\/\/[\d\.]+\/odin\/c1\/(channel\/ads|skin\/config)\? data-type=text data="{}" status-code=200
+
+# 底部tab红点
+^https:\/\/damang\.api\.mgtv\.com\/station\/album\/red\/dot\? data-type=text data="{}" status-code=200
+
+# 播放器界面
+^https:\/\/hb-boom\.api\.mgtv\.com\/release\/pullReleaseInfo data-type=text data="{}" status-code=200
+
+# 升级弹窗
+^https:\/\/mobile\.api\.mgtv\.com\/v2\/mobile\/checkUpdate\? data-type=text data="{}" status-code=200
+
+# 播放详情页
+^http:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/cms\/list\? data-type=text data="{}" status-code=200
+
+# 搜索框填充词
+^http:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\? data-type=text data="{}" status-code=200
+
+^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind data-type=text data="{}" status-code=200
+
+# 播放页弹窗动图
+^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.(pisp\.scripts\.get|xspace\.play\.position\.preload\.query|xspace\.poplayer\.position\.query) data-type=text data="{}" status-code=200
 
 ########################################################################################
 
