@@ -1,8 +1,8 @@
 #!name=AD ByeBye+ 2.x
-#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 09/06/2024・Support: @bunizao
+#!desc=(2.x)以最优性能表现去除各种繁杂广告。| Repo: https://tuu.cat/repo・Update: 10/22/2024・Support: @bunizao
 #!category=🚫 AD Block
 #!author=@hututu0 整理，来源见脚本以及注释，感谢以下大佬！！！
-#!source=Rules@hututu0 | Xiaohongshu@ddgksf2013 | Amap@kokoryh | Cainiao@Keywos | Weibo@Rucu6 | Zhihu@Rucu6 | Tools@ScriptHub
+#!source=Rules@hututu0 | Xiaohongshu@ddgksf2013 | Amap@kokoryh | Cainiao@Keywos | Weibo@RuCu6 | Zhihu@RuCu6 | Tools@ScriptHub
 #------------------------------------------------------
 # 目前包括：高德地图，微博，知乎，Pixiv, 百度贴吧，小红书, 微信小程序, 爱奇艺，优酷，腾讯视频
 # 高德地图需要卸载重装 & 重启手机 才会生效
@@ -62,129 +62,129 @@ amdc\.m\.taobao\.com - reject
 
 # -------------------------------------- Amap --------------------------------------
 
-header = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, timeout=60
+header = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/header.js, timeout=60
 
 # 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 首页,推广卡片,红点角标,右上角动图,搜索框热词,左下角天气,消息横幅
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 我的页面,推广卡片
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 附近页
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 开屏广告
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 打车页,红点角标,弹窗,天气图标,推广卡片
-amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # -------------------------------------- Weibo --------------------------------------
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
 # 详情页 超话,评论区,看图界面,个人主页,我的页面,信息流,商品橱窗,视频流,视频号,视频调查,话题卡片
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist|flowpage)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist|flowpage)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/searchall\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/searchall\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v[12]\/ad\/preload, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v[12]\/ad\/preload, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
-weibo = type=http-response, pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
 # 会员图标
-weibo = type=http-response, pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, max-size=-1, timeout=60
+weibo = type=http-response, pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/weibo.js, requires-body=true, max-size=-1, timeout=60
 
 # -------------------------------------Zhihu--------------------------------------
 
-header = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, timeout=60
+header = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/header.js, timeout=60
 
 # 导航详情页,路线规划,地点详情页,搜索详情页,导航结束页
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 首页,推广卡片,红点角标,右上角动图,搜索框热词,左下角天气,消息横幅
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 我的页面,推广卡片
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 附近页
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 开屏广告
-amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # 打车页,红点角标,弹窗,天气图标,推广卡片
-amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information), script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
-amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, max-size=-1, timeout=60
+amap = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/amap.js, requires-body=true, max-size=-1, timeout=60
 
 # ------------------------------------- Pixiv ---------------------------------------
 
@@ -193,13 +193,13 @@ pixivAd = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(aut
 # ------------------------------------ Cainiao ---------------------------------------
 
 
-header = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, timeout=60
+header = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch, script-path=https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/Surge/script/header.js, timeout=60
 
-cainiao = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js, requires-body=true, max-size=-1, timeout=60
+cainiao = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js, requires-body=true, max-size=-1, timeout=60
 
-cainiao = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js, requires-body=true, max-size=-1, timeout=60
+cainiao = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js, requires-body=true, max-size=-1, timeout=60
 
-cainiao = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js, requires-body=true, max-size=-1, timeout=60
+cainiao = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js, requires-body=true, max-size=-1, timeout=60
 
 # ------------------------------------- Xiaohongshu ---------------------------------------
 
@@ -244,88 +244,8 @@ redbook_json = type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/
 
 # ------------------------------------- Tieba ---------------------------------------
 
-tiebaJson_104 = type=http-response, pattern=^http:\/\/c\.tieba\.baidu\.com\/c\/f\/(excellent\/personalized|frs\/(generalTabList|page|threadlist)|pb\/(pic)?page)$, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/tiebaJson.js, timeout=60, script-update-interval=0
-
-tiebaProto_105 = type=http-response, pattern=^http:\/\/c\.tieba\.baidu\.com\/c\/f\/(excellent\/personalized|frs\/(generalTabList|page|threadlist)|pb\/(pic)?page)\?cmd, requires-body=true, max-size=3145728, binary-body-mode=true, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/tiebaProto.js, timeout=60, script-update-interval=0
-
-tiebaJson_106 = type=http-response, pattern=^http:\/\/c\.tieba\.baidu\.com\/c\/s\/sync$, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/tiebaJson.js, timeout=60, script-update-interval=0
-
-tiebaJson_107 = type=http-response, pattern=^https:\/\/tiebac\.baidu\.com\/tiebaads\/commonbatch\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/tiebaJson.js, timeout=60, script-update-interval=0
-
-# -------------------------------------- CNFTP --------------------------------------
-
-# 首页信息流广告
-cnftp = type=http-response, pattern=^http:\/\/[\d\.]+\/3f1\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-cnftp = type=http-response, pattern=^http:\/\/access\.if\.iqiyi\.com\/3f1\/cards\.iqiyi\.com\/(views_category\/3\.0\/category_home|views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/(category_home|categorylib_content|film_hybrid)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 播放详情页
-cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/views_plt\/3\.0\/player_tabs_v2\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 搜索页列表
-cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/views_search\/3\.0\/(hot_query_)?search\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 评论区
-cnftp = type=http-response, pattern=^https:\/\/comment-card\.iqiyi\.com\/views_comment\/3\.0\/long_video_comments\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 我的页面菜单
-cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 首页左上角天气
-cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 通用控制,各tab页二楼
-cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/common_switch\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 底部tab,顶部tab
-cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/views\/3\.0\/(bottom_theme|home_top_menu)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 搜索框填充词
-cnftp = type=http-response, pattern=^https:\/\/search\.video\.iqiyi\.com\/q\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 开屏广告,播放广告
-cnftp = type=http-response, pattern=^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 我的页面
-cnftp = type=http-response, pattern=^https:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 首页信息流,顶部tab
-cnftp = type=http-response, pattern=^http:\/\/mob-st\.bz\.mgtv\.com\/odin\/c1\/channel\/index\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-cnftp = type=http-response, pattern=^https?:\/\/dc2?\.bz\.mgtv\.com\/dynamic\/v1\/channel\/(index|vrsList)\/\w, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 底部tab
-cnftp = type=http-response, pattern=^https:\/\/mobile\.api\.mgtv\.com\/mobile\/config\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-cnftp = type=http-response, pattern=^https:\/\/mobile\.api\.mgtv\.com\/v10\/video\/info\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-cnftp = type=http-response, pattern=^https:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/info\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-cnftp = type=http-response, pattern=^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v2\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-replaceBody = type=http-request, pattern=^https?:\/\/vv\.video\.qq\.com\/getvinfo, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd-%3E%26sppreviewtype%3D0%241%26spsrt%3D0
-
-# 播放详情页,首页信息流,顶部tab,我的页面,评论区
-cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(gateway\.new\.execute|home\.feed|home\.query|uc\.query|ycp\.query), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 底部tab
-cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 青少年模式弹窗
-cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 搜索列表
-cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.soku\.yksearch, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 热剧弹窗
-cnftp = type=http-response, pattern=^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
-
-# 开屏广告
-cnftp = type=http-response, pattern=^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+tieba_json = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js,script-update-interval=0
+tieba_proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=-1,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js,argument=per_filter_video_thread=1
 
 ########################################################################################
 
@@ -491,48 +411,11 @@ cnftp = type=http-response, pattern=^https:\/\/un-acs\.youku\.com\/gw\/mtop\.you
 ^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 ^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# -------------------------------------- CNFTP --------------------------------------
-
-# 播放页开通会员提示
-^https:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show\? data-type=text data="{}" status-code=200
-
-# 播放页多余动效
-^https:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\? data-type=text data="{}" status-code=200
-
-# 播放页升级白金会员按钮
-^https:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\? data-type=text data="{}" status-code=200
-
-# 青少年弹窗
-^https:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\? data-type=text data="{}" status-code=200
-
-# 首页左上角推广
-^http:\/\/[\d\.]+\/odin\/c1\/(channel\/ads|skin\/config)\? data-type=text data="{}" status-code=200
-
-# 底部tab红点
-^https:\/\/damang\.api\.mgtv\.com\/station\/album\/red\/dot\? data-type=text data="{}" status-code=200
-
-# 播放器界面
-^https:\/\/hb-boom\.api\.mgtv\.com\/release\/pullReleaseInfo data-type=text data="{}" status-code=200
-
-# 升级弹窗
-^https:\/\/mobile\.api\.mgtv\.com\/v2\/mobile\/checkUpdate\? data-type=text data="{}" status-code=200
-
-# 播放详情页
-^http:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/cms\/list\? data-type=text data="{}" status-code=200
-
-# 搜索框填充词
-^http:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\? data-type=text data="{}" status-code=200
-
-^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind data-type=text data="{}" status-code=200
-
-# 播放页弹窗动图
-^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.(pisp\.scripts\.get|xspace\.play\.position\.preload\.query|xspace\.poplayer\.position\.query) data-type=text data="{}" status-code=200
-
 ########################################################################################
 
 
 [MITM]
-hostname = %APPEND% m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, *.weibo.cn, *.weibo.com, sinaurl.cn, t.cnweibo.cn, *.zhihu.com, *.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, vod-movie.maoyan.com, api.maoyan.com, ad.maoyan.com, wx.maoyan.com, -i.vip.iqiyi.com, *.iqiyi.com, *.mgtv.com, vv.video.qq.com, acs.youku.com, push.m.youku.com, un-acs.youku.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
+hostname = %APPEND% m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, *.weibo.cn, *.weibo.com, sinaurl.cn, t.cnweibo.cn, *.zhihu.com, *.xiaohongshu.com, referee.xiaohongshu.com, oauth.secure.pixiv.net, tiebac.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, vod-movie.maoyan.com, api.maoyan.com, ad.maoyan.com, wx.maoyan.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
 h2 = true
 tcp-connection = true
 
