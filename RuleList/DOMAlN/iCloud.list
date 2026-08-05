@@ -2,4 +2,8 @@ DOMAIN-KEYWORD,content.icloud
 DOMAIN-SUFFIX,icloud-content.com
 DOMAIN-SUFFIX,gcs-content-storage-upload.googleapis.com
 DOMAIN-SUFFIX,gcs-content-storage-download.googleapis.com
+DOMAIN-SUFFIX,gcs-us-00003.content-storage-upload.googleapis.com
+DOMAIN-SUFFIX,us-std-00001.s3.dualstack.us-east-1.amazonaws.com
 DOMAIN-SUFFIX,us-ore-00001.s3.dualstack.us-west-2.amazonaws.com
+
+
