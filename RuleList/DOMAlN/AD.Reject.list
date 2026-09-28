@@ -78,6 +78,10 @@ URL-REGEX,"^http:\/\/47\.246\.103\.9\/amdc\/mobileDispatch"
 URL-REGEX,"^http:\/\/47\.246\.103\.10\/amdc\/mobileDispatch"
 URL-REGEX,"^http:\/\/59\.82\.113\.10\/amdc\/mobileDispatch"
 URL-REGEX,"^http:\/\/59\.82\.113\.219\/amdc\/mobileDispatch"
+DOMAIN,xpis-xcdn.youku.com
+DOMAIN,pre-xpis-xcdn.youku.com
+DOMAIN,xpis-tel-xcdn.youku.com
+DOMAIN,xpis-mob-xcdn.youku.com
 DOMAIN,httpdns.cctv.com
 DOMAIN,httpdns-browser.platform.dbankcloud.cn
 DOMAIN,httpdns.huaweicloud.com
