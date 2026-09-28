@@ -73,7 +73,7 @@ IP-CIDR,203.107.1.0/24,no-resolve
 DOMAIN,amdc.alipay.com
 DOMAIN,ucdc.upaas.quark.cn
 DOMAIN,httpdns.danuoyi.tbcache.com
-URL-REGEX,"^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatchh"
+URL-REGEX,"^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch"
 URL-REGEX,"^http:\/\/47\.246\.103\.9\/amdc\/mobileDispatch"
 URL-REGEX,"^http:\/\/47\.246\.103\.10\/amdc\/mobileDispatch"
 URL-REGEX,"^http:\/\/59\.82\.113\.10\/amdc\/mobileDispatch"
@@ -343,6 +343,7 @@ DOMAIN,df.tanx.com
 DOMAIN,opehs.tanx.com
 DOMAIN,beacon-api.aliyuncs.com
 DOMAIN,adash.man.aliyuncs.com
+DOMAIN,adashx.m.taobao.com
 DOMAIN,applog.uc.cn
 DOMAIN,atoken.m.taobao.com
 AND,((DOMAIN-KEYWORD,adash),(DOMAIN-SUFFIX,ut.taobao.com))
