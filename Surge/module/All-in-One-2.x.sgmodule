@@ -1,5 +1,5 @@
 #!name=AD ByeBye+ 2.x
-#!desc=Most Optimized Ad-free Experience presented with automated updates. | 提供最优化无广告体验，自动同步更新。\nRepo: https://tuu.cat/repo・Update: 10/18/2026・Support: @bunizao・ Channel: @hututu00
+#!desc=Most Optimized Ad-free Experience presented with automated updates. | 提供最优化无广告体验，自动同步更新。\nRepo: https://tuu.cat/repo・Update: 10/19/2026・Support: @bunizao・ Channel: @hututu00
 #!include=Block HTTPDNS, AD Block, Zhihu, Amap, DiDi, REDnote, Weibo, Tieba, Cainiao, PinDuoDuo, JD, Bilibili, 12306, Eleme, Meituan, MiniProgram, Pixiv
 #!url=https://tuu.cat/ADBlock
 #!category=🚫 AD Block
@@ -57,10 +57,11 @@ RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList
 (?i)^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card\/v\d\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # ------------- Amap -------------
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-assets\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-aiqs\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https:\/\/ai\.amap\.com\/v1\/ai_rec\/home_qs\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+(?i)^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-assets\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+(?i)^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-aiqs\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+(?i)^https:\/\/ai\.amap\.com\/v1\/ai_rec\/home_qs\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+(?i)^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+(?i)^https:\/\/m5\.amap\.com\/ws\/info_bff\/rankingCard\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # ------------- DiDi -------------
 (?i)^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -183,11 +184,6 @@ RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList
 
 [Script]
 
-# ------------- Amap -------------
-body_rewrite_12 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://github.com/bunizao/Mirrored/raw/main/Chores/js/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.adStatementConfig%22%2C%22data.adCustomerRetainArchitecture%22%2C%22data.adImEntryConfig%22%2C%22data.adVenueConfig%22%2C%22data.adPerfSwitch%22%2C%22data.EndNaviC3AdCard%22%2C%22data.infoCpcReport%22%2C%22data.hotsaleConfig%22%2C%22data.marketing_resource_config%22%2C%22data.coupon_risk_asac%22%2C%22data.commonCouponSceneLog%22%2C%22data.sug_coupon_opt%22%2C%22data.giftEntryConfig%22%2C%22data.splashscreen%22%2C%22data.SplashScreenControl%22%2C%22data.splashview_config%22%2C%22data.feedback_banner%22%2C%22data.TrainOrderBanner%22%2C%22data.nearby_business_popup%22%2C%22data.shortcut_popup_frequency%22%2C%22data.tel_retention_popup%22%2C%22data.hotel_activity%22%2C%22data.taxi_activity%22%2C%22data.hotel_privilege%22%2C%22data.sportsActivityConfig%22%2C%22data.activity_qingke_contry_control%22%2C%22data.920bestwishes%22%2C%22data.custom_consultdata.widget_guide%22%2C%22data.free_ride%22%2C%22data.homepage_resource_config%22%2C%22data.home_message_guide%22%2C%22data.hotel_tipsicon%22%2C%22data.sur_bar%22%2C%22data.nearby_map_entry_guide%22%2C%22data.comment_info%22%2C%22data.small_biz_index%22%2C%22data.small_biz_fun%22%2C%22data.setpagesearch%22%2C%22data.wallet%22%5D%5D%5D
-body_rewrite_15 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\?, script-path=https://github.com/bunizao/Mirrored/raw/main/Chores/js/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22%24.data.shadingWords%22%5D%5D%5D
-body_rewrite_21 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/car\/order\/content_info\?, script-path=https://github.com/bunizao/Mirrored/raw/main/Chores/js/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-del%22%2C%5B%22data.lubanData.skin%22%5D%5D%5D
-
 # ----------- REDnote ------------
 移除图片和实况照片水印 = type=http-response, pattern=(?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save), script-path=https://github.com/bunizao/Mirrored/raw/main/Chores/js/RedPaper_remove_ads.js, requires-body=true
 移除整体配置 ui = type=http-response, pattern=(?i)^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system\/service\/ui\/config\?, script-path=https://github.com/bunizao/Mirrored/raw/main/Chores/js/RedPaper_remove_ads.js, requires-body=true
@@ -245,6 +241,6 @@ ProtoBuf处理 = type=http-response, pattern=(?i)^https:\/\/(grpc\.biliapi\.net|
 ########################################################################################
 
 [MITM]
-hostname = %APPEND% oauth.secure.pixiv.net, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, appconf.mail.163.com, msglb.91160.com, ucdc2-upaas.uc.cn, gw-cn.jiaoliuqu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, m-cloud.zhihu.com, api.zhihu.com, www.zhihu.com, page-info.zhihu.com, zhida.zhihu.com, m5.amap.com, ai.amap.com, m5-zb.amap.com, as.xiaojukeji.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, res.xiaojukeji.com, api.udache.com, daijia.kuaidadi.com, htwkop-st.xiaojukeji.com, htwkop.xiaojukeji.com, freight.xiaojukeji.com, poi.map.xiaojukeji.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com, www.xiaohongshu.com, *.weibo.cn, *.weibo.com, weibo.com, tiebac.baidu.com, tieba.baidu.com, netflow-mtop.cainiao.com, nbcps-mtop.cainiao.com, cn-acs.m.cainiao.com, e2e-mtop.cainiao.com, longquan-mtop.cainiao.com, api.pinduoduo.com, m.pinduoduo.net, api.m.jd.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, line3-h5-mobile-api.biligame.com, ad.12306.cn, mobile.12306.cn
+hostname = %APPEND% oauth.secure.pixiv.net, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, appconf.mail.163.com, msglb.91160.com, ucdc2-upaas.uc.cn, gw-cn.jiaoliuqu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, m-cloud.zhihu.com, api.zhihu.com, www.zhihu.com, page-info.zhihu.com, zhida.zhihu.com, m5.amap.com, ai.amap.com, m5-zb.amap.com, center.amap.com, sns.amap.com, as.xiaojukeji.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, res.xiaojukeji.com, api.udache.com, daijia.kuaidadi.com, htwkop-st.xiaojukeji.com, htwkop.xiaojukeji.com, freight.xiaojukeji.com, poi.map.xiaojukeji.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com, www.xiaohongshu.com, *.weibo.cn, *.weibo.com, weibo.com, tiebac.baidu.com, tieba.baidu.com, netflow-mtop.cainiao.com, nbcps-mtop.cainiao.com, cn-acs.m.cainiao.com, e2e-mtop.cainiao.com, longquan-mtop.cainiao.com, api.pinduoduo.com, m.pinduoduo.net, api.m.jd.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, line3-h5-mobile-api.biligame.com, ad.12306.cn, mobile.12306.cn
 h2 = true
 tcp-connection = true
