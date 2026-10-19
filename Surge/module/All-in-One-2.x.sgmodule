@@ -57,11 +57,13 @@ RULE-SET,https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList
 (?i)^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card\/v\d\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # ------------- Amap -------------
+(?i)^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 (?i)^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-assets\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 (?i)^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-aiqs\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 (?i)^https:\/\/ai\.amap\.com\/v1\/ai_rec\/home_qs\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 (?i)^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 (?i)^https:\/\/m5\.amap\.com\/ws\/info_bff\/rankingCard\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+(?i)^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # ------------- DiDi -------------
 (?i)^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -241,6 +243,6 @@ ProtoBuf处理 = type=http-response, pattern=(?i)^https:\/\/(grpc\.biliapi\.net|
 ########################################################################################
 
 [MITM]
-hostname = %APPEND% oauth.secure.pixiv.net, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, appconf.mail.163.com, msglb.91160.com, ucdc2-upaas.uc.cn, gw-cn.jiaoliuqu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, m-cloud.zhihu.com, api.zhihu.com, www.zhihu.com, page-info.zhihu.com, zhida.zhihu.com, m5.amap.com, ai.amap.com, m5-zb.amap.com, center.amap.com, sns.amap.com, as.xiaojukeji.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, res.xiaojukeji.com, api.udache.com, daijia.kuaidadi.com, htwkop-st.xiaojukeji.com, htwkop.xiaojukeji.com, freight.xiaojukeji.com, poi.map.xiaojukeji.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com, www.xiaohongshu.com, *.weibo.cn, *.weibo.com, weibo.com, tiebac.baidu.com, tieba.baidu.com, netflow-mtop.cainiao.com, nbcps-mtop.cainiao.com, cn-acs.m.cainiao.com, e2e-mtop.cainiao.com, longquan-mtop.cainiao.com, api.pinduoduo.com, m.pinduoduo.net, api.m.jd.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, line3-h5-mobile-api.biligame.com, ad.12306.cn, mobile.12306.cn
+hostname = %APPEND% oauth.secure.pixiv.net, api.mcd.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, res.pizzahut.com.cn, 3pp.starbucks.com.cn, htwkop.xiaojukeji.com, tm-api.pin-dao.cn, webchatapp.fcbox.com, dsp.fcbox.com, go.heytea.com, api.hellobike.com, ucmp.sf-express.com, appconf.mail.163.com, msglb.91160.com, ucdc2-upaas.uc.cn, gw-cn.jiaoliuqu.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, m-cloud.zhihu.com, api.zhihu.com, www.zhihu.com, page-info.zhihu.com, zhida.zhihu.com, m5.amap.com, ai.amap.com, m5-zb.amap.com, center.amap.com, sns.amap.com, info.amap.com, as.xiaojukeji.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, res.xiaojukeji.com, api.udache.com, daijia.kuaidadi.com, htwkop-st.xiaojukeji.com, htwkop.xiaojukeji.com, freight.xiaojukeji.com, poi.map.xiaojukeji.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com, www.xiaohongshu.com, *.weibo.cn, *.weibo.com, weibo.com, tiebac.baidu.com, tieba.baidu.com, netflow-mtop.cainiao.com, nbcps-mtop.cainiao.com, cn-acs.m.cainiao.com, e2e-mtop.cainiao.com, longquan-mtop.cainiao.com, api.pinduoduo.com, m.pinduoduo.net, api.m.jd.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, line3-h5-mobile-api.biligame.com, ad.12306.cn, mobile.12306.cn
 h2 = true
 tcp-connection = true
